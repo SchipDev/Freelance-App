@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import App from "../App";
 import "../styles/landing.css";
+import BootstrapCarousel from "./BootstrapCarousel";
 class Landing extends Component {
   render() {
     return (
@@ -16,7 +17,7 @@ class Landing extends Component {
             <p>Log In</p>
             <p id="join">Join now</p>
           </div>
-          <div className="title">
+          {/* <div className="title">
             <div>
               <h1>
                 Hire the best freelancers for any job,<br></br> online. Find
@@ -27,9 +28,10 @@ class Landing extends Component {
                 reality.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* <App /> */}
+        <BootstrapCarousel />
       </div>
     );
   }
