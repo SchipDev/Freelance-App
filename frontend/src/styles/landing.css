@@ -1,0 +1,77 @@
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.4em;
+  justify-content: center;
+}
+.logo img {
+  width: 15em;
+  height: 8em;
+}
+.logo h1 {
+  background: white;
+  color: rgb(23, 68, 164);
+
+  line-height: 0;
+}
+.logo span {
+  color: white;
+  -webkit-text-stroke: 2.2px rgb(23, 68, 164);
+}
+.nav1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+}
+.sign {
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(96, 94, 94);
+}
+.sign p {
+  margin: 0.6em;
+}
+#join {
+  border: 1px solid rgb(96, 94, 94);
+  padding: 0 1.3em;
+}
+.title {
+  background: rgb(242, 241, 233);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+}
+.title div {
+  width: 40%;
+}
+.title h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 0;
+  font-size: 1.5em;
+}
+.title p {
+  font-size: 1.1em;
+}
+@media only screen and (min-width: 920px) {
+  .logo h1 {
+    line-height: 1em;
+  }
+  .nav1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+  }
+}
+@media only screen and (min-width: 615px) {
+  .logo h1 {
+    margin-top: 1.5em;
+  }
+}
