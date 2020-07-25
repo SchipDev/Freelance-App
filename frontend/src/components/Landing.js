@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import App from "../App";
 import "../styles/landing.css";
 import BootstrapCarousel from "./BootstrapCarousel";
+import { Link } from "react-router-dom";
+
 class Landing extends Component {
   render() {
     return (
@@ -14,8 +16,12 @@ class Landing extends Component {
             </h1>
           </div>
           <div className="sign">
-            <p>Log In</p>
-            <p id="join">Join now</p>
+            <Link to="/log-in" id="login">
+              Log In
+            </Link>
+            <Link to="/sign-up" id="join">
+              Join now
+            </Link>
           </div>
           {/* <div className="title">
             <div>

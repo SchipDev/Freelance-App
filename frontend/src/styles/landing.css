@@ -27,6 +27,7 @@
   display: flex;
   font-size: 1.5em;
   color: rgb(96, 94, 94);
+  margin-left: 20px;
 }
 .sign p {
   margin: 0.6em;
@@ -34,6 +35,21 @@
 #join {
   border: 1px solid rgb(96, 94, 94);
   padding: 0 1.3em;
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+#join:hover {
+  background-color: lightgray;
+}
+#login {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+  margin-right: 10px;
+}
+#login:hover {
+  text-decoration: underline;
 }
 .title {
   background: rgb(242, 241, 233);
