@@ -5,6 +5,7 @@ class SignUp extends Component {
     state = {
 
     } 
+
     handleChange = e => this.setState({[e.target.name]: e.target.value})
 
     handleSubmit =  e => {
@@ -13,6 +14,7 @@ class SignUp extends Component {
                 this.props.setUser({...user.data})  
             }).catch(({ response }) => console.error(response.data));
     }
+
     render() {
         return (
             <Fragment>
