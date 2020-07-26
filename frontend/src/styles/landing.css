@@ -1,3 +1,8 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 .logo {
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +45,7 @@
   font-size: medium;
 }
 #join:hover {
-  background-color: lightgray;
+  background-color: rgb(216, 206, 206);
 }
 #login {
   text-decoration: none;
@@ -52,25 +57,18 @@
   text-decoration: underline;
 }
 .title {
-  background: rgb(242, 241, 233);
+  background: rgb(227, 226, 224);
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 40vh;
-  width: 100%;
-  position: relative;
+  height: 45vh;
 }
-.title div {
-  width: 40%;
+.landing > div {
+  margin: 1%;
 }
-.title h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 0;
-  font-size: 1.5em;
-}
-.title p {
-  font-size: 1.1em;
+.landing:nth-child(3) {
+  padding-left: 3.2%;
+  padding-left: 5%;
 }
 .carousel {
   overflow: hidden;
@@ -109,6 +107,13 @@
   padding: 2vh;
   opacity: 0.7;
 }
+@media only screen and (min-width: 500px) {
+  .title {
+    height: 50vh;
+    width: 97%;
+    margin-left: 2vw;
+  }
+}
 @media only screen and (min-width: 920px) {
   .nav1 {
     display: flex;
@@ -126,6 +131,9 @@
 @media only screen and (min-width: 1500px) {
   .carousel {
     overflow: hidden;
+    height: 80vh;
+  }
+  .title {
     height: 80vh;
   }
   .text p {
