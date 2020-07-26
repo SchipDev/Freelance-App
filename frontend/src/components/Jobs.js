@@ -1,9 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../styles/jobs.css";
+import { Link } from "react-router-dom";
 // const axios = require("axios");
 
 class Jobs extends Component {
-  componentDidMount() {
+  state = {
+    jobs: [],
+    title: "",
+    location: "",
+    radius: ""
+  };
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  toggleForm = () => {
+    this.setState({
+      showForm: !this.state.showForm
+    });
+  };
+  getInfo = e => {
+    e.preventDefault();
     axios({
       method: "GET",
       url: "https://indeed-com.p.rapidapi.com/search/jobs",
@@ -15,22 +34,73 @@ class Jobs extends Component {
       },
       params: {
         sort: "relevance",
-        location: "San Francisco CA 94121",
+        location: this.state.location,
         offset: "0",
-        query: "Teacher",
-        radius: "100"
+        query: this.state.title,
+        radius: "25"
       }
     })
       .then(response => {
-        console.log(response);
+        console.log(response.data.results);
+        this.setState({
+          jobs: response.data.results
+        });
       })
       .catch(error => {
         console.log(error);
       });
-  }
-
+  };
+  showJobs = () => {
+    return this.state.jobs.map((job, i) => {
+      return (
+        <div key={i} className="eachJob">
+          <Link to={`/jobs/${job.jobkey}`}>
+            <h3>{job.jobtitle}</h3>
+          </Link>
+          <p>{job.company}</p>
+          <p className="location">{job.formattedLocation}</p>
+          <p className="days">{job.formattedRelativeTime}</p>
+        </div>
+      );
+    });
+  };
   render() {
-    return <div></div>;
+    return (
+      <div className="jobs">
+        <div className="searchJobs">
+          <h2>Search for your next job</h2>
+          <form className="form1" onSubmit={this.getInfo}>
+            <label>Job Title</label>
+            <input
+              placeholder="Search by title"
+              onChange={this.handleChange}
+              type="text"
+              name="title"
+            />
+
+            <label id="labelLoc">Location</label>
+            <input
+              placeholder="City, state or zip code"
+              onChange={this.handleChange}
+              type="text"
+              name="location"
+            />
+
+            {/* <label>Radius</label>
+            <input onChange={this.handleChange} type="number" name="radius" />
+            <br /> */}
+            <br />
+            <button className="submit" type="submit">
+              Find Jobs
+            </button>
+          </form>
+        </div>
+        <div className="jobsList">
+          <h3>Based on your request, we have found top 10 best results</h3>
+          {this.showJobs()}
+        </div>
+      </div>
+    );
   }
 }
 

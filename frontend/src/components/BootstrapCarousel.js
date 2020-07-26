@@ -7,7 +7,7 @@ export class BootstrapCarousel extends Component {
       <div>
         <div className="box">
           <div className="container-fluid">
-            <Carousel interval={800} keyboard={false} pauseOnHover={true}>
+            <Carousel interval={900} keyboard={false} pauseOnHover={true}>
               <Carousel.Item className="carousel box">
                 <img
                   className="d-block w-100 carousel"

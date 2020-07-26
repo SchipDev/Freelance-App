@@ -1,0 +1,113 @@
+.jobs {
+  display: flex;
+  flex-direction: column;
+  margin: 4vw;
+}
+.searchJobs {
+  background-color: rgb(207, 226, 238);
+  padding: 6vw;
+  margin-bottom: 3vh;
+  border: 0.1px lightgray solid;
+}
+.form1 input {
+  padding-left: 1vw;
+}
+.searchJobs h2 {
+  font-size: 4vh;
+  text-align: center;
+}
+.searchJobs form {
+  display: flex;
+  flex-direction: column;
+}
+.form1 label {
+  font-weight: 800;
+}
+.form1 button {
+  border-radius: 20px;
+  background-color: rgb(23, 68, 164);
+  color: white;
+  font-weight: 800;
+}
+.jobsList {
+  background-color: rgb(250, 253, 255);
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.1px lightgray solid;
+  padding: 2vh 0;
+  justify-content: center;
+}
+.eachJob {
+  width: 300px;
+  height: 250px;
+  border: 0.3px lightgray solid;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: white;
+  padding: 2vw;
+  margin-top: 3vh;
+  margin-right: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+.jobsList h3 {
+  font-size: 20px;
+  width: 90%;
+  text-align: center;
+  font-weight: 700;
+}
+.eachJob h3 {
+  text-align: start;
+  margin-bottom: 20px;
+  color: rgb(23, 68, 164);
+}
+.eachJob p {
+  color: rgb(91, 91, 91);
+}
+.days {
+  text-decoration-line: overline;
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 769px) {
+  .jobs {
+    margin: 2vw;
+  }
+  .searchJobs {
+    padding: 2vw;
+  }
+  .searchJobs form {
+    display: flex;
+    flex-direction: row;
+  }
+  .form1 label {
+    font-weight: 800;
+    padding: 0 0.4vw;
+    font-size: 1.3vw;
+    margin-top: 0.5vh;
+  }
+  #labelLoc {
+    margin-left: 7.4vw;
+  }
+  .form1 input {
+    width: 30vw;
+    font-size: 1.1vw;
+    padding-left: 0.7vw;
+    border-radius: 10px;
+  }
+  .form1 button {
+    font-size: 1.1vw;
+    padding: 0 2vw;
+    margin-left: 1vw;
+  }
+  .searchJobs h2 {
+    font-size: 3.8vh;
+    text-align: center;
+    padding-bottom: 4.5vh;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .jobsList {
+    width: 50%;
+  }
+}
