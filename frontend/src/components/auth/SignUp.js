@@ -25,13 +25,21 @@ class SignUp extends Component {
                 <div id='signup_div'>
                     <h2>SignUP</h2>
                     <form onSubmit={this.handleSubmit}>
-                        <label>Email Address</label>
+                        <label for='email'>Email Address</label>
                         <br />
-                        <input name="email" type="email" onChange={this.handleChange} placeholder='example@example.com' className='input_field'/>
+                        <input id='email' name="email" type="email" onChange={this.handleChange} placeholder='example@example.com' className='input_field'/>
                         <br />
-                        <label>Password</label>
+                        <label for='yourname'>Your Name</label>
                         <br />
-                        <input name="password" type="password" onChange={this.handleChange} placeholder='Password' className='input_field'/>
+                        <input id='yourname' name="name" type="text" onChange={this.handleChange} placeholder='John Smith' className='input_field'/>
+                        <br />
+                        <label for='jobtitle'>Job Title</label>
+                        <br />
+                        <input id='jobtitle' name="jobTitle" type="text" onChange={this.handleChange} placeholder='Web Developer' className='input_field'/>
+                        <br />
+                        <label for='password'>Password</label>
+                        <br />
+                        <input id='password' name="password" type="password" onChange={this.handleChange} placeholder='Password' className='input_field'/>
                         <br />
                         <input type="submit" value="Sign Up" id="signup_button" />
                     </form>

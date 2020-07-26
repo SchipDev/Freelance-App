@@ -13,6 +13,7 @@
 .input_field {
     width: 20vw;
     border-radius: 10px;
+    background-color: #ccc;
 }
 
 #signup_button {
