@@ -1,30 +1,43 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
+import '../../styles/SignUp.css'
+import { Link } from 'react-router-dom'
+import logo from '../../images/logo.png'
 
 class SignUp extends Component {
     state = {
 
-    } 
+    }
 
-    handleChange = e => this.setState({[e.target.name]: e.target.value})
+    handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
-    handleSubmit =  e => {
+    handleSubmit = e => {
         e.preventDefault()
-            actions.signUp(this.state).then(user=> {
-                this.props.setUser({...user.data})  
-            }).catch(({ response }) => console.error(response.data));
+        actions.signUp(this.state).then(user => {
+            this.props.setUser({ ...user.data })
+        }).catch(({ response }) => console.error(response.data));
     }
 
     render() {
         return (
-            <Fragment>
-                <h2>SignUP</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input name="email" type="email" onChange={this.handleChange} />
-                    <input name="password" type="password" onChange={this.handleChange} />
-                    <input type="submit" value="Sign Up"/>
-                </form>
-            </Fragment>
+            <div>
+            <img src={logo} id='logo'/>
+                <div id='signup_div'>
+                    <h2>SignUP</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Email Address</label>
+                        <br />
+                        <input name="email" type="email" onChange={this.handleChange} placeholder='example@example.com' className='input_field'/>
+                        <br />
+                        <label>Password</label>
+                        <br />
+                        <input name="password" type="password" onChange={this.handleChange} placeholder='Password' className='input_field'/>
+                        <br />
+                        <input type="submit" value="Sign Up" id="signup_button" />
+                    </form>
+                    <Link to='/google-signup' id='suwg'>Sign Up With Google</Link>
+                </div>
+            </div>
         );
     }
 }
