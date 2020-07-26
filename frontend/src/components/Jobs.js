@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../styles/jobs.css";
 import { Link } from "react-router-dom";
+import JobDetail from './JobDetail'
 // const axios = require("axios");
 
 class Jobs extends Component {
@@ -60,6 +61,7 @@ class Jobs extends Component {
           <p>{job.company}</p>
           <p className="location">{job.formattedLocation}</p>
           <p className="days">{job.formattedRelativeTime}</p>
+          <button id='expand_btn' onClick={() => this.setState({currJob: job})}>Expand</button>
         </div>
       );
     });
@@ -95,9 +97,12 @@ class Jobs extends Component {
             </button>
           </form>
         </div>
-        <div className="jobsList">
-          <h3>Based on your request, we have found top 10 best results</h3>
-          {this.showJobs()}
+        <div className='jobs-list-sbs'>
+          <div className="jobsList">
+            <h3>Based on your request, we have found top 10 best results</h3>
+            {this.showJobs()}
+          </div>
+          <JobDetail currJob={this.state.currJob} />
         </div>
       </div>
     );

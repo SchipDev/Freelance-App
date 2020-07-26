@@ -110,4 +110,11 @@
   .jobsList {
     width: 50%;
   }
+  .jobs-list-sbs {
+    display: flex;
+  }
+  #expand_btn {
+    background-color: rgb(207, 226, 238);
+  }
 }
+
