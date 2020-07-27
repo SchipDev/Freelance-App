@@ -1,6 +1,7 @@
 .jobs {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 4vw;
 }
 .searchJobs {
@@ -39,7 +40,7 @@
 }
 .eachJob {
   width: 300px;
-  height: 250px;
+  height: 300px;
   border: 0.3px lightgray solid;
   border-radius: 5px;
   justify-content: center;
@@ -49,12 +50,14 @@
   margin-right: 3vh;
   display: flex;
   flex-direction: column;
+  margin-left: 6vw;
 }
 .jobsList h3 {
   font-size: 20px;
   width: 90%;
   text-align: center;
   font-weight: 700;
+  margin-top: 3.4vh;
 }
 .eachJob h3 {
   text-align: start;
@@ -68,7 +71,44 @@
   text-decoration-line: overline;
   font-size: 14px;
 }
-
+.jobDeatail {
+  background-color: rgb(250, 253, 255);
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.1px lightgray solid;
+  padding: 2vh 0;
+  justify-content: center;
+  margin-top: 6%;
+}
+.singleJob h3 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 900;
+}
+.singleJob {
+  padding: 1vh 2vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.singleJob a {
+  margin-top: 8px;
+  text-decoration: underline;
+}
+#posted {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(91, 91, 91);
+  line-height: 0.8em;
+}
+.loc {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(91, 91, 91);
+}
+#snippet {
+  margin-top: 10px;
+}
 @media only screen and (min-width: 769px) {
   .jobs {
     margin: 2vw;
@@ -98,7 +138,6 @@
   .form1 button {
     font-size: 1.1vw;
     padding: 0 2vw;
-    margin-left: 1vw;
   }
   .searchJobs h2 {
     font-size: 3.8vh;
@@ -108,7 +147,8 @@
 }
 @media only screen and (min-width: 1025px) {
   .jobsList {
-    width: 50%;
+    width: 48%;
+    margin-left: 1%;
   }
   .jobs-list-sbs {
     display: flex;
@@ -116,5 +156,21 @@
   #expand_btn {
     background-color: rgb(207, 226, 238);
   }
+  .eachJob {
+    margin-left: 1.2vw;
+  }
+  .jobDeatail {
+    background-color: rgb(250, 253, 255);
+    display: flex;
+    height: fit-content;
+    margin-top: 0;
+    border: 0.1px lightgray solid;
+    padding: 2vh 0;
+    justify-content: center;
+    width: 48%;
+    margin-left: 2%;
+  }
+  .singleJob {
+    padding: 4vh;
+  }
 }
-
