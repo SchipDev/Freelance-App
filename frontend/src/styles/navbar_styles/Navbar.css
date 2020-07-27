@@ -1,0 +1,16 @@
+#bar {
+    position: fixed;
+    background-color: rgba(178, 216, 250, 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav_button {
+    background-color: blue;
+    color: white;
+    padding: 0.5vh;
+    border-radius: 20px;
+    margin: 5px;
+}

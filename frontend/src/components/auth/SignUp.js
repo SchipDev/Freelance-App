@@ -3,6 +3,7 @@ import actions from '../../services/index'
 import '../../styles/SignUp.css'
 import { Link } from 'react-router-dom'
 import logo from '../../images/logo.png'
+import Navbar from '../navbar/Navbar'
 
 class SignUp extends Component {
     state = {
@@ -21,6 +22,7 @@ class SignUp extends Component {
     render() {
         return (
             <div>
+            <Navbar />
             <img src={logo} id='logo'/>
                 <div id='signup_div'>
                     <h2>SignUP</h2>
