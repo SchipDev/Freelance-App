@@ -109,7 +109,42 @@
 #snippet {
   margin-top: 10px;
 }
+.emptySpace1 {
+  background-color: rgb(250, 253, 255);
+  border: 0.1px lightgray solid;
+  min-width: 98%;
+  min-height: 41vh;
+}
+.emptySpace1 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13vh;
+  height: 8vh;
+  width: 18vw;
+}
+@media only screen and (min-width: 760px) and (max-width: 768px) {
+  .emptySpace1 {
+    background-color: rgb(250, 253, 255);
+    border: 0.1px lightgray solid;
+    min-width: 83%;
+    min-height: 53vh;
+  }
+  .emptySpace1 img {
+    margin-top: 13vh;
+    height: 18vh;
+    width: 29vw;
+  }
+}
 @media only screen and (min-width: 769px) {
+  .emptySpace1 img {
+    margin-top: 13vh;
+    height: 29vh;
+    width: 38vw;
+  }
+  .emptySpace1 {
+    min-height: 70vh;
+  }
   .jobs {
     margin: 2vw;
   }
@@ -146,6 +181,11 @@
   }
 }
 @media only screen and (min-width: 1025px) {
+  .emptySpace1 img {
+    margin-top: 13vh;
+    height: 36vh;
+    width: 20vw;
+  }
   .jobsList {
     width: 48%;
     margin-left: 1%;

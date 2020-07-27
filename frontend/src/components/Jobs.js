@@ -145,7 +145,9 @@ class Jobs extends Component {
             )}
           </div>
         ) : (
-          ""
+          <div className="emptySpace1">
+            <img src={require("../images/search.png")} alt="search" />
+          </div>
         )}
       </div>
     );
