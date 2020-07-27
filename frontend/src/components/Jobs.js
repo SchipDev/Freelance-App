@@ -2,15 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../styles/jobs.css";
 import { Link } from "react-router-dom";
-import JobDetail from './JobDetail'
+import JobDetail from "./JobDetail";
+import jobs from "./jobs.json";
+import detailJob from "./detailJob.json";
 // const axios = require("axios");
 
 class Jobs extends Component {
   state = {
+    // jobs: jobs,
+    // currJob: detailJob,
     jobs: [],
     title: "",
     location: "",
-    radius: ""
+    radius: "",
+    showHeader: false
   };
   handleChange = event => {
     this.setState({
@@ -19,7 +24,7 @@ class Jobs extends Component {
   };
   toggleForm = () => {
     this.setState({
-      showForm: !this.state.showForm
+      showHeader: !this.state.showHeader
     });
   };
   getInfo = e => {
@@ -30,7 +35,7 @@ class Jobs extends Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-        "x-rapidapi-key": "520b2c9402mshf46439b682e852dp1733d4jsn81c2c3d744d0",
+        "x-rapidapi-key": "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
         useQueryString: true
       },
       params: {
@@ -44,7 +49,8 @@ class Jobs extends Component {
       .then(response => {
         console.log(response.data.results);
         this.setState({
-          jobs: response.data.results
+          jobs: response.data.results,
+          showHeader: true
         });
       })
       .catch(error => {
@@ -61,7 +67,33 @@ class Jobs extends Component {
           <p>{job.company}</p>
           <p className="location">{job.formattedLocation}</p>
           <p className="days">{job.formattedRelativeTime}</p>
-          <button id='expand_btn' onClick={() => this.setState({currJob: job})}>Expand</button>
+          <button
+            id="expand_btn"
+            onClick={async () => {
+              await axios({
+                method: "GET",
+                url: `https://indeed-com.p.rapidapi.com/get/job/${job.jobkey}`,
+                headers: {
+                  "content-type": "application/octet-stream",
+                  "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+                  "x-rapidapi-key":
+                    "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
+                  useQueryString: true
+                }
+              })
+                .then(response => {
+                  console.log(response);
+                  this.setState({
+                    currJob: response.data.results
+                  });
+                })
+                .catch(error => {
+                  console.log(error);
+                });
+            }}
+          >
+            Expand
+          </button>
         </div>
       );
     });
@@ -97,13 +129,24 @@ class Jobs extends Component {
             </button>
           </form>
         </div>
-        <div className='jobs-list-sbs'>
-          <div className="jobsList">
-            <h3>Based on your request, we have found top 10 best results</h3>
-            {this.showJobs()}
+        {this.state.showHeader ? (
+          <div className="jobs-list-sbs">
+            <div className="jobsList">
+              <h3>Based on your request, we have found top 10 best results</h3>
+
+              {this.showJobs()}
+            </div>
+            {this.state.currJob !== undefined ? (
+              <div className="jobDeatail">
+                <JobDetail currJob={this.state.currJob} />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-          <JobDetail currJob={this.state.currJob} />
-        </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
