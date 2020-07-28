@@ -1,0 +1,36 @@
+.companies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4vw;
+}
+#backCompany {
+  background-color: rgb(207, 226, 238);
+  width: 100%;
+}
+#backCompany h4 {
+  font-size: 2.5vh;
+  font-style: oblique;
+  text-align: center;
+}
+.form2 input,
+.form2 button {
+  border-radius: 10px;
+}
+@media only screen and (min-width: 769px) {
+  #backCompany {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #backCompany h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .form2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

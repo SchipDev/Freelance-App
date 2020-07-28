@@ -182,8 +182,8 @@
 }
 @media only screen and (min-width: 1025px) {
   .emptySpace1 img {
-    margin-top: 13vh;
-    height: 36vh;
+    margin-top: 15vh;
+    height: 30vh;
     width: 20vw;
   }
   .jobsList {
