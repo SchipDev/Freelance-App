@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import CompanyDetail from "./components/CompanyDetail";
 import { Switch, Route } from "react-router-dom";
 import Landing from "./components/Landing";
 import Jobs from "./components/Jobs";
@@ -19,6 +19,11 @@ class Main extends Component {
             exact
             path="/companies"
             render={props => <Companies {...props} />}
+          />
+          <Route
+            exact
+            path="/companies/:key"
+            render={props => <CompanyDetail {...props} />}
           />
           <Route
             exact
