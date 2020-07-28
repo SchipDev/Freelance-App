@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import '../styles/CompanyDetail.css'
 import SalaryChart from './charts/SalaryChart'
+import compImg from '../images/companyLogo.png'
 
 
 
@@ -15,14 +16,14 @@ class CompanyDetail extends Component {
   };
   componentDidMount() {
     axios({
-      method: "GET",
-      url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
-      headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
-        useQueryString: true
-      }
+      // method: "GET",
+      // url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
+      // headers: {
+      //   "content-type": "application/octet-stream",
+      //   "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+      //   "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+      //   useQueryString: true
+      // }
     })
       .then(response => {
         console.log(response.data);
@@ -32,7 +33,6 @@ class CompanyDetail extends Component {
       })
       .catch(error => {
         this.getTestData()
-        this.getLinksList()
       });
   };
 
@@ -54,7 +54,7 @@ workLifeBalanceRating: 3.2
   getTestData = () => {
     let testData = {
       "key": "2320d4fe6484f95e",
-      "name": "Subway in Walmart",
+      "name": "Demonstration (API Calls Used Up)",
       "industries": null,
       "images": {
         "squareLogoUrl": null,
@@ -75,7 +75,7 @@ workLifeBalanceRating: 3.2
       "links": {
         "corporateWebsite": 'https://www.subway.com/',
         "twitter": null,
-        "instagram": null,
+        "instagram": 'https://www.instagram.com/subway/?hl=en',
         "facebook": null,
         "customLinks": []
       },
@@ -107,7 +107,7 @@ workLifeBalanceRating: 3.2
     this.setState({
       company: testData
     })
-    
+    return 1
   }
 
 
@@ -157,14 +157,37 @@ workLifeBalanceRating: 3.2
   render() {
     return (
       <div id='wholeSection'>
-        <h1 id='company_name'>{this.state.company?.name}</h1>
+        <div id='comp_header'>
+          <img src={compImg} className='company_imgs' />
+          <h1 id='company_name'>{this.state.company?.name}</h1>
+        </div>
         <div id='graphs'>
           <CompanyRatingChart data={this.getRatingData()} />
           <SalaryChart data={this.getSalaryData()} />
         </div>
-        {this.state.company?.links?.corperateWebsite != null ?
-          <a href={this.state.company?.links?.corperateWebsite}>Visit Corperate Website</a>
-          : 'No Website Provided'}
+        <strong className='header2'>Company Links</strong>
+        <div id='link_secn'>
+          {this.state.company?.links?.corporateWebsite != null ?
+            <a href={this.state.company?.links?.corporateWebsite}>Website</a>
+            :
+            'No website provided'
+          }
+          {this.state.company?.links?.twitter != null ?
+            <a href={this.state.company?.links?.twitter} classname='weblink-btn'>Twitter</a>
+            :
+            ''
+          }
+          {this.state.company?.links?.instagram != null ?
+            <a href={this.state.company?.links?.instagram} classname='weblink-btn'>Instagram</a>
+            :
+            ''
+          }
+          {this.state.company?.links?.facebook != null ?
+            <a href={this.state.company?.links?.facebook} classname='weblink-btn'>Facebook</a>
+            :
+            ''
+          }
+        </div>
       </div>
     );
   }
