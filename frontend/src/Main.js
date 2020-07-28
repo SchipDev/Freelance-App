@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import CompanyDetail from "./components/CompanyDetail";
 import { Switch, Route } from "react-router-dom";
 import Landing from "./components/Landing";
 import Jobs from "./components/Jobs";
@@ -7,7 +7,6 @@ import Companies from "./components/Companies";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import GoogleAuth from "./components/auth/GoogleAuth";
-import CompanyDetail from './components/CompanyDetail'
 
 class Main extends Component {
   render() {
@@ -20,6 +19,11 @@ class Main extends Component {
             exact
             path="/companies"
             render={props => <Companies {...props} />}
+          />
+          <Route
+            exact
+            path="/companies/:key"
+            render={props => <CompanyDetail {...props} />}
           />
           <Route
             exact
@@ -39,7 +43,9 @@ class Main extends Component {
           <Route
             exact
             path="/companies/details"
-            render={props => <CompanyDetail {...props} setUser={this.setUser} />}
+            render={props => (
+              <CompanyDetail {...props} setUser={this.setUser} />
+            )}
           />
         </Switch>
       </div>

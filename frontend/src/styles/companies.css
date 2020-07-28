@@ -17,7 +17,31 @@
 .form2 button {
   border-radius: 10px;
 }
+
+.form2 input {
+  padding-left: 1vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+.form2 button {
+  border-radius: 20px;
+  background-color: rgb(23, 68, 164);
+  color: white;
+  font-weight: 800;
+}
+.listCom {
+  background-color: rgb(250, 253, 255);
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.1px lightgray solid;
+  padding: 2vh 0;
+  justify-content: center;
+  /* min-width: 99%; */
+}
 @media only screen and (min-width: 769px) {
+  .companies {
+    margin: 2vw;
+  }
   #backCompany {
     display: flex;
     flex-direction: column;
@@ -26,11 +50,28 @@
   }
   #backCompany h2 {
     margin: 0;
-    padding: 0;
+    padding-top: 2vh;
+    padding-bottom: 0.4vh;
+  }
+
+  .form2 input {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 30vw;
+    /* font-size: 1.6vw; */
+    font-size: 25px;
+  }
+  .form2 button {
+    border-radius: 20px;
+    background-color: rgb(23, 68, 164);
+    color: white;
+
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: 800;
   }
   .form2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 3vh;
+    padding-bottom: 2vh;
   }
 }
