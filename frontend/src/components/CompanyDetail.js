@@ -15,14 +15,14 @@ class CompanyDetail extends Component {
   };
   componentDidMount() {
     axios({
-      // method: "GET",
-      // url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
-      // headers: {
-      //   "content-type": "application/octet-stream",
-      //   "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-      //   "x-rapidapi-key": "3744a68137msh8cf674348740bbcp131f20jsn28bd57c6886d",
-      //   useQueryString: true
-      // }
+      method: "GET",
+      url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
+      headers: {
+        "content-type": "application/octet-stream",
+        "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+        useQueryString: true
+      }
     })
       .then(response => {
         console.log(response.data);
