@@ -7,6 +7,7 @@ import Companies from "./components/Companies";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import GoogleAuth from "./components/auth/GoogleAuth";
+import CompanyDetail from './components/CompanyDetail'
 
 class Main extends Component {
   render() {
@@ -34,6 +35,11 @@ class Main extends Component {
             exact
             path="/google-signup"
             render={props => <GoogleAuth {...props} setUser={this.setUser} />}
+          />
+          <Route
+            exact
+            path="/companies/details"
+            render={props => <CompanyDetail {...props} setUser={this.setUser} />}
           />
         </Switch>
       </div>
