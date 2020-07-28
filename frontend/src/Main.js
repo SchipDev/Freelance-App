@@ -7,6 +7,7 @@ import Companies from "./components/Companies";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import GoogleAuth from "./components/auth/GoogleAuth";
+require("dotenv").config();
 
 class Main extends Component {
   render() {

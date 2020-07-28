@@ -1,0 +1,337 @@
+[
+  {
+    "key": "29027f9dce8e63d3",
+    "name": "Applebee's",
+    "addresses": [
+      {
+        "text": "Glendale, CA"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_RESTAURANTS_TRAVEL_AND_LEISURE",
+        "name": "Restaurants, Travel and Leisure"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/bef505569219c9fcc2c9570964c29f56",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/42c1b80f44993998d6a204f8ec66b907",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/b3fc14ab27b1c26f397e994df8fd88bc"
+    },
+    "employeeSize": {
+      "key": "ERv1_10000_PLUS",
+      "name": "10,000+"
+    },
+    "globalReviewsCount": 15175,
+    "ratings": {
+      "overallRating": 3.6,
+      "cultureAndValuesRating": 3.4,
+      "jobSecurityAndAdvancementRating": 3.1,
+      "managementRating": 3.3,
+      "workLifeBalanceRating": 3.4,
+      "compensationAndBenefitsRating": 2.8
+    }
+  },
+  {
+    "key": "6e7b40121fbb5e2f",
+    "name": "Apple",
+    "addresses": [
+      {
+        "text": "Cupertino, California, United States"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_COMPUTERS_AND_ELECTRONICS",
+        "name": "Computers and Electronics"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/55b3b8bf1ce31a60cff6bf0ff59f94b4",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/2a5877f042945ae8070ebb29251b1920",
+      "ceoPhotoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_ceophoto/8c425fed2cc5a31484f9d579b2564125",
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/4611668065cfd61e39abefa3d172643a"
+    },
+    "employeeSize": {
+      "key": "ERv1_10000_PLUS",
+      "name": "10,000+"
+    },
+    "globalReviewsCount": 9742,
+    "ratings": {
+      "overallRating": 4.2,
+      "cultureAndValuesRating": 4.1,
+      "jobSecurityAndAdvancementRating": 3.7,
+      "managementRating": 3.7,
+      "workLifeBalanceRating": 3.8,
+      "compensationAndBenefitsRating": 4.1
+    }
+  },
+  {
+    "key": "a37bedc9eac2df24",
+    "name": "AppleOne",
+    "addresses": [
+      {
+        "text": "Glendale California, United States"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_CONSULTING_AND_BUSINESS_SERVICES",
+        "name": "Consulting and Business Services"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/a941f5e6bad6df63a7aa70f0103f150c",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/89ec9bfb81a94e5fc01d81400f3c4d22",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": null
+    },
+    "employeeSize": {
+      "key": "ERv1_1001_5000",
+      "name": "1,001 to 5,000"
+    },
+    "globalReviewsCount": 2696,
+    "ratings": {
+      "overallRating": 3.8,
+      "cultureAndValuesRating": 3.6,
+      "jobSecurityAndAdvancementRating": 3.1,
+      "managementRating": 3.5,
+      "workLifeBalanceRating": 3.7,
+      "compensationAndBenefitsRating": 3.3
+    }
+  },
+  {
+    "key": "8c899ba24d8d8b55",
+    "name": "Applegreen",
+    "addresses": [
+      {
+        "text": "Dublin"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_RETAIL",
+        "name": "Retail"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/aeec13b15b878a61e79cf4d6ce8db876",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/aeec13b15b878a61e79cf4d6ce8db876",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": null
+    },
+    "employeeSize": {
+      "key": "ERv1_501_1000",
+      "name": "501 to 1,000"
+    },
+    "globalReviewsCount": 235,
+    "ratings": {
+      "overallRating": 2.5,
+      "cultureAndValuesRating": 2.4,
+      "jobSecurityAndAdvancementRating": 2.4,
+      "managementRating": 2.4,
+      "workLifeBalanceRating": 2.4,
+      "compensationAndBenefitsRating": 2.2
+    }
+  },
+  {
+    "key": "0cc81bde172f9a54",
+    "name": "Apple Rehab",
+    "addresses": [
+      {
+        "text": "21 Waterville Road\r\nAvon, CT \r\n06001"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_HEALTH_CARE",
+        "name": "Health Care"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/3d15492b54c7a874816fcc86891e8b83",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/d46e6e0d96a09a8627552758b2b08512",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/16ac5b2a36773a07d1adc97002fef45f"
+    },
+    "employeeSize": {
+      "key": "ERv1_1001_5000",
+      "name": "1,001 to 5,000"
+    },
+    "globalReviewsCount": 229,
+    "ratings": {
+      "overallRating": 3.1,
+      "cultureAndValuesRating": 3,
+      "jobSecurityAndAdvancementRating": 3,
+      "managementRating": 2.8,
+      "workLifeBalanceRating": 3.3,
+      "compensationAndBenefitsRating": 2.9
+    }
+  },
+  {
+    "key": "acc4d7f0cba6b463",
+    "name": "Apple Leisure Group",
+    "addresses": [
+      {
+        "text": "Milwaukee, WI"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_RESTAURANTS_TRAVEL_AND_LEISURE",
+        "name": "Restaurants, Travel and Leisure"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/498f8822d128d74989386331dd099955",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/f24ac7541ab202c52aa949622a2eb031",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/93e458e0fe62d21a8427605dbb5dd108"
+    },
+    "employeeSize": {
+      "key": "ERv1_10000_PLUS",
+      "name": "10,000+"
+    },
+    "globalReviewsCount": 139,
+    "ratings": {
+      "overallRating": 3.2,
+      "cultureAndValuesRating": 3.2,
+      "jobSecurityAndAdvancementRating": 2.7,
+      "managementRating": 2.8,
+      "workLifeBalanceRating": 3,
+      "compensationAndBenefitsRating": 3.1
+    }
+  },
+  {
+    "key": "922affbb75cd9bb6",
+    "name": "Apple Market",
+    "addresses": [
+      {
+        "text": "Meriden"
+      }
+    ],
+    "industries": null,
+    "images": {
+      "squareLogoUrl": null,
+      "rectangularLogoUrl": null,
+      "ceoPhotoUrl": null,
+      "headerImageUrl": null
+    },
+    "employeeSize": {
+      "key": "ERv1_11_50",
+      "name": "11 to 50"
+    },
+    "globalReviewsCount": 137,
+    "ratings": {
+      "overallRating": 3.6,
+      "cultureAndValuesRating": 3.4,
+      "jobSecurityAndAdvancementRating": 2.9,
+      "managementRating": 3.2,
+      "workLifeBalanceRating": 3.5,
+      "compensationAndBenefitsRating": 2.7
+    }
+  },
+  {
+    "key": "dd7b320122b127cb",
+    "name": "Apple Bus Company",
+    "addresses": [
+      {
+        "text": "Cleveland"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_TRANSPORT_AND_FREIGHT",
+        "name": "Transport and Freight"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/8199d37268ac35824063387d3eb19a3c",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/be93b96b2c83994b672127f21c4ba383",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/5c0e3d6bec4cce4f4e597b8de144f8bf"
+    },
+    "employeeSize": {
+      "key": "ERv1_501_1000",
+      "name": "501 to 1,000"
+    },
+    "globalReviewsCount": 133,
+    "ratings": {
+      "overallRating": 3.3,
+      "cultureAndValuesRating": 3,
+      "jobSecurityAndAdvancementRating": 2.7,
+      "managementRating": 3,
+      "workLifeBalanceRating": 3.4,
+      "compensationAndBenefitsRating": 2.5
+    }
+  },
+  {
+    "key": "88db0180fc134d28",
+    "name": "Apple Bank for Savings",
+    "addresses": [
+      {
+        "text": "New York NY"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_BANKS_AND_FINANCIAL_SERVICES",
+        "name": "Banks and Financial Services"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/a6bf5c413ae68bef22a0bd5748b84a61",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/a6bf5c413ae68bef22a0bd5748b84a61",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": null
+    },
+    "employeeSize": {
+      "key": "ERv1_501_1000",
+      "name": "501 to 1,000"
+    },
+    "globalReviewsCount": 96,
+    "ratings": {
+      "overallRating": 3.7,
+      "cultureAndValuesRating": 3.4,
+      "jobSecurityAndAdvancementRating": 3.2,
+      "managementRating": 3.3,
+      "workLifeBalanceRating": 3.7,
+      "compensationAndBenefitsRating": 3.4
+    }
+  },
+  {
+    "key": "d0506fb89983a2cb",
+    "name": "Apple Montessori Schools",
+    "addresses": [
+      {
+        "text": "5 Newark Pompton Turnpike, Riverdale, NJ 07457"
+      }
+    ],
+    "industries": [
+      {
+        "key": "Iv1_EDUCATION_AND_SCHOOLS",
+        "name": "Education and Schools"
+      }
+    ],
+    "images": {
+      "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/3153fae4e5746e882a8700c209dacf2a",
+      "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/362ed7ee11af475a1b2d4f04cfeb313c",
+      "ceoPhotoUrl": null,
+      "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/c538a556a7bc916f16d219c828ac7697"
+    },
+    "employeeSize": {
+      "key": "ERv1_201_500",
+      "name": "201 to 500"
+    },
+    "globalReviewsCount": 93,
+    "ratings": {
+      "overallRating": 3.1,
+      "cultureAndValuesRating": 3.1,
+      "jobSecurityAndAdvancementRating": 2.9,
+      "managementRating": 3,
+      "workLifeBalanceRating": 3.1,
+      "compensationAndBenefitsRating": 2.5
+    }
+  }
+]

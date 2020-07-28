@@ -35,7 +35,7 @@ class Jobs extends Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-        "x-rapidapi-key": "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
+        "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
         useQueryString: true
       },
       params: {
@@ -76,8 +76,7 @@ class Jobs extends Component {
                 headers: {
                   "content-type": "application/octet-stream",
                   "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-                  "x-rapidapi-key":
-                    "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
+                  "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
                   useQueryString: true
                 }
               })

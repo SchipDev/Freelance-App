@@ -3,10 +3,11 @@ import "../styles/companies.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CompanyDetail from "./CompanyDetail";
+import companies from "./listCompany.json";
 
 class Companies extends Component {
   state = {
-    companies: [],
+    companies: companies,
     name: ""
   };
   handleChange = event => {
@@ -22,7 +23,7 @@ class Companies extends Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-        "x-rapidapi-key": "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
+        "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
         useQueryString: true
       },
       params: {
@@ -62,18 +63,107 @@ class Companies extends Component {
     //         console.log(error);
     //       });
   };
+  stars = rating => {
+    if (rating == 0) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star0.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 0 && rating <= 1.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star1.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 1.4 && rating <= 2.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star2.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 2.4 && rating <= 3.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star3.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 3.4 && rating <= 4.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star4.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star5.png")}
+          alt="logoOfCompany"
+        />
+      );
+    }
+  };
   showCompany = () => {
     return this.state.companies.map((company, i) => {
       return (
-        <div key={i} className="eachComp">
-          <Link to={`/companies/${company.key}`}>
-            <h3>{company.name}</h3>
-          </Link>
-        </div>
+        <table className="comp-table">
+          <tr key={i}>
+            <div className="firstRow">
+              <td className="table-logo">
+                <Link to={`/companies/${company.key}`}>
+                  {company.images.squareLogoUrl !== null ? (
+                    <img
+                      src={company.images.squareLogoUrl}
+                      alt="logoOfCompany"
+                    />
+                  ) : (
+                    <img
+                      src={require("../images/companyLogo.png")}
+                      alt="logoOfCompany"
+                    />
+                  )}
+                </Link>
+              </td>
+              <div className="rateName">
+                <td className="table-data">
+                  <Link to={`/companies/${company.key}`}>
+                    <h3>{company.name}</h3>
+                  </Link>
+                </td>
+
+                <td className="table-data rateStar">
+                  <strong>{company.ratings.overallRating}</strong>
+                  <div className="stars">
+                    {this.stars(company.ratings.overallRating)}
+                  </div>
+                </td>
+              </div>
+            </div>
+            <td className="descrip">
+              {company.industries !== null ? (
+                <strong> {company.industries[0].name}</strong>
+              ) : (
+                <strong>Data is not provided</strong>
+              )}
+            </td>
+          </tr>
+        </table>
       );
     });
   };
   render() {
+    console.log(this.state.companies);
     return (
       <div className="companies">
         <div id="backCompany" className="searchJobs companySearch">
