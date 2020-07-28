@@ -40,6 +40,13 @@ class Main extends Component {
             path="/google-signup"
             render={props => <GoogleAuth {...props} setUser={this.setUser} />}
           />
+          <Route
+            exact
+            path="/companies/details"
+            render={props => (
+              <CompanyDetail {...props} setUser={this.setUser} />
+            )}
+          />
         </Switch>
       </div>
     );

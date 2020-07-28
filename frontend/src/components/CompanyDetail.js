@@ -1,4 +1,4 @@
-// import CompanyRatingChart from "./charts/CompanyRatingChart";
+import CompanyRatingChart from "./charts/CompanyRatingChart";
 import axios from "axios";
 import React, { Component } from "react";
 
@@ -35,7 +35,7 @@ class CompanyDetail extends Component {
     return (
       <div>
         <div>Hello</div>
-        {/* <CompanyRatingChart /> */}
+        <CompanyRatingChart />
       </div>
     );
   }
