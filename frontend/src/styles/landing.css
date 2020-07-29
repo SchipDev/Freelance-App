@@ -68,12 +68,21 @@
 .title {
   background: rgb(250, 253, 255);
   border: 0.1px lightgray solid;
-  background-position: 0 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 45vh;
-  margin: 3.7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 98%;
+  padding: 5vh 0;
 }
+
+/* /* .title:nth-child(odd) {
+  align-self: right;
+} */
+
+/*.title:nth-child(even) {
+  align-self: left;
+} */
 .carousel {
   overflow: hidden;
   height: 40vh;
@@ -112,11 +121,80 @@
   opacity: 0.7;
 }
 
+.flip-card {
+  background-color: transparent;
+  height: 50vw;
+  width: 60vw;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-front img {
+  height: 55vw;
+  width: 60vw;
+}
+.flip-card p {
+  margin: auto;
+  padding: auto;
+  font-size: 5vw;
+  text-align: center;
+}
+.title2 h2 {
+  text-align: center;
+  padding: 3vw 0;
+  font-size: 5vw;
+  color: rgb(23, 68, 164);
+}
+.flip-card h1 {
+  margin: auto;
+  padding: auto;
+  font-size: 10vw;
+  text-align: center;
+  margin: 10vw 0 0;
+}
+.flip-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media only screen and (min-width: 500px) {
-  .title {
+  /* .title {
     height: 50vh;
     margin: 2.5vw;
-  }
+  } */
 }
 @media only screen and (min-width: 920px) {
   .nav1 {
@@ -126,24 +204,25 @@
     align-items: center;
     padding: 0 2em;
   }
-  .title {
+  /* .title {
     height: 80vh;
     margin: 0.8vw;
-  }
+  } */
   .carousel {
     overflow: hidden;
     height: 60vh;
   }
 }
+
 @media only screen and (min-width: 1500px) {
   .carousel {
     overflow: hidden;
     height: 80vh;
   }
-  .title {
+  /* .title {
     height: 80vh;
     margin: 0.8vw;
-  }
+  } */
   .text p {
     font-size: 2.6vh;
   }
@@ -155,6 +234,49 @@
     right: 0;
     top: 30%;
     text-align: center;
-    width: 40%;
+    width: 50%;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    height: 20vw;
+    width: 19vw;
+    perspective: 1000px;
+  }
+
+  .flip-card-front img {
+    height: 20vw;
+    width: 19vw;
+  }
+  .flip-card p {
+    margin: auto;
+    padding: auto;
+    font-size: 1.9vw;
+    text-align: center;
+    max-width: 90%;
+  }
+  .title2 h2 {
+    text-align: center;
+    padding-bottom: 2vw;
+    font-size: 2.5vw;
+    color: rgb(23, 68, 164);
+  }
+  .flip-card h1 {
+    margin: auto;
+    padding: auto;
+    font-size: 7vw;
+    text-align: center;
+    margin: 2vw 0 0;
+  }
+  .flip-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    display: flex;
+
+    flex-direction: row;
   }
 }
