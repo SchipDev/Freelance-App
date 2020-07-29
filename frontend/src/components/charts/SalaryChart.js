@@ -72,7 +72,7 @@ export default class Example extends Component {
     render() {
         return (
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4vh'}}>
-            <strong>Employees Satisfied With Salary</strong>
+            <strong>{this.props.title}</strong>
                 <PieChart width={400} height={400}>
                     <Pie
                         activeIndex={this.state.activeIndex}
@@ -82,7 +82,7 @@ export default class Example extends Component {
                         cy={200}
                         innerRadius={60}
                         outerRadius={80}
-                        fill="#8884d8"
+                        fill="royalblue"
                         dataKey="ct"
                         onMouseEnter={this.onPieEnter}
                     />

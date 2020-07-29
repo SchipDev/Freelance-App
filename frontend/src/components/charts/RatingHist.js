@@ -3,7 +3,7 @@ import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-const CompanyRatingChart = (props) => {
+const RatingHist = (props) => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -18,7 +18,7 @@ const CompanyRatingChart = (props) => {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis domain={[0, 5]} />
+                <YAxis />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="ra" fill="royalblue" />
@@ -27,4 +27,4 @@ const CompanyRatingChart = (props) => {
     )
 }
 
-export default CompanyRatingChart
+export default RatingHist
