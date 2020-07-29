@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import JobDetail from "./JobDetail";
 import jobs from "./jobs.json";
 import detailJob from "./detailJob.json";
+import Navbar from "./Navbar";
 // const axios = require("axios");
 
 class Jobs extends Component {
@@ -99,55 +100,60 @@ class Jobs extends Component {
   };
   render() {
     return (
-      <div className="jobs">
-        <div className="searchJobs">
-          <h2>Search for your next job</h2>
-          <form className="form1" onSubmit={this.getInfo}>
-            <label>Job Title</label>
-            <input
-              placeholder="Search by title"
-              onChange={this.handleChange}
-              type="text"
-              name="title"
-            />
+      <div>
+        <Navbar />
+        <div className="jobs">
+          <div className="searchJobs">
+            <h2>Search for your next job</h2>
+            <form className="form1" onSubmit={this.getInfo}>
+              <label>Job Title</label>
+              <input
+                placeholder="Search by title"
+                onChange={this.handleChange}
+                type="text"
+                name="title"
+              />
 
-            <label id="labelLoc">Location</label>
-            <input
-              placeholder="City, state or zip code"
-              onChange={this.handleChange}
-              type="text"
-              name="location"
-            />
+              <label id="labelLoc">Location</label>
+              <input
+                placeholder="City, state or zip code"
+                onChange={this.handleChange}
+                type="text"
+                name="location"
+              />
 
-            {/* <label>Radius</label>
+              {/* <label>Radius</label>
             <input onChange={this.handleChange} type="number" name="radius" />
             <br /> */}
-            <br />
-            <button className="submit" type="submit">
-              Find Jobs
-            </button>
-          </form>
-        </div>
-        {this.state.showHeader ? (
-          <div className="jobs-list-sbs">
-            <div className="jobsList">
-              <h3>Based on your request, we have found top 10 best results</h3>
+              <br />
+              <button className="submit" type="submit">
+                Find Jobs
+              </button>
+            </form>
+          </div>
+          {this.state.showHeader ? (
+            <div className="jobs-list-sbs">
+              <div className="jobsList">
+                <h3>
+                  Based on your request, we have found top 10 best results
+                </h3>
 
-              {this.showJobs()}
-            </div>
-            {this.state.currJob !== undefined ? (
-              <div className="jobDeatail">
-                <JobDetail currJob={this.state.currJob} />
+                {this.showJobs()}
               </div>
-            ) : (
-              ""
-            )}
-          </div>
-        ) : (
-          <div className="emptySpace1">
-            <img src={require("../images/search.png")} alt="search" />
-          </div>
-        )}
+              {this.state.currJob !== undefined ? (
+                <div className="jobDeatail">
+                  <JobDetail currJob={this.state.currJob} />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          ) : (
+            <div className="emptySpace1">
+              <img src={require("../images/search.png")} alt="search" />
+            </div>
+          )}
+        </div>
       </div>
     );
   }

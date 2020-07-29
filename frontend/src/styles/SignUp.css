@@ -4,6 +4,7 @@
 }
 
 #signup_div {
+  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;

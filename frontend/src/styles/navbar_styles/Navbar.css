@@ -37,7 +37,7 @@
   #menuToggle {
     display: block;
     position: relative;
-    top: 10vw;
+    top: 15vw;
     left: 10vw;
 
     z-index: 1;
@@ -69,7 +69,7 @@
     width: 40px;
     height: 32px;
     position: absolute;
-    top: -5px;
+    top: -8px;
     left: -7px;
     color: black;
     cursor: pointer;
@@ -116,7 +116,6 @@
   #menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
   }
 
   /*
@@ -156,7 +155,6 @@
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
-
   #menuToggle input:checked ~ ul {
     transform: none;
   }
@@ -164,13 +162,23 @@
     opacity: 0;
     width: 0;
     height: 0;
+    visibility: hidden;
+  }
+  body {
+    margin: 0;
+    padding: 0;
   }
 }
 @media only screen and (min-width: 769px) {
   #bar {
     padding: 0;
-    position: fixed;
-    background-color: rgba(178, 216, 250, 0.7);
+    position: absolute;
+    top: 0;
+
+    background-image: linear-gradient(
+      rgb(255, 255, 255),
+      rgba(178, 216, 250, 0.7)
+    );
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -234,9 +242,11 @@
     position: fixed;
     background-color: rgba(178, 216, 250, 0.7);
     width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
   }
   .navAll {
     display: flex;
@@ -244,8 +254,8 @@
     justify-content: row;
   }
   .nav-links img {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 2vw;
+    height: 2vw;
   }
   .nav-links p {
     color: black;
@@ -259,17 +269,19 @@
   .nav-links {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding-right: 70px;
+    padding-right: 3vw;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   #contact {
-    width: 3vw;
-    height: 2.5vw;
+    width: 2.6vw;
+    height: 2vw;
   }
   #jobImg {
-    width: 3vw;
-    height: 2.5vw;
+    width: 2.4vw;
+    height: 2vw;
   }
   .logoNav2 img {
     width: 8vw;
@@ -288,9 +300,8 @@
   .logoNav2 {
     display: flex;
     background-color: white;
-    border-radius: 20px;
-    padding: 0 1vw;
-
-    border: 15px solid rgba(178, 216, 250, 0.7);
+    border: none;
+    margin: 0;
+    opacity: 0.9;
   }
 }

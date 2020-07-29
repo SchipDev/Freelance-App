@@ -9,12 +9,12 @@
   width: 100%;
 }
 #backCompany h4 {
-  font-size: 20px;
+  font-size: 3vh;
   font-style: oblique;
   text-align: center;
 }
 #backCompany h2 {
-  font-size: 37px;
+  font-size: 4vh;
 }
 .form2 input,
 .form2 button {
