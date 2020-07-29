@@ -1,16 +1,296 @@
-#bar {
+/* #bar {
+  position: fixed;
+  background-color: rgba(178, 216, 250, 0.7);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+} */
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4vw;
+  }
+  .nav-links img {
+    width: 13vw;
+    height: 13vw;
+  }
+  .nav-links p {
+    color: black;
+    font-size: 4vw;
+  }
+  .navAll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body {
+    font-family: "Avenir Next", "Avenir", sans-serif;
+
+    color: black;
+    font-family: "Avenir Next";
+  }
+
+  #menuToggle {
+    display: block;
+    position: relative;
+    top: 10vw;
+    left: 10vw;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #menuToggle nav-links {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+  }
+
+  #menuToggle nav-links:hover {
+    color: tomato;
+  }
+  #contact {
+    width: 16vw;
+    height: 11vw;
+  }
+  #jobImg {
+    width: 15vw;
+    height: 14vw;
+  }
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    color: black;
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+
+  /*
+ * Just a quick hamburger
+ */
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: black;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  /*
+ * But let's hide the middle one.
+ */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+ * Ohyeah and the last one should go the other direction
+ */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+  #menu {
+    position: absolute;
+    width: 60vw;
+    margin: -100px 0 0 -80px;
+    padding: 50px;
+    padding-top: 125px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: rgb(207, 226, 238);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+  #logoNav {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+@media only screen and (min-width: 769px) {
+  #bar {
+    padding: 0;
     position: fixed;
     background-color: rgba(178, 216, 250, 0.7);
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+  }
+  .navAll {
+    display: flex;
+    flex-direction: row;
+    justify-content: row;
+  }
+  .nav-links img {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  .nav-links p {
+    color: black;
+    font-size: 1vw;
+  }
+  #menuToggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-.nav_button {
-    background-color: blue;
+  }
+  #contact {
+    width: 3vw;
+    height: 2.5vw;
+  }
+  #jobImg {
+    width: 3vw;
+    height: 2.5vw;
+  }
+  .logoNav2 img {
+    width: 8vw;
+    height: 5vw;
+  }
+  .logoNav2 h1 {
+    color: rgb(23, 68, 164);
+    margin-top: 2vw;
+    padding-left: 1vw;
+    font-size: 2vw;
+  }
+  .logoNav2 span {
     color: white;
-    padding: 0.5vh;
+    -webkit-text-stroke: 2.2px rgb(23, 68, 164);
+  }
+  .logoNav2 {
+    display: flex;
+    background-color: white;
+    padding: 0 1vw;
+    border: 10px solid rgba(178, 216, 250, 0.7);
+  }
+}
+@media only screen and (min-width: 769px) {
+  #bar {
+    padding: 0;
+    position: fixed;
+    background-color: rgba(178, 216, 250, 0.7);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navAll {
+    display: flex;
+    flex-direction: row;
+    justify-content: row;
+  }
+  .nav-links img {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  .nav-links p {
+    color: black;
+    font-size: 1vw;
+  }
+  #menuToggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 70px;
+  }
+  #contact {
+    width: 3vw;
+    height: 2.5vw;
+  }
+  #jobImg {
+    width: 3vw;
+    height: 2.5vw;
+  }
+  .logoNav2 img {
+    width: 8vw;
+    height: 5vw;
+  }
+  .logoNav2 h1 {
+    color: rgb(23, 68, 164);
+    margin-top: 2vw;
+    padding-left: 1vw;
+    font-size: 2vw;
+  }
+  .logoNav2 span {
+    color: white;
+    -webkit-text-stroke: 2.2px rgb(23, 68, 164);
+  }
+  .logoNav2 {
+    display: flex;
+    background-color: white;
     border-radius: 20px;
-    margin: 5px;
+    padding: 0 1vw;
+
+    border: 15px solid rgba(178, 216, 250, 0.7);
+  }
 }
