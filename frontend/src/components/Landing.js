@@ -28,7 +28,58 @@ class Landing extends Component {
         <div>
           <BootstrapCarousel />
         </div>
-        <div className="title"></div>
+        <div className="title2">
+          <h2>Four Easy Steps to Landing The Job</h2>
+          <div className="title">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src={require("../images/resume.png")} alt="logo" />
+                </div>
+                <div class="flip-card-back">
+                  <h1>1</h1>
+                  <p>Sign Up on JobHunter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src={require("../images/profile-p.png")} alt="logo" />
+                </div>
+                <div class="flip-card-back">
+                  <h1>2</h1>
+                  <p>Upload Your Resume</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src={require("../images/connect.png")} alt="logo" />
+                </div>
+                <div class="flip-card-back">
+                  <h1>3</h1>
+                  <p>Wait For A Little Bit </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src={require("../images/hire.png")} alt="logo" />
+                </div>
+                <div class="flip-card-back">
+                  <h1>4</h1>
+                  <p>You Are Hired!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

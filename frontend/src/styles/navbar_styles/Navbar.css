@@ -14,8 +14,8 @@
     padding-left: 4vw;
   }
   .nav-links img {
-    width: 13vw;
-    height: 13vw;
+    width: 14vw;
+    height: 14vw;
   }
   .nav-links p {
     color: black;
@@ -57,8 +57,8 @@
     color: tomato;
   }
   #contact {
-    width: 16vw;
-    height: 11vw;
+    width: 18vw;
+    height: 12vw;
   }
   #jobImg {
     width: 15vw;
@@ -241,7 +241,7 @@
     padding: 0;
     position: fixed;
     background-color: rgba(178, 216, 250, 0.7);
-    width: 100%;
+    max-width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -304,4 +304,8 @@
     margin: 0;
     opacity: 0.9;
   }
+}
+img {
+  width: 0;
+  height: 0;
 }
