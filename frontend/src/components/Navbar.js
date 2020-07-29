@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div id="bar" className="navDone">
-      <Link to="/">
+      <Link style={{ textDecoration: "none" }} to="/">
         {" "}
         <div id="logoNav" className="logoNav2">
           <img src={require("../images/logo.png")} alt="logo" />
@@ -23,7 +23,7 @@ const Navbar = () => {
           <span></span>
 
           <ul id="menu" className="navAll">
-            <Link to="/profile">
+            <Link style={{ textDecoration: "none" }} to="/profile">
               <div className="nav-links">
                 <img
                   src={require("../images//userProfile.png")}
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <p>Profile</p>
               </div>
             </Link>
-            <Link to="/jobs">
+            <Link style={{ textDecoration: "none" }} to="/jobs">
               <div className="nav-links">
                 <img
                   id="jobImg"
@@ -42,19 +42,19 @@ const Navbar = () => {
                 <p>Jobs</p>
               </div>
             </Link>
-            <Link to="/companies">
+            <Link style={{ textDecoration: "none" }} to="/companies">
               <div className="nav-links">
                 <img src={require("../images/company.png")} alt="company" />
                 <p>Companies</p>
               </div>
             </Link>
-            <Link to="/post-job">
+            <Link style={{ textDecoration: "none" }} to="/post-job">
               <div className="nav-links">
                 <img src={require("../images/postJob.png")} alt="postJob" />
                 <p>Post a job</p>
               </div>
             </Link>
-            <Link to="/contact">
+            <Link style={{ textDecoration: "none" }} to="/contact">
               <div className="nav-links">
                 <img
                   id="contact"

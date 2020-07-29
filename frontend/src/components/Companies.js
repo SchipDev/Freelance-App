@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CompanyDetail from "./CompanyDetail";
 import companies from "./listCompany.json";
+import Navbar from "./Navbar";
 
 class Companies extends Component {
   state = {
@@ -165,23 +166,26 @@ class Companies extends Component {
   render() {
     console.log(this.state.companies);
     return (
-      <div className="companies">
-        <div id="backCompany" className="searchJobs companySearch">
-          <h2>Find great places to work</h2>
-          <h4>Get access to millions of company reviews</h4>
-          <form className="form2" onSubmit={this.getInfo}>
-            <input
-              placeholder="Search by name"
-              onChange={this.handleChange}
-              type="text"
-              name="name"
-            />
-            <button className="submit" type="submit">
-              Find Companies
-            </button>
-          </form>
+      <div>
+        <Navbar />
+        <div className="companies">
+          <div id="backCompany" className="searchJobs companySearch">
+            <h2>Find great places to work</h2>
+            <h4>Get access to millions of company reviews</h4>
+            <form className="form2" onSubmit={this.getInfo}>
+              <input
+                placeholder="Search by name"
+                onChange={this.handleChange}
+                type="text"
+                name="name"
+              />
+              <button className="submit" type="submit">
+                Find Companies
+              </button>
+            </form>
+          </div>
+          <div className="listCom">{this.showCompany()}</div>
         </div>
-        <div className="listCom">{this.showCompany()}</div>
       </div>
     );
   }

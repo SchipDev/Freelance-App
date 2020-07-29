@@ -5,8 +5,8 @@ import '../styles/CompanyDetail.css'
 import SalaryChart from './charts/SalaryChart'
 import compImg from '../images/companyLogo.png'
 import RatingHist from './charts/RatingHist'
-
-
+import "../styles/CompanyDetail.css";
+import Navbar from "./Navbar";
 
 class CompanyDetail extends Component {
   state = {};
@@ -33,13 +33,9 @@ class CompanyDetail extends Component {
         });
       })
       .catch(error => {
-        this.getTestData()
+        this.getTestData();
       });
-  };
-
-
-
-
+  }
 
   /*
 ratings:
@@ -51,89 +47,84 @@ overallRating: 3.3
 workLifeBalanceRating: 3.2
 */
 
-
   getTestData = () => {
     let testData = {
-      "key": "2320d4fe6484f95e",
-      "name": "Demonstration (API Calls Used Up)",
-      "industries": null,
-      "images": {
-        "squareLogoUrl": 'https://www.graphicmore.com/wp-content/uploads/2016/05/Subway-Logo-Design-Free-Vector-File.jpg',
-        "rectangularLogoUrl": null,
-        "ceoPhotoUrl": null,
-        "headerImageUrl": null
+      key: "2320d4fe6484f95e",
+      name: "Demonstration (API Calls Used Up)",
+      industries: null,
+      images: {
+        squareLogoUrl: null,
+        rectangularLogoUrl: null,
+        ceoPhotoUrl: null,
+        headerImageUrl: null
       },
-      "employeeSize": null,
-      "globalReviewsCount": 325,
-      "ratings": {
-        "overallRating": 3.3,
-        "cultureAndValuesRating": 3,
-        "jobSecurityAndAdvancementRating": 2.6,
-        "managementRating": 3,
-        "workLifeBalanceRating": 3.2,
-        "compensationAndBenefitsRating": 2.4
+      employeeSize: null,
+      globalReviewsCount: 325,
+      ratings: {
+        overallRating: 3.3,
+        cultureAndValuesRating: 3,
+        jobSecurityAndAdvancementRating: 2.6,
+        managementRating: 3,
+        workLifeBalanceRating: 3.2,
+        compensationAndBenefitsRating: 2.4
       },
-      "links": {
-        "corporateWebsite": 'https://www.subway.com/',
-        "twitter": 'https://twitter.com/subwayfreshbuzz?lang=en',
-        "instagram": 'https://www.instagram.com/subway/?hl=en',
-        "facebook": 'https://www.facebook.com/subway/',
-        "customLinks": []
+      links: {
+        corporateWebsite: "https://www.subway.com/",
+        twitter: null,
+        instagram: "https://www.instagram.com/subway/?hl=en",
+        facebook: null,
+        customLinks: []
       },
-      "relativeCompanyPageUrl": "/cmp/Subway-in-Walmart",
-      "addresses": [],
-      "description": {
-        "unescapeText": "This is where you can do the best work of your life. Where you’ll join some of the world’s smartest, most innovative people to create amazing products and experiences. Where your work can make a difference in people’s lives. Including your own."
+      relativeCompanyPageUrl: "/cmp/Subway-in-Walmart",
+      addresses: [],
+      description: null,
+      ratingHistogram: [43, 46, 88, 69, 79],
+      revenue: null,
+      ceoApproval: {
+        yesCount: 96,
+        noCount: 50
       },
-      "ratingHistogram": [
-        43,
-        46,
-        88,
-        69,
-        79
-      ],
-      "revenue": null,
-      "ceoApproval": {
-        "yesCount": 96,
-        "noCount": 50
+      ceoName: null,
+      salarySatisfaction: {
+        yesCount: 176,
+        noCount: 215
       },
-      "ceoName": null,
-      "salarySatisfaction": {
-        "yesCount": 176,
-        "noCount": 215
-      },
-      "recommendFriend": {
-        "yesCount": 214,
-        "noCount": 168
+      recommendFriend: {
+        yesCount: 214,
+        noCount: 168
       }
-    }
+    };
     this.setState({
       company: testData
-    })
-    return 1
-  }
-
+    });
+    return 1;
+  };
 
   getRatingData = () => {
     let data = [
       {
-        name: 'Compensation', ra: this.state.company?.ratings?.compensationAndBenefitsRating
+        name: "Compensation",
+        ra: this.state.company?.ratings?.compensationAndBenefitsRating
       },
       {
-        name: 'Culture', ra: this.state.company?.ratings?.cultureAndValuesRating
+        name: "Culture",
+        ra: this.state.company?.ratings?.cultureAndValuesRating
       },
       {
-        name: 'Job Security', ra: this.state.company?.ratings?.jobSecurityAndAdvancementRating
+        name: "Job Security",
+        ra: this.state.company?.ratings?.jobSecurityAndAdvancementRating
       },
       {
-        name: 'Management', ra: this.state.company?.ratings?.managementRating
+        name: "Management",
+        ra: this.state.company?.ratings?.managementRating
       },
       {
-        name: 'Overall', ra: this.state.company?.ratings?.overallRating
+        name: "Overall",
+        ra: this.state.company?.ratings?.overallRating
       }
-    ]
-    return data
-  }
+    ];
+    return data;
+  };
 
   getRatingHistogram = () => {
     return [
@@ -158,13 +149,15 @@ workLifeBalanceRating: 3.2
   getSalaryData = () => {
     return [
       {
-        name: "Yes", ct: this.state.company?.salarySatisfaction.yesCount
+        name: "Yes",
+        ct: this.state.company?.salarySatisfaction.yesCount
       },
       {
-        name: 'No', ct: this.state.company?.salarySatisfaction?.noCount
+        name: "No",
+        ct: this.state.company?.salarySatisfaction?.noCount
       }
-    ]
-  }
+    ];
+  };
 
   getApprovalData = () => {
     return [
