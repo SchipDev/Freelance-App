@@ -9,26 +9,34 @@
 }
 
 #graphs {
-    background-color: lightgray;
+    background-color: rgb(250, 253, 255);
+    border: 0.1px lightgray solid;
 }
 .company_imgs {
     width: 5vw;
+    border-radius: 50%;
 }
 #link_secn a {
     color: white;    
-    background-color: royalblue;
     padding: 1vh;
     text-align: center;
     border-radius: 40px;
 }
+#link_secn img {
+    width: 4vh;
+}
 #link_secn {
     margin: 2vh;
-    background-color: lightgray;
-    padding: 10vh;
+    background-color: rgb(250, 253, 255);;
+    padding: 5vh;
 }
 
 .header2 {
     margin-top: 4vh;
+}
+
+#desc {
+    margin-bottom: 5vh;
 }
 
 
@@ -50,6 +58,9 @@
         display: flex;
         flex-direction: column;
     }
+    #desc {
+        width: 80%;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -65,5 +76,8 @@
     #link_secn {
         display: flex;
         flex-direction: row;
+    }
+    #desc {
+        width: 55%;
     }
 }
