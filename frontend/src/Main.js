@@ -7,9 +7,26 @@ import Companies from "./components/Companies";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import GoogleAuth from "./components/auth/GoogleAuth";
+import actions from "./services/index";
+import Profile from "./components/profile/Profile";
 require("dotenv").config();
 
 class Main extends Component {
+  state = {
+    user: {}
+  }
+
+  setUser = (user) => {
+    this.setState({
+      user
+    })
+  }
+
+  logOut = async () => {
+    let res = await actions.logOut();
+    this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
+  };
+
   render() {
     return (
       <div>
@@ -48,7 +65,13 @@ class Main extends Component {
               <CompanyDetail {...props} setUser={this.setUser} />
             )}
           />
+          <Route
+            exact
+            path="/profile"
+            render={props => <Profile {...props} user={this.state} />}
+          />
         </Switch>
+        hello
       </div>
     );
   }

@@ -77,7 +77,9 @@ workLifeBalanceRating: 3.2
       },
       relativeCompanyPageUrl: "/cmp/Subway-in-Walmart",
       addresses: [],
-      description: null,
+      description: {
+        "unescapeText": "This is where you can do the best work of your life. Where you’ll join some of the world’s smartest, most innovative people to create amazing products and experiences. Where your work can make a difference in people’s lives. Including your own."
+      },
       ratingHistogram: [43, 46, 88, 69, 79],
       revenue: null,
       ceoApproval: {
@@ -130,16 +132,16 @@ workLifeBalanceRating: 3.2
     return [
       {
         name: '1 Star', ra: this.state.company?.ratingHistogram[0]
-      }, 
+      },
       {
         name: '2 Star', ra: this.state.company?.ratingHistogram[1]
-      }, 
+      },
       {
         name: '3 Star', ra: this.state.company?.ratingHistogram[2]
-      }, 
+      },
       {
         name: '4 Star', ra: this.state.company?.ratingHistogram[3]
-      }, 
+      },
       {
         name: '5 Star', ra: this.state.company?.ratingHistogram[4]
       }
@@ -172,44 +174,47 @@ workLifeBalanceRating: 3.2
 
   render() {
     return (
-      <div id='wholeSection'>
-        <div id='comp_header'>
-          <img src={this.state.company?.images?.squareLogoUrl ? this.state.company.images.squareLogoUrl : compImg} className='company_imgs' />
-          <h1 id='company_name'>{this.state.company?.name}</h1>
-        </div>
-        <article id='desc'>
-          <p>{this.state.company?.description?.unescapeText}</p>
-        </article>
-        <div id='graphs'>
-          <CompanyRatingChart data={this.getRatingData()} title='Aspect Rating' />
-          <SalaryChart data={this.getSalaryData()} title='Employees Satisfied With Salary' />
-        </div>
-        <div id='graphs'>
-          <RatingHist data={this.getRatingHistogram()} title='Overall Company Ratings' />
-          <SalaryChart data={this.getApprovalData()} title='Employees Approve of CEO' />
-        </div>
-        <strong className='header2'>Company Links</strong>
-        <div id='link_secn'>
-          {this.state.company?.links?.corporateWebsite != null ?
-            <a href={this.state.company?.links?.corporateWebsite}><img src='https://www.vippng.com/png/full/519-5191632_transparent-background-website-icon.png' /></a>
-            :
-            'No website provided'
-          }
-          {this.state.company?.links?.twitter != null ?
-            <a href={this.state.company?.links?.twitter}><img src='https://www.transparentpng.com/thumb/twitter/twitter-bird-logo-pictures-0.png' /></a>
-            :
-            ''
-          }
-          {this.state.company?.links?.instagram != null ?
-            <a href={this.state.company?.links?.instagram}><img src='https://pluspng.com/img-png/instagram-png-instagram-png-icon-1024.png' /></a>
-            :
-            ''
-          }
-          {this.state.company?.links?.facebook != null ?
-            <a href={this.state.company?.links?.facebook}><img src='https://image.flaticon.com/icons/png/512/124/124010.png' /></a>
-            :
-            ''
-          }
+      <div>
+      <Navbar />
+        <div id='wholeSection'>
+          <div id='comp_header'>
+            <img src={this.state.company?.images?.squareLogoUrl ? this.state.company.images.squareLogoUrl : compImg} className='company_imgs' />
+            <h1 id='company_name'>{this.state.company?.name}</h1>
+          </div>
+          <article id='desc'>
+            <p>{this.state.company?.description?.unescapeText}</p>
+          </article>
+          <div id='graphs'>
+            <CompanyRatingChart data={this.getRatingData()} title='Aspect Rating' />
+            <SalaryChart data={this.getSalaryData()} title='Employees Satisfied With Salary' />
+          </div>
+          <div id='graphs'>
+            <RatingHist data={this.getRatingHistogram()} title='Overall Company Ratings' />
+            <SalaryChart data={this.getApprovalData()} title='Employees Approve of CEO' />
+          </div>
+          <strong className='header2'>Company Links</strong>
+          <div id='link_secn'>
+            {this.state.company?.links?.corporateWebsite != null ?
+              <a href={this.state.company?.links?.corporateWebsite}><img src='https://www.vippng.com/png/full/519-5191632_transparent-background-website-icon.png' /></a>
+              :
+              'No website provided'
+            }
+            {this.state.company?.links?.twitter != null ?
+              <a href={this.state.company?.links?.twitter}><img src='https://www.transparentpng.com/thumb/twitter/twitter-bird-logo-pictures-0.png' /></a>
+              :
+              ''
+            }
+            {this.state.company?.links?.instagram != null ?
+              <a href={this.state.company?.links?.instagram}><img src='https://pluspng.com/img-png/instagram-png-instagram-png-icon-1024.png' /></a>
+              :
+              ''
+            }
+            {this.state.company?.links?.facebook != null ?
+              <a href={this.state.company?.links?.facebook}><img src='https://image.flaticon.com/icons/png/512/124/124010.png' /></a>
+              :
+              ''
+            }
+          </div>
         </div>
       </div>
     );

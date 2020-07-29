@@ -11,9 +11,10 @@ class LogIn extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        actions.logIn(this.state).then(user => {
-            this.props.setUser({ ...user.data })
-        }).catch(({ response }) => console.error(response.data));
+        actions.logIn(this.state).then(async user => {
+            await this.props.setUser({ ...user.data })
+            this.props.history.push('/')
+        }).catch(({ response }) => console.error(response));
     }
     render() {
         return (
