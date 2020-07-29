@@ -14,6 +14,7 @@
 }
 .company_imgs {
     width: 5vw;
+    height: 5vh;
     border-radius: 50%;
 }
 #link_secn a {
@@ -24,6 +25,7 @@
 }
 #link_secn img {
     width: 4vh;
+    height: 4vh;
 }
 #link_secn {
     margin: 2vh;

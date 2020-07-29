@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar'
+import '../../styles/Profile.css'
 
 const Profile = (props) => {
-    if(!props.user.email){ 
-        props.history.push('/log-in') 
-    }   
+    console.log(props.user.user.email)
+    if (!props.user.user.email) {
+        props.history.push('/log-in')
+    }
     return (
         <div>
-            Profile
-            Welcome {props.user.email} !!! 
+            <Navbar />
+            <div id='user_info'>
+                <h1>{props.user.user.name}</h1>
+                <strong>{props.user.user.email}</strong>
+            </div>
         </div>
     );
 }

@@ -53,7 +53,7 @@ workLifeBalanceRating: 3.2
       name: "Demonstration (API Calls Used Up)",
       industries: null,
       images: {
-        squareLogoUrl: null,
+        squareLogoUrl: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/55b3b8bf1ce31a60cff6bf0ff59f94b4",
         rectangularLogoUrl: null,
         ceoPhotoUrl: null,
         headerImageUrl: null

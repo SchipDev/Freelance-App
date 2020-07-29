@@ -13,7 +13,7 @@ class LogIn extends Component {
         e.preventDefault()
         actions.logIn(this.state).then(async user => {
             await this.props.setUser({ ...user.data })
-            this.props.history.push('/')
+            this.props.history.push('/profile')
         }).catch(({ response }) => console.error(response));
     }
     render() {

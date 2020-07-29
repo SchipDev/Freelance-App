@@ -71,7 +71,6 @@ class Main extends Component {
             render={props => <Profile {...props} user={this.state} />}
           />
         </Switch>
-        hello
       </div>
     );
   }
