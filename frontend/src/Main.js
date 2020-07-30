@@ -14,13 +14,13 @@ require("dotenv").config();
 class Main extends Component {
   state = {
     user: {}
-  }
+  };
 
-  setUser = (user) => {
+  setUser = user => {
     this.setState({
       user
-    })
-  }
+    });
+  };
 
   logOut = async () => {
     let res = await actions.logOut();

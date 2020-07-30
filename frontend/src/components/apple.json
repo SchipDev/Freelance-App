@@ -1,0 +1,65 @@
+{
+  "key": "6e7b40121fbb5e2f",
+  "name": "Apple",
+  "industries": [
+    {
+      "key": "Iv1_COMPUTERS_AND_ELECTRONICS",
+      "name": "Computers and Electronics"
+    }
+  ],
+  "images": {
+    "squareLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/55b3b8bf1ce31a60cff6bf0ff59f94b4",
+    "rectangularLogoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_logo/2a5877f042945ae8070ebb29251b1920",
+    "ceoPhotoUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_ceophoto/8c425fed2cc5a31484f9d579b2564125",
+    "headerImageUrl": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/4611668065cfd61e39abefa3d172643a"
+  },
+  "employeeSize": {
+    "key": "ERv1_10000_PLUS",
+    "name": "10,000+"
+  },
+  "globalReviewsCount": 9751,
+  "ratings": {
+    "overallRating": 4.2,
+    "cultureAndValuesRating": 4.1,
+    "jobSecurityAndAdvancementRating": 3.7,
+    "managementRating": 3.7,
+    "workLifeBalanceRating": 3.8,
+    "compensationAndBenefitsRating": 4.1
+  },
+  "links": {
+    "corporateWebsite": "http://www.apple.com/jobs",
+    "twitter": "https://twitter.com/apple",
+    "instagram": null,
+    "facebook": "https://www.facebook.com/apple/",
+    "customLinks": []
+  },
+  "relativeCompanyPageUrl": "/cmp/Apple",
+  "addresses": [
+    {
+      "text": "Cupertino, California, United States",
+      "unescapeText": "Cupertino, California, United States"
+    }
+  ],
+  "description": {
+    "text": "This is where you can do the best work of your life.&nbsp;Where you&rsquo;ll join some of the world&rsquo;s smartest, most innovative people to create amazing products and experiences. Where your work can make a difference in people&rsquo;s lives. Including your own.",
+    "unescapeText": "This is where you can do the best work of your life. Where you’ll join some of the world’s smartest, most innovative people to create amazing products and experiences. Where your work can make a difference in people’s lives. Including your own."
+  },
+  "ratingHistogram": [309, 425, 1388, 2832, 4797],
+  "revenue": {
+    "key": "RRv1_OVER_10B",
+    "name": "more than $10B (USD)"
+  },
+  "ceoApproval": {
+    "yesCount": 3860,
+    "noCount": 523
+  },
+  "ceoName": "Tim Cook",
+  "salarySatisfaction": {
+    "yesCount": 5099,
+    "noCount": 2103
+  },
+  "recommendFriend": {
+    "yesCount": 6346,
+    "noCount": 1153
+  }
+}

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import actions from "../../services/index";
-// import "../../styles/SignUp.css";
+import "../../styles/SignUp.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/google=logo.png";
 import Navbar from "../Navbar";
 
 class SignUp extends Component {
@@ -23,10 +23,17 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div>
+      <div className="allSignUp">
         {/* <Navbar /> */}
+        <div className="headSign">
+          <p>Get one step closer to your dream job with</p>
+          <h1 id="signLogo">
+            <span>Job</span>Hunter
+          </h1>
+        </div>
+
         <div id="signup_div">
-          <h2>SignUP</h2>
+          <h3>Join Us </h3>
           <form onSubmit={this.handleSubmit}>
             <label for="email">Email Address</label>
             <br />
@@ -39,6 +46,7 @@ class SignUp extends Component {
               className="input_field"
             />
             <br />
+
             <label for="yourname">Your Name</label>
             <br />
             <input
@@ -75,7 +83,7 @@ class SignUp extends Component {
             <input type="submit" value="Sign Up" id="signup_button" />
           </form>
           <Link to="/google-signup" id="suwg">
-            Sign Up With Google
+            Sign Up With Google <img id="googleLogo" src={logo} alt="logo" />
           </Link>
         </div>
       </div>
