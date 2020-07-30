@@ -24,9 +24,7 @@ const actions = {
   postResume: async (resume) => {
     return await service.post('/post-resume', resume)
   }, 
-  updateResume: async () => {
-    return await service.post('/update-resume')
-  }
+  
 };
 
 export default actions;

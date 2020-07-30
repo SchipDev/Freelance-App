@@ -6,12 +6,12 @@ const Resume = require('../models/Resume.model')
 
 router.post('/signup', (req, res, next) => {
   User.register(req.body, req.body.password)
-    .then((user) => { 
-        req.login(user, function(err,result){
-          res.status(201).json(user)
-        })
+    .then((user) => {
+      req.login(user, function (err, result) {
+        res.status(201).json(user)
+      })
     })
-    .catch((err) => { 
+    .catch((err) => {
       console.log(err)
       res.status(500).json({ err })
     });
@@ -19,7 +19,7 @@ router.post('/signup', (req, res, next) => {
 
 
 //return await service.get('/is-logged-in');
-router.get('/is-logged-in', (req, res, next) => {  
+router.get('/is-logged-in', (req, res, next) => {
   res.json(req.user)
 })
 
@@ -40,8 +40,10 @@ router.get('/profile', isAuth, (req, res, next) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
-router.post('/post-resume', (req,res,next) => {
-  Resume.create(req.body).then(resume => res.json({resume}))
+router.post('/post-resume', (req, res, next) => {
+  Resume.create(req.body).then(res => {
+    User.findByIdAndUpdate(res.userId, {'hasResume': true}).then(res => console.log(res)).catch(error => console.log(error))
+  })
 })
 
 function isAuth(req, res, next) {

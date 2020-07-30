@@ -43,13 +43,13 @@ class Profile extends Component {
 
     compileResume = () => {
         let resume = {
-            email: this.props.user.user.email, 
+            userId: this.props.user.user._id,
             summary: this.state.summary
         }
         return resume
     }
 
-    handleSubmit = e => {
+    handleSubmitNewResume = e => {
         e.preventDefault()
         let resume = this.compileResume()
         actions.postResume(resume).then(res => console.log(res))
@@ -57,18 +57,31 @@ class Profile extends Component {
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
+    displayCreateResume = () => {
+        return (
+            <form onSubmit={this.handleSubmitNewResume}>
+                <input name='summary' type='text' onChange={this.handleChange} placeholder='Summary' />
+                <br />
+                <input type='submit' />
+            </form>
+        )
+    }
+
+    displayAddWorkExperience = () => {
+
+    }
+
+
+
     render() {
+        console.log(this.props.user.user.hasResume)
         return (
             <div>
                 <Navbar />
                 <div id='user_info'>
                     <h1>{this.props.user.user.name}</h1>
                     <strong>{this.props.user.user.email}</strong>
-                    <form onSubmit={this.handleSubmit}>
-                        <input name='summary' type='text' onChange={this.handleChange} placeholder='Summary' />
-                        <br />
-                        <input type='submit' />
-                    </form>
+                    {this.props.user.user.hasResume ? '' : this.displayCreateResume()}
                 </div>
             </div>
         )
