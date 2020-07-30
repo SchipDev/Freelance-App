@@ -1,0 +1,195 @@
+{
+    "data": {
+        "pageInfo": {
+            "hasNextPage": true,
+            "totalCount": 500
+        },
+        "reviews": [
+            {
+                "overallRating": 5,
+                "title": "Empresa boa",
+                "dateCreated": "2020-07-30T01:03:56.358Z",
+                "normalizedJobTitle": "Conferente de Mercadoria",
+                "rawJobTitle": "conferente de mercadorias",
+                "rawLocation": "Betim, MG",
+                "text": "Empresa Boa que da ótimas oportunidades de crescimento",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 5,
+                "title": "Productive with new changes",
+                "dateCreated": "2020-07-30T00:36:37.486Z",
+                "normalizedJobTitle": "Department Manager",
+                "rawJobTitle": "Department Manager",
+                "rawLocation": "Richland, WA",
+                "text": "I have worked for Wal-Mart for 5 years, first being hired as a Cart Pusher.  As the years went by, I have transferred to multiple departments and eventually promoted within the company.  This company has always allowed opportunities for me, and management was very generous about shift flexibility.  ",
+                "pros": "1 Hour Lunches, Benefits, Shift Flexibility",
+                "cons": "Picking favorites, lack of displinary measures",
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 3,
+                "title": "Current Position Review",
+                "dateCreated": "2020-07-30T00:30:07.172Z",
+                "normalizedJobTitle": "Money Center Clerk",
+                "rawJobTitle": "Money Center Associate & Cashier",
+                "rawLocation": "Glen Allen, VA",
+                "text": "I enjoy the work that I perform serving customers at the service desk and the people I work with at Walmart but the hours are not consistent. I would prefer to have one full-time job that meets my needs verses working at Walmart and a parttime jobs to meet my financial needs.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 2,
+                "title": "Life has a curve ball and you can’t dodge it.",
+                "dateCreated": "2020-07-30T00:11:13.936Z",
+                "normalizedJobTitle": "Cashier",
+                "rawJobTitle": "Cashier",
+                "rawLocation": "Huntsville, AL",
+                "text": "Life has a curve ball and you can’t dodge it. It’s like a saying when you think life is going to perfect and pineapples on the beach but in reality it not. Different jobs that we work have a meaning, sometimes bad and sometimes good.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 3,
+                "title": "inventoery",
+                "dateCreated": "2020-07-30T00:04:55.895Z",
+                "normalizedJobTitle": "Inventory Specialist",
+                "rawJobTitle": "Inventory Specialist",
+                "rawLocation": "Fresno, CA",
+                "text": "good starting work place to start working different position to work and move up with fear benefits and management lots of customer service and gives you a good house keeping skill.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 5,
+                "title": "The energy",
+                "dateCreated": "2020-07-29T23:43:04.357Z",
+                "normalizedJobTitle": "Cart Attendant",
+                "rawJobTitle": "Cart Pusher",
+                "rawLocation": "Ponce Municipio, PR",
+                "text": "It feels like its alive and it feels like a really, strong and united family. The company helps its associates with a lot of things like a really great healthcare plan.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 4,
+                "title": "Great place, bad management.",
+                "dateCreated": "2020-07-29T23:32:56.424Z",
+                "normalizedJobTitle": "Associate",
+                "rawJobTitle": "Wal-Mart Associate",
+                "rawLocation": "Cleveland, OH",
+                "text": "It was a great place to work fast paced and easy work, management had a lack of communication and would not help me out with my work/school life balance.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 5,
+                "title": "Enjoyed working there, it was enjoyable",
+                "dateCreated": "2020-07-29T23:32:26.387Z",
+                "normalizedJobTitle": "Merchandiser",
+                "rawJobTitle": "Merchandiser",
+                "rawLocation": "Delray Beach, FL",
+                "text": "I was hired temporary to help from the Coronavirus situation.\r\nWorked filling shelves in the Liquor and produce departments. . All people I was associated with were nice and friendly.",
+                "pros": null,
+                "cons": null,
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 3,
+                "title": "As expected",
+                "dateCreated": "2020-07-29T23:31:16.182Z",
+                "normalizedJobTitle": "Sales Associate",
+                "rawJobTitle": "Sales Associate",
+                "rawLocation": "Denver, NC",
+                "text": "During my time at Walmart, I dealt with a supervisor who often spent more time on her phone than anything else. It was up to her workers to perform her job which became an issue when I realized how often I was stepping into her role and not receiving the same pay. I was told I would be hired as a full-time associate and, despite much praise toward my work ethic, they strung me along toward the holiday season. I made the decision that I would look elsewhere for my career",
+                "pros": "Typically there are plenty of opportunities to move up.",
+                "cons": "Schedule is not flexible",
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            },
+            {
+                "overallRating": 3,
+                "title": "Work",
+                "dateCreated": "2020-07-29T23:22:37.012Z",
+                "normalizedJobTitle": "Grocery Associate",
+                "rawJobTitle": "Online Grocery Pickup",
+                "rawLocation": "Springville",
+                "text": "Good company to work for. Some days are laid back while most can be very stressful. Pay isn't bad considering what you're doing. If you can work through irate and demanding customers, it's not that bad.",
+                "pros": "Employees are pretty laid back for the most part. Pay is alright.",
+                "cons": "Irate and demanding customers. Stressful at times.",
+                "helpfulVotesCount": null,
+                "unhelpfulVotesCount": null,
+                "comments": []
+            }
+        ]
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "http://localhost:3000",
+        "alt-svc": "h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+        "cache-control": "private",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "2170",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 30 Jul 2020 18:23:53 GMT",
+        "function-execution-id": "2bd6ecz9h9jd",
+        "server": "RapidAPI-1.1.24",
+        "x-cloud-trace-context": "12c2e39e557df4d8ab3fa464da8ad763;o=1",
+        "x-powered-by": "Express",
+        "x-rapidapi-region": "AWS - us-east-1",
+        "x-rapidapi-version": "1.1.24",
+        "x-ratelimit-requests-limit": "100",
+        "x-ratelimit-requests-remaining": "95"
+    },
+    "config": {
+        "url": "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
+        "method": "get",
+        "params": {
+            "offset": "0"
+        },
+        "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+            "x-rapidapi-key": "e14d7b4a61mshaf4d68517150093p1d2b11jsnaa5e4d29c6bc",
+            "useQueryString": true
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1
+    },
+    "request": {}
+}

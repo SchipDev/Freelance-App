@@ -52,7 +52,7 @@ class Profile extends Component {
     handleSubmit = e => {
         e.preventDefault()
         let resume = this.compileResume()
-        actions.postResume(resume)
+        actions.postResume(resume).then(res => console.log(res))
     }
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value });

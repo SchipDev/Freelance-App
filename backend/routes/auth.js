@@ -40,8 +40,8 @@ router.get('/profile', isAuth, (req, res, next) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
-router.get('/post-resume', (req,res,next) => {
-  Resume.create(req.body)
+router.post('/post-resume', (req,res,next) => {
+  Resume.create(req.body).then(resume => res.json({resume}))
 })
 
 function isAuth(req, res, next) {
