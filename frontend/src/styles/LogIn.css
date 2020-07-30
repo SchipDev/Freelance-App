@@ -1,3 +1,9 @@
-#logP {
-  font-size: 3.5vw;
+@media only screen and (min-width: 1225px) {
+  #logP {
+    font-size: 1.5vw;
+  }
+  .logIn {
+    margin-top: 3vh;
+    margin-left: 2vw;
+  }
 }

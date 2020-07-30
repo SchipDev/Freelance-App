@@ -9,11 +9,11 @@ import RatingHist from "./charts/RatingHist";
 import "../styles/CompanyDetail.css";
 import Navbar from "./Navbar";
 import apple from "./apple.json";
-import data from './ReviewData.json'
+import data from "./ReviewData.json";
 
 class CompanyDetail extends Component {
   state = {
-    reviewData: '',
+    reviewData: "",
     isShowingReviews: false
   };
 
@@ -55,7 +55,8 @@ workLifeBalanceRating: 3.2
       name: "Name",
       industries: null,
       images: {
-        squareLogoUrl: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/55b3b8bf1ce31a60cff6bf0ff59f94b4",
+        squareLogoUrl:
+          "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/55b3b8bf1ce31a60cff6bf0ff59f94b4",
         rectangularLogoUrl: null,
         ceoPhotoUrl: null,
         headerImageUrl: null
@@ -108,9 +109,9 @@ workLifeBalanceRating: 3.2
     this.setState({
       reviewData: data.data.reviews,
       isShowingReviews: !this.state.isShowingReviews
-    })
-    console.log(this.state.reviewData)
-  }
+    });
+    console.log(this.state.reviewData);
+  };
 
   getRatingData = () => {
     let data = [
@@ -188,7 +189,57 @@ workLifeBalanceRating: 3.2
       }
     ];
   };
-
+  stars = rating => {
+    if (rating == 0) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star0.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 0 && rating <= 1.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star1.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 1.4 && rating <= 2.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star2.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 2.4 && rating <= 3.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star3.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else if (rating > 3.4 && rating <= 4.4) {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star4.png")}
+          alt="logoOfCompany"
+        />
+      );
+    } else {
+      return (
+        <img
+          className="stars"
+          src={require("../images/star5.png")}
+          alt="logoOfCompany"
+        />
+      );
+    }
+  };
   getCompanyReview = () => {
     if (!this.state.isShowingReviews) {
       axios({
@@ -211,31 +262,30 @@ workLifeBalanceRating: 3.2
           this.setState({
             reviewData: response.data.reviews,
             isShowingReviews: !this.state.isShowingReviews
-          })
+          });
         })
         .catch(error => {
-          this.getReviewTestData()
+          this.getReviewTestData();
         });
-    }
-    else {
+    } else {
       this.setState({
         isShowingReviews: !this.state.isShowingReviews
-      })
+      });
     }
-  }
+  };
 
   displayReviews = () => {
     return this.state.reviewData.map((review, ind) => {
       return (
-        <div>
-          <strong>{review.normalizedJobTitle} says:</strong> <br />
-          <b>Rating: {review.overallRating}</b>
-          <p>{review.text}</p>
-          <p>Review created on {review.dateCreated.substring(0,7)}</p>
+        <div className="reviewsAll">
+          <p>{this.stars(review.overallRating)}</p>
+          <strong>{review.normalizedJobTitle} says:</strong>
+          <p id="textArea">{review.text}</p>
+          <div>Review created on {review.dateCreated.substring(0, 7)}</div>
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   render() {
     return (
@@ -265,6 +315,12 @@ workLifeBalanceRating: 3.2
           <article id="desc">
             <p>{this.state.company?.description?.unescapeText}</p>
           </article>
+          <p id="review" onClick={this.getCompanyReview}>
+            See Company Reviews
+          </p>
+          <div className="review3">
+            {this.state.isShowingReviews ? this.displayReviews() : ""}
+          </div>
           <div className="graphsAll">
             <div className="graphs one">
               <CompanyRatingChart
@@ -287,6 +343,7 @@ workLifeBalanceRating: 3.2
               />
             </div>
           </div>
+
           <strong className="header2">Company Links</strong>
           <div id="link_secn">
             {this.state.company?.links?.corporateWebsite != null ? (
@@ -294,34 +351,30 @@ workLifeBalanceRating: 3.2
                 <img src="https://www.vippng.com/png/full/519-5191632_transparent-background-website-icon.png" />
               </a>
             ) : (
-                "No website provided"
-              )}
+              "No website provided"
+            )}
             {this.state.company?.links?.twitter != null ? (
               <a href={this.state.company?.links?.twitter}>
                 <img src="https://www.transparentpng.com/thumb/twitter/twitter-bird-logo-pictures-0.png" />
               </a>
             ) : (
-                ""
-              )}
+              ""
+            )}
             {this.state.company?.links?.instagram != null ? (
               <a href={this.state.company?.links?.instagram}>
                 <img src="https://pluspng.com/img-png/instagram-png-instagram-png-icon-1024.png" />
               </a>
             ) : (
-                ""
-              )}
+              ""
+            )}
             {this.state.company?.links?.facebook != null ? (
               <a href={this.state.company?.links?.facebook}>
                 <img src="https://image.flaticon.com/icons/png/512/124/124010.png" />
               </a>
             ) : (
-                ""
-              )}
+              ""
+            )}
           </div>
-        </div>
-        <button onClick={this.getCompanyReview}>See Company Reviews</button>
-        <div>
-          {this.state.isShowingReviews ? this.displayReviews() : ''}
         </div>
       </div>
     );
@@ -402,8 +455,6 @@ export default CompanyDetail;
   }
 }
 */
-
-
 
 /*
 {
@@ -602,5 +653,3 @@ export default CompanyDetail;
   "request": {}
 }
 */
-
-
