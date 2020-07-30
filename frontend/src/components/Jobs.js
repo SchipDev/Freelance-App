@@ -57,6 +57,28 @@ class Jobs extends Component {
       .catch(error => {
         console.log(error);
       });
+
+    // axios({
+    //   method: "GET",
+    //   url:
+    //     "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
+    //   headers: {
+    //     "content-type": "application/octet-stream",
+    //     "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+    //     "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+    //     useQueryString: true
+    //   },
+    //   params: {
+    //     offset: "0"
+    //   }
+    // })
+    //   .then(response => {
+    //     console.log("REVIEWS");
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   };
   showJobs = () => {
     return this.state.jobs.map((job, i) => {

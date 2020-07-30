@@ -1,18 +1,3 @@
-#login_div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-input[type='submit'] {
-    margin-top: 10px;
-    background: aqua;
-}
-
-input[type='email'] {
-    width: 25vw;
-}
-input[type='password'] {
-    width: 25vw;
+#logP {
+  font-size: 3.5vw;
 }
