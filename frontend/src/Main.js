@@ -14,13 +14,13 @@ require("dotenv").config();
 class Main extends Component {
   state = {
     user: {}
-  }
+  };
 
-  setUser = (user) => {
+  setUser = user => {
     this.setState({
       user
-    })
-  }
+    });
+  };
 
   logOut = async () => {
     let res = await actions.logOut();
@@ -71,7 +71,6 @@ class Main extends Component {
             render={props => <Profile {...props} user={this.state} />}
           />
         </Switch>
-        hello
       </div>
     );
   }
