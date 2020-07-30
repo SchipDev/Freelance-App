@@ -9,6 +9,7 @@ import LogIn from "./components/auth/LogIn";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import actions from "./services/index";
 import Profile from "./components/profile/Profile";
+import MakePost from "./components/MakePost";
 require("dotenv").config();
 
 class Main extends Component {
@@ -37,6 +38,11 @@ class Main extends Component {
             exact
             path="/companies"
             render={props => <Companies {...props} />}
+          />
+          <Route
+            exact
+            path="/post-job"
+            render={props => <MakePost {...props} />}
           />
           <Route
             exact

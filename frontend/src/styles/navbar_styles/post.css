@@ -1,0 +1,119 @@
+.rw-sentence {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+.rw-sentence span {
+  white-space: nowrap;
+}
+.rw-words {
+  text-indent: 10px;
+  display: inline;
+}
+.rw-words span {
+  position: absolute;
+  opacity: 0;
+
+  overflow: hidden;
+  width: 100%;
+  color: rgb(23, 68, 164);
+}
+.rw-words-1 span {
+  animation: rotateWordsFirst 10s linear infinite 0s;
+}
+.rw-words-2 span {
+  animation: rotateWordsSecond 18s linear infinite 0s;
+}
+.rw-words span:nth-child(2) {
+  animation-delay: 4s;
+  color: rgb(89, 7, 182);
+}
+.rw-words span:nth-child(3) {
+  animation-delay: 8s;
+  color: rgb(89, 7, 182);
+}
+.rw-words span:nth-child(4) {
+  animation-delay: 13s;
+  color: rgb(23, 68, 164);
+}
+.rw-words span:nth-child(5) {
+  animation-delay: 18s;
+  color: rgb(89, 7, 182);
+}
+
+@keyframes rotateWordsSecond {
+  0% {
+    opacity: 1;
+    animation-timing-function: ease-in;
+    width: 0px;
+  }
+  10% {
+    opacity: 0.3;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 100%;
+  }
+  27% {
+    opacity: 0;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.rw-sentence p {
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 4vh;
+  margin-bottom: 0;
+  font-weight: 100;
+}
+.rw-words-2 span {
+  font-size: 7vw;
+  text-align: center;
+  margin-top: 2vh;
+  font-weight: 100;
+}
+.headPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(207, 226, 238);
+  width: 100%;
+  padding: 6vw;
+  padding-bottom: 9vh;
+  margin-bottom: 3vh;
+  border: 0.1px lightgray solid;
+  width: 100%;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4vw;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .rw-sentence p {
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 6vh;
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+  .rw-words-2 span {
+    font-size: 3.5vw;
+    text-align: center;
+    margin-top: 2vh;
+    font-weight: 100;
+  }
+  .headPost {
+    padding-top: 1vh;
+    padding-bottom: 9vh;
+    margin-bottom: 3vh;
+    margin-top: 7vh;
+    border: 0.1px lightgray solid;
+    width: 100%;
+  }
+}
