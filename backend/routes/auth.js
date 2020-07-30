@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const passport = require('../config/passport');
+const Resume = require('../models/Resume.model')
 
 router.post('/signup', (req, res, next) => {
   User.register(req.body, req.body.password)
@@ -38,6 +39,10 @@ router.get('/profile', isAuth, (req, res, next) => {
     .then((user) => res.status(200).json({ user }))
     .catch((err) => res.status(500).json({ err }));
 });
+
+router.get('/post-resume', (req,res,next) => {
+  Resume.create(req.body)
+})
 
 function isAuth(req, res, next) {
   req.isAuthenticated() ? next() : res.status(401).json({ msg: 'Log in first' });

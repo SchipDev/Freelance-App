@@ -3,7 +3,7 @@ const PLM = require("passport-local-mongoose");
 
 const userSchema = new Schema(
   {
-    email: {type: String, required: true},
+    email: {type: String, required: true, unique: true},
     name: String,
     jobTitle: String, 
     googleId: String,

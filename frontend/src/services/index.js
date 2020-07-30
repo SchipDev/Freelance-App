@@ -20,6 +20,12 @@ const actions = {
   },
   logOut: async () => {
     return await service.get('/logout')
+  },
+  postResume: async () => {
+    return await service.post('/post-resume')
+  }, 
+  updateResume: async () => {
+    return await service.post('/update-resume')
   }
 };
 
