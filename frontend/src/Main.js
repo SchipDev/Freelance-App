@@ -10,6 +10,7 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import actions from "./services/index";
 import Profile from "./components/profile/Profile";
 import MakePost from "./components/MakePost";
+import Contact from "./components/Contact";
 require("dotenv").config();
 
 class Main extends Component {
@@ -75,6 +76,11 @@ class Main extends Component {
             exact
             path="/profile"
             render={props => <Profile {...props} user={this.state} />}
+          />
+          <Route
+            exact
+            path="/contact"
+            render={props => <Contact {...props} user={this.state} />}
           />
         </Switch>
       </div>
