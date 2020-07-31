@@ -3,7 +3,7 @@ const PLM = require("passport-local-mongoose");
 
 const resumeSchema = new Schema(
   {
-    userId: {type: String, required: true, unique: true},
+    userId: {type: Schema.Types.ObjectId, ref: 'User'},
     summary: String, 
     skills: [String], 
     workExperience: [Object], 

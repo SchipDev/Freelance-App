@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar'
 import '../../styles/Profile.css'
 import actions from '../../services/index'
+import axios from 'axios'
 
 // const Profile = (props) => {
 //     if (!props.user.user.email) {
@@ -39,6 +40,9 @@ class Profile extends Component {
         if (!this.props.user.user.email) {
             this.props.history.push('/log-in')
         }
+        if (this.props.user.user.hasResume) {
+            axios.get(`http://localhost:5000/get-resume/${this.props.user.user._id}`).then(res => this.setState({userResume: res.data[0]}))
+        }
     }
 
     compileResume = () => {
@@ -67,8 +71,13 @@ class Profile extends Component {
         )
     }
 
-    displayAddWorkExperience = () => {
 
+    displaySummary = () => {
+        return (
+            <div>
+                <article>{this.state.userResume?.summary}</article>
+            </div>
+        )
     }
 
 
@@ -81,7 +90,7 @@ class Profile extends Component {
                 <div id='user_info'>
                     <h1>{this.props.user.user.name}</h1>
                     <strong>{this.props.user.user.email}</strong>
-                    {this.props.user.user.hasResume ? '' : this.displayCreateResume()}
+                    {this.props.user.user.hasResume ? this.displaySummary() : this.displayCreateResume()}
                 </div>
             </div>
         )
