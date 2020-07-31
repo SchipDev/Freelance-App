@@ -21,13 +21,14 @@ class LogIn extends Component {
       <div className="allSignUp">
         {/* <Navbar /> */}
         <div className="headSign">
-          <p id="logP">Welcome Back to</p>
+          <p id="logP">It's been a long time since we've heard from you</p>
           <h1 className="signLogoL" id="signLogo">
             <span>Job</span>Hunter
           </h1>
         </div>
 
         <div className="logIn" id="signup_div">
+          <h3>Log In </h3>
           <form onSubmit={this.handleSubmit}>
             <label for="email">Email Address</label>
             <br />

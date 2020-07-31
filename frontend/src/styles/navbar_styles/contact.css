@@ -1,0 +1,138 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+  background-color: rgb(207, 226, 238);
+  padding-top: 9vh;
+  border: 0.1px lightgray solid;
+  font-size: 5vw;
+}
+#cotactImg {
+  width: 33vw;
+  height: 33vw;
+  margin-top: 3vh;
+}
+.headCont {
+  width: 50%;
+  font-style: oblique;
+}
+.headCont strong {
+  color: rgb(23, 68, 164);
+}
+.headCont span {
+  color: white;
+  -webkit-text-stroke: 2.2px rgb(23, 68, 164);
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.profile-pic {
+  width: 50vw;
+  height: 60vw;
+  width: 50%;
+  border-radius: 10px;
+}
+.listCom {
+  border: 20px;
+  background-color: rgb(250, 253, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1px lightgray solid;
+  padding: 2vh 0;
+}
+.fpart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+.fpart h2 {
+  font-weight: 700;
+  font-size: 7.5vw;
+}
+.linkedIn {
+  width: 20vw;
+  height: 20vw;
+}
+#shane {
+  display: flex;
+  flex-direction: row-reverse;
+}
+@media only screen and (min-width: 1025px) {
+  .contact {
+    margin-top: 12vh;
+    font-size: 2vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+  #cotactImg {
+    width: 15vw;
+    height: 15vw;
+    margin-top: 3vh;
+    position: relative;
+    top: 9vw;
+  }
+  .headCont {
+    font-style: oblique;
+    width: 50%;
+    text-align: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    top: -18vw;
+  }
+  .listCom {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+
+    border: none;
+  }
+  #shane {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-pic {
+    width: 20vw;
+    height: 24vw;
+
+    border-radius: 10px;
+  }
+  .fpart h2 {
+    font-weight: 700;
+    font-size: 2vw;
+  }
+  .linkedIn {
+    width: 5vw;
+    height: 5vw;
+  }
+  .fpart {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  #shanePic {
+    width: 20vw;
+    height: 24vw;
+  }
+}
