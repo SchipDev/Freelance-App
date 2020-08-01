@@ -40,9 +40,9 @@ router.get('/profile', isAuth, (req, res, next) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
-router.post('/post-resume', (req, res, next) => {
-  Resume.create(req.body).then(res => {
-    User.findByIdAndUpdate(res.userId, {'hasResume': true}).then(res => console.log(res)).catch(error => console.log(error))
+router.post('/post-resume', isAuth, (req, res, next) => {
+  Resume.create(req.body).then(resume=> {
+    User.findByIdAndUpdate(req.user._id, {'hasResume': true}, { new: true }).then(user => res.json({user, resume})).catch(error => res.json({error}))
   })
 })
 

@@ -24,7 +24,12 @@ const actions = {
   postResume: async (resume) => {
     return await service.post('/post-resume', resume)
   }, 
-  
+  addWorkExperience: async (workExp, resumeId) => {
+    return await service.post(`/add_WE/${resumeId}`, workExp)
+  }, 
+  addSkill: async (skill, resumeId) => {
+    return await service.post(`/add_Skill/${resumeId}`, skill)
+  }
 };
 
 export default actions;
