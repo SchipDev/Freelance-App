@@ -75,7 +75,7 @@ class Main extends Component {
           <Route
             exact
             path="/profile"
-            render={props => <Profile {...props} user={this.state} />}
+            render={props => <Profile {...props} setUser={this.setUser} user={this.state} />}
           />
           <Route
             exact

@@ -1,53 +1,55 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../models/User');
-const passport = require('../config/passport');
-const Resume = require('../models/Resume.model')
+const User = require("../models/User");
+const passport = require("../config/passport");
+const Resume = require("../models/Resume.model");
 
-router.post('/signup', (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   User.register(req.body, req.body.password)
-    .then((user) => {
-      req.login(user, function (err, result) {
-        res.status(201).json(user)
-      })
+    .then(user => {
+      req.login(user, function(err, result) {
+        res.status(201).json(user);
+      });
     })
-    .catch((err) => {
-      console.log(err)
-      res.status(500).json({ err })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
     });
 });
 
-
 //return await service.get('/is-logged-in');
-router.get('/is-logged-in', (req, res, next) => {
-  res.json(req.user)
-})
+router.get("/is-logged-in", (req, res, next) => {
+  res.json(req.user);
+});
 
-
-router.post('/login', passport.authenticate('local'), (req, res, next) => {
+router.post("/login", passport.authenticate("local"), (req, res, next) => {
   const { user } = req;
   res.status(200).json(user);
 });
 
-router.get('/logout', (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   req.logout();
-  res.status(200).json({ msg: 'Logged out' });
+  res.status(200).json({ msg: "Logged out" });
 });
 
-router.get('/profile', isAuth, (req, res, next) => {
+router.get("/profile", isAuth, (req, res, next) => {
   User.findById(req.user._id)
-    .then((user) => res.status(200).json({ user }))
-    .catch((err) => res.status(500).json({ err }));
+    .then(user => res.status(200).json({ user }))
+    .catch(err => res.status(500).json({ err }));
 });
 
-router.post('/post-resume', (req, res, next) => {
-  Resume.create(req.body).then(res => {
-    User.findByIdAndUpdate(res.userId, {'hasResume': true}).then(res => console.log(res)).catch(error => console.log(error))
-  })
-})
+router.post("/post-resume", isAuth, (req, res, next) => {
+  Resume.create(req.body).then(resume => {
+    User.findByIdAndUpdate(req.user._id, { hasResume: true }, { new: true })
+      .then(user => res.json({ user, resume }))
+      .catch(error => res.json({ error }));
+  });
+});
 
 function isAuth(req, res, next) {
-  req.isAuthenticated() ? next() : res.status(401).json({ msg: 'Log in first' });
+  req.isAuthenticated()
+    ? next()
+    : res.status(401).json({ msg: "Log in first" });
 }
 
 module.exports = router;
