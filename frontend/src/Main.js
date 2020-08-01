@@ -11,6 +11,7 @@ import actions from "./services/index";
 import Profile from "./components/profile/Profile";
 import MakePost from "./components/MakePost";
 import Contact from "./components/Contact";
+import JobHelper from "./components/JobHelper";
 require("dotenv").config();
 
 class Main extends Component {
@@ -52,6 +53,11 @@ class Main extends Component {
           />
           <Route
             exact
+            path="/job-helpers"
+            render={props => <JobHelper {...props} />}
+          />
+          <Route
+            exact
             path="/sign-up"
             render={props => <SignUp {...props} setUser={this.setUser} />}
           />
@@ -75,7 +81,9 @@ class Main extends Component {
           <Route
             exact
             path="/profile"
-            render={props => <Profile {...props} setUser={this.setUser} user={this.state} />}
+            render={props => (
+              <Profile {...props} setUser={this.setUser} user={this.state} />
+            )}
           />
           <Route
             exact

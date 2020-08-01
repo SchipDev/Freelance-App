@@ -22,6 +22,7 @@ const actions = {
   logOut: async () => {
     return await service.get("/logout");
   },
+
   postResume: async resume => {
     return await service.post("/post-resume", resume);
   },
@@ -31,6 +32,9 @@ const actions = {
   showMyjobs: async id => {
     return await service.get(`/post-job/${id}`);
   },
+  //   showHelpers: async() => {
+  //     return await service.get('/job-helpers');
+  //   },
   deleteMyJob: async id => {
     return await service.get(`/post-job/delete/${id}`);
   },
@@ -42,6 +46,7 @@ const actions = {
   }, 
   addEducation: async (edu, resumeId) => {
     return await service.post(`/add_Education/${resumeId}`, edu)
+    return await service.post(`/add_WE/${resumeId}`, workExp);
   }
 };
 

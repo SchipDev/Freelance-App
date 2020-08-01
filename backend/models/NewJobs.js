@@ -12,8 +12,8 @@ const newjobsSchema = new Schema(
       required: true
     },
     rate: {
-      type: String,
-
+      type: Number,
+      min: 0,
       required: true
     },
     description: {

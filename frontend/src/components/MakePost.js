@@ -68,6 +68,7 @@ class PostJob extends Component {
     });
     actions.deleteMyJob(this.props.user.user._id).then(res => {});
   };
+
   showPostsOn = () => {
     console.log(this.state.myPosts);
     return this.state.myPosts.map((post, i) => {
@@ -79,7 +80,9 @@ class PostJob extends Component {
             {title}|${post.rate}|{date.toDateString()}
           </div>
           <p id="one">{post.description}</p>
-          <button onClick={() => this.delete(post)}>Delete</button>
+          <button id="expand_btn3" onClick={() => this.delete(post)}>
+            Delete
+          </button>
         </li>
       );
     });
@@ -151,7 +154,7 @@ class PostJob extends Component {
                   <input
                     id="rate"
                     name="rate"
-                    type="text"
+                    type="number"
                     onChange={this.handleChange}
                     placeholder="15"
                     className="input_field"

@@ -21,6 +21,11 @@ router.get("/post-job/:id", (req, res, next) => {
     console.log(result);
   });
 });
+router.get("/job-helpers", (req, res) => {
+  NewJobs.find().then(helpers => {
+    res.json(helpers);
+  });
+});
 router.get("/post-job/delete/:id", (req, res, next) => {
   console.log(req.params);
   NewJobs.deleteOne({ userId: req.params.id }).then(jobs => {
