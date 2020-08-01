@@ -14,9 +14,19 @@ class Profile extends Component {
         addWEObj: {
             jobTitle: '',
             startDate: '',
-            endDate: ''
+            endDate: '', 
+            employer: '', 
+            description: ''
         },
-        isShowingAddSkill: false
+        isShowingAddSkill: false, 
+        isShowingAddEdu: false, 
+        newEduObj: {
+            title: '',
+            date: '',
+            recieved: '', 
+            institute: '', 
+            description: ''
+        }
     }
 
     componentDidMount() {
@@ -79,6 +89,13 @@ class Profile extends Component {
             case 'endDate':
                 newWEObj.endDate = e.target.value
                 break;
+            case 'employer':
+                newWEObj.employer = e.target.value
+                break;
+            case 'description': 
+                newWEObj.description = e.target.value
+                break;
+
         }
         this.setState({
             addWEObj: newWEObj
@@ -115,7 +132,7 @@ class Profile extends Component {
         let workExp = this.state.userResume?.workExperience?.map((we, ind) => {
             return (
                 <div>
-                    <strong>{we.jobTitle}</strong>
+                    <strong>{we.jobTitle} | {we.employer}</strong>
                     <p>{we.startDate} - {we.endDate}</p>
                     <article>{we.description}</article>
                 </div>
@@ -130,9 +147,11 @@ class Profile extends Component {
                 {this.state.isShowingAddWE ?
                     <form onSubmit={this.handleSubmitAddWE}>
                         <label>Job Title</label> <br />
-                        <input onChange={this.handleChangeAddWE} name='jobTitle' type='text' placeholder='Job Title' /> <br />
+                        <input onChange={this.handleChangeAddWE} name='jobTitle' type='text' placeholder='Job Title' /> <input onChange={this.handleChangeAddWE} name='employer' placeholder='Employer Name' /> <br />
                         <label>Start Date</label><input onChange={this.handleChangeAddWE} name='startDate' type='text' placeholder='MM/DD/YYYY' />
                         <label>End Date</label><input onChange={this.handleChangeAddWE} name='endDate' type='text' placeholder='MM/DD/YYYY or Present' /><br />
+                        <label>Description</label><br />
+                        <input onChange={this.handleChangeAddWE} name='description' type='text' placeholder='Descripe your responsibillities and the skills you used. ' />
                         <input type='submit' />
                     </form>
                     : ''}
@@ -180,12 +199,86 @@ class Profile extends Component {
 
     //----------------------------------------------------------------------------------------------------
 
+    handleChangeAddEdu = e => {
+        let eduObj = {...this.state.newEduObj}
+        switch (e.target.name) {
+            case 'title':
+                eduObj.title = e.target.value
+                break;
+            case 'date':
+                eduObj.date = e.target.value
+                break;
+            case 'recieved':
+                eduObj.recieved = e.target.value
+                break;
+            case 'institute':
+                eduObj.institute = e.target.value
+                break;
+            case 'description': 
+                eduObj.description = e.target.value
+                break;
+
+        }
+        this.setState({
+            newEduObj: eduObj
+        })
+        console.log(this.state.newEduObj)
+    }
+
+    handleSubmitNewEdu = e => {
+        e.preventDefault()
+        let eduToSend = {...this.state.newEduObj}
+        console.log(eduToSend)
+        actions.addEducation(eduToSend, this.state.userResume?._id).then(res => {
+            this.setState({
+                userResume: res.data, 
+                isShowingAddEdu: false
+            })
+        })
+    }
+
+    displayEdu = () => {
+        let eduList = this.state.userResume?.education?.map((edu, ind) => {
+            return (
+                <div>
+                    <strong>{edu.title} | {edu.institute}</strong><br />
+                    <b>{edu.recieved} - {edu.date}</b> <br />
+                    <p>{edu.description}</p>
+                </div>
+            )
+        })
+        
+        return (
+            <dov>
+                <h2>Education</h2>
+                <div>{eduList}</div>
+                <button onClick={() => this.setState({isShowingAddEdu: !this.state.isShowingAddEdu})}>Add Education</button>
+                {this.state.isShowingAddEdu ? 
+                <form onSubmit={this.handleSubmitNewEdu}>
+                    <input onChange={this.handleChangeAddEdu} name='title' type='text' placeholder='Education Name'/> <br />
+                    <input onChange={this.handleChangeAddEdu} name='date' type='text' placeholder='MM/YYYY'/> <br />
+                    <input onChange={this.handleChangeAddEdu} name='recieved' placeholder='Degree of Certificate' /> <br />
+                    <input onChange={this.handleChangeAddEdu} name='institute' placeholder='e.g. Virginia Tech' /> <br />
+                    <input onChange={this.handleChangeAddEdu} name='description' placeholder='e.g. Minors, Honors, Societies etc.' /> <br />
+                    <input type='submit' />
+                </form>
+                : ''}
+            </dov>
+        )
+    }
+
+
+
+
+
+
     displayResume = () => {
         return (
             <div>
                 {this.displaySummary()}
                 {this.displayWorkExperience()}
                 {this.displaySkills()}
+                {this.displayEdu()}
             </div>
         )
     }
