@@ -41,7 +41,10 @@ button {
   animation-delay: 18s;
   color: rgb(89, 7, 182);
 }
-
+#expand_btn3 {
+  background-color: rgb(207, 226, 238);
+  width: 30%;
+}
 @keyframes rotateWordsSecond {
   0% {
     opacity: 1;
@@ -178,10 +181,11 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(207, 226, 238);
+  background-color: rgb(250, 253, 255);
   border: 0.1px lightgray solid;
   width: 83vw;
   padding: 5vw 4vw;
+  margin-bottom: 6vw;
 }
 .onePost p {
   width: 95%;
@@ -251,10 +255,11 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(207, 226, 238);
+    background-color: rgb(250, 253, 255);
     border: 0.1px lightgray solid;
     width: 40vw;
     padding: 1vw 1vw;
+    margin-bottom: 1.5vw;
   }
   .onePost p {
     width: 95%;

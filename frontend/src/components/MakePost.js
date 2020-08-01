@@ -80,7 +80,9 @@ class PostJob extends Component {
             {title}|${post.rate}|{date.toDateString()}
           </div>
           <p id="one">{post.description}</p>
-          <button onClick={() => this.delete(post)}>Delete</button>
+          <button id="expand_btn3" onClick={() => this.delete(post)}>
+            Delete
+          </button>
         </li>
       );
     });
