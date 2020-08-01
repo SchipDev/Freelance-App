@@ -1,0 +1,54 @@
+#eachHelper {
+  height: fit-content;
+  width: 97%;
+  padding: 8vw;
+}
+.postDays {
+  font-weight: 800;
+}
+.postDays2 {
+  font-weight: 800;
+}
+.descript {
+  text-align: justify;
+}
+.sort {
+  font-weight: 700;
+  font-size: 5.5vw;
+  margin: 0;
+  padding: 0;
+}
+.sort span {
+  font-size: 5.5vw;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.active1 {
+  border-bottom: 3px solid rgb(23, 68, 164);
+}
+.active2 {
+  border-bottom: 3px solid rgb(23, 68, 164);
+}
+
+@media only screen and (min-width: 1025px) {
+  #eachHelper {
+    height: fit-content;
+    width: 40%;
+    padding: 3vw;
+  }
+  .postDays2 {
+    font-size: 1.1vw;
+  }
+  #expand_btn2 {
+    background-color: rgb(207, 226, 238);
+    width: 30%;
+    margin-left: 11.5vw;
+  }
+  .sort {
+    font-size: 1.5vw;
+  }
+  .sort span {
+    font-size: 1.5vw;
+  }
+}

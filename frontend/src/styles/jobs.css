@@ -4,6 +4,9 @@
   align-items: center;
   margin: 0;
 }
+#expand_btn {
+  background-color: rgb(207, 226, 238);
+}
 .searchJobs {
   background-color: rgb(207, 226, 238);
   padding: 6vw;

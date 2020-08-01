@@ -32,6 +32,15 @@ const Navbar = () => {
                 <p>Profile</p>
               </div>
             </Link>
+            <Link style={{ textDecoration: "none" }} to="/job-helpers">
+              <div className="nav-links">
+                <img
+                  src={require("../images/freelancer.png")}
+                  alt="freelancer"
+                />
+                <p>Freelance</p>
+              </div>
+            </Link>
             <Link style={{ textDecoration: "none" }} to="/jobs">
               <div className="nav-links">
                 <img
@@ -54,6 +63,7 @@ const Navbar = () => {
                 <p>Post a job</p>
               </div>
             </Link>
+
             <Link style={{ textDecoration: "none" }} to="/contact">
               <div className="nav-links">
                 <img

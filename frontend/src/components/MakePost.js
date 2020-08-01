@@ -68,6 +68,7 @@ class PostJob extends Component {
     });
     actions.deleteMyJob(this.props.user.user._id).then(res => {});
   };
+
   showPostsOn = () => {
     console.log(this.state.myPosts);
     return this.state.myPosts.map((post, i) => {
@@ -151,7 +152,7 @@ class PostJob extends Component {
                   <input
                     id="rate"
                     name="rate"
-                    type="text"
+                    type="number"
                     onChange={this.handleChange}
                     placeholder="15"
                     className="input_field"
