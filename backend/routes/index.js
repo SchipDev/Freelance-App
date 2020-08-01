@@ -63,4 +63,15 @@ router.post("/add_Skill/:id", (req, res, next) => {
   });
 });
 
+router.post('/add_Education/:id', (req, res, next) => {
+  Resume.findById(req.params.id).then(result => {
+    console.log(req.body);
+    result.education.unshift(req.body);
+    result.save((err, doc) => {
+      if (err) throw err;
+      res.json(doc);
+    });
+  });
+})
+
 module.exports = router;
