@@ -1,3 +1,6 @@
+button {
+  cursor: pointer;
+}
 .rw-sentence {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
 }
@@ -94,6 +97,107 @@
   margin: 4vw;
   margin-bottom: 0;
 }
+.checkForm {
+  display: flex;
+  flex-direction: column;
+  font-size: 6vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.checkForm img {
+  width: 20vw;
+  height: 20vw;
+}
+.twoButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button1 {
+  width: 80vw;
+  border-radius: 20px;
+
+  background: rgb(23, 68, 164);
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+  padding: 2vw 8vw;
+
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10vw;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 10vw;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.postF {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.postF h3 {
+  margin-top: 4vw;
+}
+
+.newPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw 8wv;
+  margin-top: 5vw;
+}
+.onePost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(207, 226, 238);
+  border: 0.1px lightgray solid;
+  width: 83vw;
+  padding: 5vw 4vw;
+}
+.onePost p {
+  width: 95%;
+  text-align: justify;
+}
+.onePost div {
+  font-weight: 800;
+  font-size: 5vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  text-decoration-style: underline;
+  text-decoration-line: underline;
+}
+.checkForm p {
+  margin-top: 3vh;
+}
 @media only screen and (min-width: 1024px) {
   .rw-sentence p {
     font-size: 2vw;
@@ -115,5 +219,58 @@
     margin-top: 7vh;
     border: 0.1px lightgray solid;
     width: 100%;
+  }
+
+  .button1 {
+    width: 50vw;
+    font-size: 1.5vw;
+    padding: 0.5vw 8vw;
+    padding: 0;
+  }
+  .button1 span:after {
+    right: -5vw;
+  }
+
+  .button1:hover span {
+    padding-right: 5vw;
+  }
+  .checkForm {
+    font-size: 1.2vw;
+    width: 50%;
+    font-weight: 800;
+  }
+  .checkForm img {
+    width: 10vw;
+    height: 10vw;
+  }
+  .checkForm p {
+    margin-top: 3vh;
+  }
+  .onePost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(207, 226, 238);
+    border: 0.1px lightgray solid;
+    width: 40vw;
+    padding: 1vw 1vw;
+  }
+  .onePost p {
+    width: 95%;
+    text-align: justify;
+    font-size: 1vw;
+  }
+  .onePost div {
+    font-weight: 800;
+    font-size: 1.3vw;
+    margin-bottom: 2vw;
+    text-align: center;
+    text-decoration-style: underline;
+    text-decoration-line: underline;
+  }
+  .newPosts {
+    padding: 2vw 8wv;
+    margin-top: 2vw;
   }
 }

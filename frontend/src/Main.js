@@ -43,7 +43,7 @@ class Main extends Component {
           <Route
             exact
             path="/post-job"
-            render={props => <MakePost {...props} />}
+            render={props => <MakePost {...props} user={this.state} />}
           />
           <Route
             exact

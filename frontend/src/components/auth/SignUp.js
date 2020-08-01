@@ -15,10 +15,11 @@ class SignUp extends Component {
     actions
       .signUp(this.state)
       .then(user => {
+        console.log(user);
         this.props.setUser({ ...user.data });
-        this.props.history.push('/profile')
+        this.props.history.push("/profile");
       })
-      .catch(({ response }) => console.error(response.data));
+      .catch(({ response }) => console.error(response));
   };
 
   render() {
