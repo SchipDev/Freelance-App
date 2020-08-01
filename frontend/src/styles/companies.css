@@ -36,6 +36,7 @@
   padding: 2vh 0 0;
   justify-content: center;
   /* min-width: 99%; */
+  flex-direction: column;
 }
 .table-logo img {
   width: 25vw;
@@ -71,6 +72,18 @@
   flex-direction: column;
   background-color: rgb(250, 253, 255);
   margin-bottom: 3vh;
+}
+#eachCompany1 {
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  padding-left: 5vw;
+  display: flex;
+  border: 0.1px lightgray solid;
+  flex-direction: column;
+
+  background-color: rgb(250, 253, 255);
+  margin-bottom: 3vh;
+  width: 100%;
 }
 .descrip {
   text-align: start;
@@ -152,6 +165,19 @@
     flex-direction: column;
     background-color: rgb(250, 253, 255);
     margin-bottom: 1.5vh;
+  }
+  #eachCompany1 {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 5vw;
+    padding-right: 2vw;
+    display: flex;
+    border: 0.1px lightgray solid;
+    flex-direction: column;
+    background-color: rgb(250, 253, 255);
+    margin-bottom: 1.5vh;
+    width: 100%;
+    flex-wrap: wrap;
   }
   .descrip {
     text-align: start;

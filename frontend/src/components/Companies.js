@@ -118,7 +118,7 @@ class Companies extends Component {
   showCompany = () => {
     return this.state.companies.map((company, i) => {
       return (
-        <table className="comp-table">
+        <table id="eachCompany1" className="comp-table">
           <tr key={i}>
             <div className="firstRow">
               <td className="table-logo">
