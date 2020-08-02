@@ -8,6 +8,7 @@ import helpers from "../styles/navbar_styles/helpers.css";
 class JobHelper extends Component {
   state = {
     helpers: [],
+    users: [],
     active1: true,
     active2: false
   };
@@ -32,8 +33,11 @@ class JobHelper extends Component {
   };
   async componentDidMount() {
     let res = await axios.get(`http://localhost:5000/job-helpers`);
+    let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
+    console.log(res2.data);
     this.setState({
-      helpers: res.data
+      helpers: res.data,
+      users: res2.data
     });
   }
   timeDiff = (date1, date2) => {
@@ -57,17 +61,35 @@ class JobHelper extends Component {
     });
     let date = Date.now();
     return res.map((helper, i) => {
+      let user = this.state.users.filter(x => x._id == helper.userId);
+      console.log(user[0]);
       return (
         <div key={i} className="eachJob" id="eachHelper">
-          <h3>{helper.title}</h3>
+          <h3>{helper.title[0].toUpperCase() + helper.title.slice(1)}</h3>
           <p className="postDays2">
             <strong>${helper.rate}</strong> | {helper.location}
           </p>
           <p className="descript">{helper.description}</p>
+          <strong>Posted by {user[0].name}</strong>
+          <div className="contact3">
+            <img
+              className="contact2"
+              src={require("../images/phone.png")}
+              alt="phone"
+            />
+            <div>{user[0].phoneNum}</div>
+          </div>
+          <div className="contact3">
+            <img
+              className="contact2"
+              src={require("../images/email.png")}
+              alt="email"
+            />
+            <div>{user[0].email}</div>
+          </div>
           <p className="days postDays">
-            Posted {this.timeDiff(helper.updatedAt, date)}
+            {this.timeDiff(helper.updatedAt, date)}
           </p>
-          <button id="expand_btn2">Save</button>
         </div>
       );
     });

@@ -5,6 +5,7 @@
 }
 .postDays {
   font-weight: 800;
+  margin-top: 8vw;
 }
 .postDays2 {
   font-weight: 800;
@@ -30,7 +31,23 @@
 .active2 {
   border-bottom: 3px solid rgb(23, 68, 164);
 }
-
+.contact2 {
+  width: 5vw;
+  height: 5vw;
+}
+.contact3 {
+  display: flex;
+}
+.contact3 div {
+  margin-left: 3vw;
+  margin-top: 4vw;
+}
+.contact2 {
+  margin-top: 5vw;
+}
+.postDays {
+  margin-top: 5vw;
+}
 @media only screen and (min-width: 1025px) {
   #eachHelper {
     height: fit-content;
@@ -50,5 +67,17 @@
   }
   .sort span {
     font-size: 1.5vw;
+  }
+  .contact2 {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-top: 1vw;
+  }
+  .postDays {
+    margin-top: 1vw;
+  }
+  .contact3 div {
+    margin-left: 0.5vw;
+    margin-top: 1vw;
   }
 }
