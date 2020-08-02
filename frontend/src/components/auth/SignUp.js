@@ -59,6 +59,20 @@ class SignUp extends Component {
               className="input_field"
             />
             <br />
+            <label for="phone">Phone Number</label>
+            <br />
+
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              className="input_field"
+              onChange={this.handleChange}
+              placeholder="888-888-8888"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
+            />
+            <br />
             <label for="jobtitle">Job Title</label>
             <br />
             <input

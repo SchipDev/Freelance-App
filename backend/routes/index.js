@@ -26,6 +26,11 @@ router.get("/job-helpers", (req, res) => {
     res.json(helpers);
   });
 });
+router.get("/job-helpers/user", (req, res) => {
+  User.find().then(helpers => {
+    res.json(helpers);
+  });
+});
 router.get("/post-job/delete/:id", (req, res, next) => {
   console.log(req.params);
   NewJobs.deleteOne({ userId: req.params.id }).then(jobs => {
@@ -68,7 +73,7 @@ router.post("/add_Skill/:id", (req, res, next) => {
   });
 });
 
-router.post('/add_Education/:id', (req, res, next) => {
+router.post("/add_Education/:id", (req, res, next) => {
   Resume.findById(req.params.id).then(result => {
     console.log(req.body);
     result.education.unshift(req.body);
@@ -77,6 +82,6 @@ router.post('/add_Education/:id', (req, res, next) => {
       res.json(doc);
     });
   });
-})
+});
 
 module.exports = router;

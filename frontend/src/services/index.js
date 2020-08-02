@@ -39,14 +39,14 @@ const actions = {
     return await service.get(`/post-job/delete/${id}`);
   },
   addWorkExperience: async (workExp, resumeId) => {
-    return await service.post(`/add_WE/${resumeId}`, workExp)
+    return await service.post(`/add_WE/${resumeId}`, workExp);
   },
   addSkill: async (skill, resumeId) => {
-    return await service.post(`/add_Skill/${resumeId}`, skill)
-  }, 
+    return await service.post(`/add_Skill/${resumeId}`, skill);
+  },
   addEducation: async (edu, resumeId) => {
-    return await service.post(`/add_Education/${resumeId}`, edu)
-    return await service.post(`/add_WE/${resumeId}`, workExp);
+    return await service.post(`/add_Education/${resumeId}`, edu);
+    // return await service.post(`/add_WE/${resumeId}`, workExp);
   }
 };
 
