@@ -100,7 +100,7 @@
 }
 .workExp2 h4 {
   padding-bottom: 0;
-  line-height: 0;
+  line-height: 1em;
   font-size: 5vw;
 }
 #dates {
@@ -147,4 +147,129 @@
   display: flex;
   justify-content: space-between;
   padding-top: 0.5vh;
+}
+
+@media only screen and (min-width: 768px) {
+  #user_info h1 {
+    font-size: 5vw;
+  }
+  .workExp2 h4 {
+    font-size: 2vw;
+  }
+  .headRes {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  #user_info {
+    padding-bottom: 6vw;
+    border: 0.1px lightgray solid;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    min-height: 88vh;
+    background-color: rgb(250, 253, 255);
+    margin: auto;
+    padding: auto;
+    margin-top: 7vw;
+    width: 57%;
+    border-left-style: double;
+    border-left-width: 4vw;
+    border-left-color: rgb(23, 68, 164);
+    border-right-style: double;
+    border-right-width: 4vw;
+    border-right-color: rgb(23, 68, 164);
+  }
+  #user_info h1 {
+    width: 90%;
+    font-size: 3vw;
+  }
+  #user_info strong {
+    font-size: 1.2vw;
+  }
+  .headRes {
+    font-size: 1.6vw;
+  }
+  .summury2 {
+    padding: 1vw 4vw;
+  }
+  .workExp1 {
+    padding: 0 4vw 0;
+  }
+  .workExp1 p {
+    padding: 0 0 0;
+  }
+  .workExp2 {
+    margin-top: 1.5vh;
+  }
+  .workExp2 h4 {
+    font-size: 1.2vw;
+    line-height: 1em;
+  }
+  .dates {
+    font-size: 1.3vw;
+  }
+  .workExp2 article {
+    text-align: justify;
+    padding-top: 1vh;
+    margin-bottom: 1vw;
+  }
+  .workExp1 p,
+  .addS {
+    font-size: 1.2vw;
+  }
+  #workExp textarea {
+    min-height: 7vh;
+  }
+  #workExp label {
+    font-size: 1.2vw;
+  }
+  .submitButton {
+    width: 10vw;
+    border-radius: 20px;
+    font-size: 1.2vw;
+    margin-top: 0;
+  }
+  .dateTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  .formSkill {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    margin-top: 1.5vw;
+  }
+  .skillButton {
+    padding: 0;
+    margin-bottom: 2vh;
+  }
+
+  #skillInp {
+    border-radius: 30px;
+    font-size: 0.98vw;
+  }
+  .skillSet {
+    line-height: 2.2em;
+  }
+  .edu1 {
+    padding: 3vw 4vw 1vw;
+  }
+  .summary {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+  #textarea3 {
+    text-align: justify;
+    padding: 0.5vw 1vw;
+    /* resize: none; */
+    resize: vertical;
+    min-height: 10vw;
+  }
 }

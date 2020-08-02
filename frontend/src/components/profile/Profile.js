@@ -137,11 +137,14 @@ class Profile extends Component {
     let workExp = this.state.userResume?.workExperience?.map((we, ind) => {
       return (
         <div className="workExp2">
-          <h4>{we.jobTitle[0].toUpperCase() + we.jobTitle.slice(1)}</h4>
-          <div>{we.employer}</div>
-          <div id="dates">
-            {we.startDate} - {we.endDate}
+          <div className="dateTitle">
+            <h4>{we.employer}</h4>
+            <div id="dates">
+              {we.startDate} - {we.endDate}
+            </div>
           </div>
+          <div> {we.jobTitle[0].toUpperCase() + we.jobTitle.slice(1)} </div>
+
           <article>{we.description}</article>
         </div>
       );
@@ -215,7 +218,7 @@ class Profile extends Component {
 
   displaySkills = () => {
     let skillList = this.state.userResume?.skills?.map((skill, ind) => {
-      return <li>{skill}</li>;
+      return <li className="skillSet">{skill}</li>;
     });
 
     return (
@@ -236,7 +239,8 @@ class Profile extends Component {
               onChange={this.handleChange}
               type="text"
               name="skillToAdd"
-              placeholder="e.g.HTML"
+              placeholder="e.g.Interpersonal skills."
+              id="skillInp"
               className="input_field"
             />
             <input className="submitButton skillButton" type="submit" />
@@ -304,13 +308,14 @@ class Profile extends Component {
     let eduList = this.state.userResume?.education?.map((edu, ind) => {
       return (
         <div className="workExp2">
-          <h4>{edu.institute}</h4>
-          <div>{edu.title}</div>
           <div className="dateRec">
-            <div>{edu.recieved}</div>
+            <h4>{edu.institute}</h4>
             <div> {edu.date}</div>
-          </div>{" "}
-          <article>{edu.description}</article>
+          </div>
+          <div>
+            <b>{edu.title}</b>
+          </div>
+          <div>{edu.recieved}</div> <article>{edu.description}</article>
         </div>
       );
     });
@@ -370,7 +375,7 @@ class Profile extends Component {
               placeholder="Ex: Alpha Phi Omega, Marching Band, Volleyball"
               className="input_field"
             />{" "}
-            <input type="submit" />
+            <input className="submitButton" type="submit" />
           </form>
         ) : (
           ""
