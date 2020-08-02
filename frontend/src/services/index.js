@@ -46,7 +46,6 @@ const actions = {
   }, 
   addEducation: async (edu, resumeId) => {
     return await service.post(`/add_Education/${resumeId}`, edu)
-    return await service.post(`/add_WE/${resumeId}`, workExp);
   }
 };
 
