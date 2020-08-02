@@ -1,0 +1,150 @@
+#user_info {
+  padding-top: 17vw;
+  padding-bottom: 6vw;
+  border: 0.1px lightgray solid;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 88vh;
+  background-color: rgb(250, 253, 255);
+  margin-top: 1.2vh;
+  width: 92%;
+  border-left-style: double;
+  border-left-width: 5vw;
+  border-left-color: rgb(23, 68, 164);
+  border-right-style: double;
+  border-right-width: 5vw;
+  border-right-color: rgb(23, 68, 164);
+}
+#user_info h1 {
+  width: 90%;
+  text-align: center;
+  color: rgb(23, 68, 164);
+  font-size: 8vw;
+  font-weight: 700;
+}
+#user_info strong {
+  text-align: center;
+}
+.summary {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+#textarea3 {
+  text-align: justify;
+  padding: 3vw 5vw;
+  /* resize: none; */
+  resize: vertical;
+  min-height: 80vw;
+}
+.submitButton {
+  width: 25vw;
+  border-radius: 20px;
+  font-weight: 700;
+  background: rgb(23, 68, 164);
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+  margin-top: 4vw;
+}
+.summury2 {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+}
+
+.summury2 article {
+  text-align: justify;
+}
+.headRes {
+  font-size: 6vw;
+  color: rgb(23, 68, 164);
+  text-decoration-line: underline;
+  /* border-bottom: 1px solid rgb(23, 68, 164); */
+  font-weight: 700;
+}
+.workExp1 {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+}
+.workExp1 p {
+  padding: 2vw 0 0;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 900;
+}
+#workExp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#workExp label {
+  font-weight: 700;
+}
+#workExp textarea {
+  min-height: 14vh;
+}
+.workExp2 h4 {
+  font-size: 5vw;
+  font-weight: 700;
+}
+.workExp2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vw;
+}
+.workExp2 h4 {
+  padding-bottom: 0;
+  line-height: 0;
+  font-size: 5vw;
+}
+#dates {
+  text-align: left;
+}
+.workExp2 article {
+  text-align: justify;
+  padding-top: 1vh;
+  margin-bottom: 3vw;
+}
+.skills1 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4vw;
+}
+.addS {
+  text-align: center;
+  cursor: pointer;
+  font-weight: 900;
+  margin: 0;
+}
+.addS2 {
+  margin-top: 4vw;
+}
+.edu1 {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw 4vw 2vw;
+}
+.formSkill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vw;
+}
+.skillButton {
+  padding: 0;
+  margin: 0;
+}
+.eduForm {
+  padding-top: 2vh;
+}
+.dateRec {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5vh;
+}
