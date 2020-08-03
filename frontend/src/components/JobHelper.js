@@ -9,6 +9,7 @@ class JobHelper extends Component {
   state = {
     helpers: [],
     users: [],
+    data: [],
     active1: true,
     active2: false
   };
@@ -19,11 +20,13 @@ class JobHelper extends Component {
   };
   filteredJobs = event => {
     event.preventDefault();
+    console.log(event.target.value);
+
     this.setState({
       [event.target.name]: event.target.value
     });
     event.preventDefault();
-    let helpersCopy = [...this.state.helpers];
+    let helpersCopy = [...this.state.data];
     let res = helpersCopy.filter(helper => {
       return helper.title.toLowerCase().indexOf(event.target.value) !== -1;
     });
@@ -37,6 +40,7 @@ class JobHelper extends Component {
     console.log(res2.data);
     this.setState({
       helpers: res.data,
+      data: res.data,
       users: res2.data
     });
   }
