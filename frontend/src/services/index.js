@@ -49,7 +49,18 @@ const actions = {
   }, 
   searchByJobTitle: async (searchParam) => {
     return await service.get(`/user_search/jobTitle/${searchParam}`)
+  }, 
+  deleteWE: async (resumeId, ind) => {
+    return await service.post(`/delete_WE/${resumeId}`, ind)
+  }, 
+  deleteSkill: async (resumeId, ind) => {
+    return await service.post(`/delete_Skill/${resumeId}`, ind)
+  }, 
+  deleteEdu: async (resumeId, ind) => {
+    return await service.post(`/delete_Edu/${resumeId}`, ind)
   }
 };
+
+
 
 export default actions;

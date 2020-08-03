@@ -84,14 +84,7 @@ router.post("/add_Education/:id", (req, res, next) => {
   });
 });
 
-router.get('/user_search/name', (req, res, next) => {
-
-})
-
 router.get('/user_search/jobTitle/:id', (req, res, next) => {
-  // let found = req.params.id.split('+').reduce((acc, val) => {
-  //   return 
-  // }, [])
   const found = []
   let searches = req.params.id.split('+')
   searches.forEach((elem, ind) => {
@@ -100,18 +93,49 @@ router.get('/user_search/jobTitle/:id', (req, res, next) => {
       res.forEach((elem) => found.push(elem))
     }).then(() => {
       // User.find({ jobTitle: { $regex: searchExp }) {$or: [{firstName: {$regex: searchExp}}, {lastName: {$regex: searchExp}}]}
-      User.find({$or: [{firstName: {$regex: searchExp}}, {lastName: {$regex: searchExp}}]}).then(result => {
+      User.find({ $or: [{ firstName: { $regex: searchExp } }, { lastName: { $regex: searchExp } }] }).then(result => {
         result.forEach((elem) => found.push(elem))
       }).then(() => res.json([...new Set(found)]))
-      
     })
   })
-  // console.log(found)
-  //console.log(req.params.id.split('+'))
-  // const test = new RegExp(`.*${searches[0]}.*`, 'ig')
-  // console.log(test)
-  // User.find({ jobTitle: { $regex: test } }).then(res => console.log(res))
-
 })
+
+router.post('/delete_WE/:id', (req, res, next) => {
+  console.log(req.body.remove)
+  console.log(req.params.id)
+  Resume.findById(req.params.id).then(result => {
+    result.workExperience.splice(req.body.remove, 1)
+    result.save((err,doc) => {
+      if (err) throw error
+      res.json(doc)
+    })
+  })
+})
+
+router.post('/delete_Skill/:id', (req, res, next) => {
+  console.log(req.body.remove)
+  console.log(req.params.id)
+  Resume.findById(req.params.id).then(result => {
+    result.skills.splice(req.body.remove, 1)
+    result.save((err,doc) => {
+      if (err) throw error
+      res.json(doc)
+    })
+  })
+})
+
+router.post('/delete_Edu/:id', (req, res, next) => {
+  console.log(req.body.remove)
+  console.log(req.params.id)
+  Resume.findById(req.params.id).then(result => {
+    result.education.splice(req.body.remove, 1)
+    result.save((err,doc) => {
+      if (err) throw error
+      console.log(doc)
+      res.json(doc)
+    })
+  })
+})
+
 
 module.exports = router;
