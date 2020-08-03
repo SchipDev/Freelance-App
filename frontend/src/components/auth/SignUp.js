@@ -19,7 +19,11 @@ class SignUp extends Component {
         this.props.setUser({ ...user.data });
         this.props.history.push("/profile");
       })
-      .catch(({ response }) => console.error(response));
+      .catch(({ response }) => {
+        alert("Looks like you already have an account with us!");
+
+        window.location.href = "http://localhost:3000/log-in";
+      });
   };
 
   render() {
