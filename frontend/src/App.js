@@ -61,7 +61,7 @@ class App extends Component {
           <Route
             exact
             path="/profile"
-            render={props => <Profile {...props}   />}
+            render={props => <Profile {...props} />}
           />
 
           <Route component={NotFound} />

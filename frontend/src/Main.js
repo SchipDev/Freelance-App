@@ -12,6 +12,7 @@ import Profile from "./components/profile/Profile";
 import MakePost from "./components/MakePost";
 import Contact from "./components/Contact";
 import JobHelper from "./components/JobHelper";
+import UserSearch from './components/UserSearch'
 require("dotenv").config();
 
 class Main extends Component {
@@ -89,6 +90,12 @@ class Main extends Component {
             exact
             path="/contact"
             render={props => <Contact {...props} user={this.state} />}
+          />
+
+          <Route
+            exact
+            path="/search"
+            render={props => <UserSearch {...props} user={this.state} />}
           />
         </Switch>
       </div>

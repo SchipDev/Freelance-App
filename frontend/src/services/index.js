@@ -46,6 +46,9 @@ const actions = {
   },
   addEducation: async (edu, resumeId) => {
     return await service.post(`/add_Education/${resumeId}`, edu)
+  }, 
+  searchByJobTitle: async (searchParam) => {
+    return await service.get(`/user_search/jobTitle/${searchParam}`)
   }
 };
 

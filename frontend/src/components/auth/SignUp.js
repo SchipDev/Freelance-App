@@ -63,13 +63,13 @@ class SignUp extends Component {
             <br />
 
             <input
-              type="text"
+              type="tel"
               id="phone"
-              name="phone"
+              name="phoneNum"
               className="input_field"
               onChange={this.handleChange}
-              placeholder="888-888-8888"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="(888)-888-8888"
+              pattern="([0-9]{3})-[0-9]{3}-[0-9]{4}"
               required
             />
             <br />
