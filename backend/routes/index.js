@@ -84,4 +84,8 @@ router.post("/add_Education/:id", (req, res, next) => {
   });
 });
 
+router.get('/user_search/name', (req,res,next) => {
+  
+})
+
 module.exports = router;
