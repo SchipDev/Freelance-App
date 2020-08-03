@@ -2,17 +2,17 @@ const { Schema, model } = require("mongoose");
 
 const resumeSchema = new Schema(
   {
-    userId: {type: Schema.Types.ObjectId, ref: 'User'},
-    summary: String, 
-    skills: [String], 
-    workExperience: Array , 
-    education: {type: [Object], default: []}
+    userId: { type: Schema.Types.ObjectId, ref: "User" },
+    summary: String,
+    skills: [String],
+    workExperience: Array,
+    education: { type: [Object], default: [] },
+    image: { type: String }
   },
   {
     timestamps: true,
-    versionKey: false,
+    versionKey: false
   }
 );
-
 
 module.exports = model("Resume", resumeSchema);

@@ -21,7 +21,6 @@ class SignUp extends Component {
       })
       .catch(({ response }) => {
         alert("Looks like you already have an account with us!");
-
         window.location.href = "http://localhost:3000/log-in";
       });
   };

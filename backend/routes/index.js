@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Resume = require("../models/Resume.model");
 const User = require("../models/User");
 const NewJobs = require("../models/NewJobs");
+const uploadCloud = require("../config/cloudinary-setup");
 
 router.get("/", (req, res, next) => {
   res.status(200).json({ msg: "Working" });
@@ -49,6 +50,17 @@ router.get("/get-resume/:id", (req, res, next) => {
     res.json(result);
   });
 });
+
+// router.post("/post-rewards/:id", uploadCloud.single("image"), (req, res, next) => {
+//   const productInputInfo = req.body;
+//   productInputInfo.image = req.file.url;
+//  Resume.findById(req.params.id).then(result => {
+// result.create(productInputInfo)
+//     .then(newlyCreatedProduct => {
+//       res.status(200).json(newlyCreatedProduct);
+//     })
+//     .catch(err => res.status(400).json(err));
+// });
 
 router.post("/add_WE/:id", (req, res, next) => {
   Resume.findById(req.params.id).then(result => {

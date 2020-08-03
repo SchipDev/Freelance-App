@@ -26,6 +26,10 @@ const actions = {
   postResume: async resume => {
     return await service.post("/post-resume", resume);
   },
+  //   postReward: async reward => {
+  //     return await service.post("/post-rewards", reward);
+  //   },
+
   postJob: async postJob => {
     return await service.post("/post-job", postJob);
   },

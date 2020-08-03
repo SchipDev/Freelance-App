@@ -24,7 +24,8 @@ class Profile extends Component {
       recieved: "",
       institute: "",
       description: ""
-    }
+    },
+    selectedFile: null
   };
 
   componentDidMount() {
