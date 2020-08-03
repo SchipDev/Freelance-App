@@ -401,7 +401,9 @@ class Profile extends Component {
       <div>
         <Navbar />
         <div className="companies" id="user_info">
-          <h1>{this.props.user.user.name}</h1>
+          <h1>
+            {this.props.user.user.firstName} {this.props.user.user.lastName}
+          </h1>
           <strong>{this.props.user.user.email}</strong>
           <strong>{this.props.user.user.phoneNum}</strong>
           {this.props.user.user.hasResume
