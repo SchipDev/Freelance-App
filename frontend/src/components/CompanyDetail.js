@@ -19,14 +19,14 @@ class CompanyDetail extends Component {
 
   componentDidMount() {
     axios({
-      //   method: "GET",
-      //   url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
-      //   headers: {
-      //     "content-type": "application/octet-stream",
-      //     "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-      //     "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
-      //     useQueryString: true
-      //   }
+      method: "GET",
+      url: `https://indeed-com.p.rapidapi.com/get/company/${this.props?.match?.params?.key}`,
+      headers: {
+        "content-type": "application/octet-stream",
+        "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+        useQueryString: true
+      }
     })
       .then(response => {
         this.setState({
@@ -243,18 +243,18 @@ workLifeBalanceRating: 3.2
   getCompanyReview = () => {
     if (!this.state.isShowingReviews) {
       axios({
-        // method: "GET",
-        // url:
-        //   "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
-        // headers: {
-        //   "content-type": "application/octet-stream",
-        //   "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-        //   "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
-        //   useQueryString: true
-        // },
-        // params: {
-        //   offset: "0"
-        // }
+        method: "GET",
+        url:
+          "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
+        headers: {
+          "content-type": "application/octet-stream",
+          "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+          "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+          useQueryString: true
+        },
+        params: {
+          offset: "0"
+        }
       })
         .then(response => {
           console.log("REVIEWS");

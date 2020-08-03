@@ -74,7 +74,9 @@ class JobHelper extends Component {
             <strong>${helper.rate}</strong> | {helper.location}
           </p>
           <p className="descript">{helper.description}</p>
-          <strong>Posted by {user[0].name}</strong>
+          <strong>
+            Posted by {user[0].firstName} {user[0].lastName}
+          </strong>
           <div className="contact3">
             <img
               className="contact2"

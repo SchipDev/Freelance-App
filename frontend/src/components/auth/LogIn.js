@@ -14,7 +14,13 @@ class LogIn extends Component {
         await this.props.setUser({ ...user.data });
         this.props.history.push("/profile");
       })
-      .catch(({ response }) => console.error(response));
+      .catch(({ response }) => {
+        alert(
+          "Looks like you did not create an account, you can sign up for a new account!"
+        );
+
+        window.location.href = "http://localhost:3000/sign-up";
+      });
   };
   render() {
     return (

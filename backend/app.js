@@ -10,11 +10,7 @@ const cors = require("cors");
 const session = require("express-session");
 const passport = require("./config/passport");
 
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/deploymentExample";
-// const MONGODB_URI =
-//   process.env.MONGODB_URI ||
-//   "mongodb+srv://<password>:astra2004all@cluster0.kf4hh.mongodb.net/jobHunters?retryWrites=true&w=majority";
+const MONGODB_URI = process.env.MONGODB_URI;
 console.log("Connecting DB to ", MONGODB_URI);
 
 mongoose

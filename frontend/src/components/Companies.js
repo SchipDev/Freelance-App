@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 class Companies extends Component {
   state = {
     companies: companies,
+
     name: ""
   };
   handleChange = event => {
@@ -43,26 +44,26 @@ class Companies extends Component {
         console.log(error);
       });
 
-    //     axios({
-    //       method: "GET",
-    //       url:
-    //         "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
-    //       headers: {
-    //         "content-type": "application/octet-stream",
-    //         "x-rapidapi-host": "indeed-com.p.rapidapi.com",
-    //         "x-rapidapi-key": "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
-    //         useQueryString: true
-    //       },
-    //       params: {
-    //         offset: "0"
-    //       }
-    //     })
-    //       .then(response => {
-    //         console.log(response);
-    //       })
-    //       .catch(error => {
-    //         console.log(error);
-    //       });
+    axios({
+      method: "GET",
+      url:
+        "https://indeed-com.p.rapidapi.com/get/company/eacc908d242186c8/reviews",
+      headers: {
+        "content-type": "application/octet-stream",
+        "x-rapidapi-host": "indeed-com.p.rapidapi.com",
+        "x-rapidapi-key": "7b31e50bcfmshb2487ec82ce202cp15ee70jsn0e9be0d08aeb",
+        useQueryString: true
+      },
+      params: {
+        offset: "0"
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
   stars = rating => {
     if (rating == 0) {

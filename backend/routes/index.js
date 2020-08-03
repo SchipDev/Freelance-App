@@ -84,8 +84,34 @@ router.post("/add_Education/:id", (req, res, next) => {
   });
 });
 
-router.get('/user_search/name', (req,res,next) => {
-  
+router.get('/user_search/name', (req, res, next) => {
+
+})
+
+router.get('/user_search/jobTitle/:id', (req, res, next) => {
+  // let found = req.params.id.split('+').reduce((acc, val) => {
+  //   return 
+  // }, [])
+  const found = []
+  let searches = req.params.id.split('+')
+  searches.forEach((elem, ind) => {
+    const searchExp = new RegExp(`.*${searches[ind]}.*`, 'ig')
+    User.find({ jobTitle: { $regex: searchExp } }).then(res => {
+      res.forEach((elem) => found.push(elem))
+    }).then(() => {
+      // User.find({ jobTitle: { $regex: searchExp }) {$or: [{firstName: {$regex: searchExp}}, {lastName: {$regex: searchExp}}]}
+      User.find({$or: [{firstName: {$regex: searchExp}}, {lastName: {$regex: searchExp}}]}).then(result => {
+        result.forEach((elem) => found.push(elem))
+      }).then(() => res.json([...new Set(found)]))
+      
+    })
+  })
+  // console.log(found)
+  //console.log(req.params.id.split('+'))
+  // const test = new RegExp(`.*${searches[0]}.*`, 'ig')
+  // console.log(test)
+  // User.find({ jobTitle: { $regex: test } }).then(res => console.log(res))
+
 })
 
 module.exports = router;

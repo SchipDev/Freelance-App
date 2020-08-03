@@ -19,7 +19,11 @@ class SignUp extends Component {
         this.props.setUser({ ...user.data });
         this.props.history.push("/profile");
       })
-      .catch(({ response }) => console.error(response));
+      .catch(({ response }) => {
+        alert("Looks like you already have an account with us!");
+
+        window.location.href = "http://localhost:3000/log-in";
+      });
   };
 
   render() {
@@ -48,14 +52,25 @@ class SignUp extends Component {
             />
             <br />
 
-            <label for="yourname">Your Name</label>
+            <label for="yourname1">First Name</label>
             <br />
             <input
-              id="yourname"
-              name="name"
+              id="yourname1"
+              name="firstName"
               type="text"
               onChange={this.handleChange}
-              placeholder="John Smith"
+              placeholder="John"
+              className="input_field"
+            />
+            <br />
+            <label for="yourname2">Last Name</label>
+            <br />
+            <input
+              id="yourname2"
+              name="lastName"
+              type="text"
+              onChange={this.handleChange}
+              placeholder="Smith"
               className="input_field"
             />
             <br />
