@@ -20,6 +20,12 @@ class Main extends Component {
     user: {}
   };
 
+  async componentDidMount() {
+    let user = await actions.isLoggedIn();
+    this.setState({ ...user.data });
+    console.log("coolest ");
+  }
+
   setUser = user => {
     this.setState({
       user
