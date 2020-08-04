@@ -26,9 +26,9 @@ const actions = {
   postResume: async resume => {
     return await service.post("/post-resume", resume);
   },
-  //   postReward: async reward => {
-  //     return await service.post("/post-rewards", reward);
-  //   },
+  postReward: async (reward, id) => {
+    return await service.post(`/post-rewards/${id}`, reward);
+  },
 
   postJob: async postJob => {
     return await service.post("/post-job", postJob);
@@ -50,7 +50,9 @@ const actions = {
   },
   addEducation: async (edu, resumeId) => {
     return await service.post(`/add_Education/${resumeId}`, edu);
-    // return await service.post(`/add_WE/${resumeId}`, workExp);
+  },
+  searchByJobTitle: async searchParam => {
+    return await service.get(`/user_search/jobTitle/${searchParam}`);
   }
 };
 

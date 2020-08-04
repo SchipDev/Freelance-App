@@ -25,7 +25,10 @@ class Profile extends Component {
       institute: "",
       description: ""
     },
-    selectedFile: null
+    selectedFile: null,
+    showLoad: false,
+    active1: true,
+    active2: false
   };
 
   componentDidMount() {
@@ -395,22 +398,120 @@ class Profile extends Component {
       </div>
     );
   };
-
+  handleChange2 = e => {
+    let image = new FormData();
+    image.append("image", e.target.files[0]);
+    console.log(this.state.user, this.props);
+    actions.postReward(image, this.props.user.user._id).then(res => {
+      console.log(res);
+    });
+  };
+  showLoad = () => {
+    this.setState({
+      showLoad: !this.state.showLoad
+    });
+  };
+  loadPic = () => {
+    this.setState({
+      showLoad: false
+    });
+  };
+  showRes = () => {
+    this.setState({
+      active1: !this.state.active1,
+      active2: !this.state.active2
+    });
+  };
+  showCon = () => {
+    this.setState({
+      active1: !this.state.active1,
+      active2: !this.state.active2
+    });
+  };
   render() {
     console.log(this.props.user.user.hasResume);
     return (
-      <div>
+      <div className="profAll">
         <Navbar />
-        <div className="companies" id="user_info">
-          <h1>
-            {this.props.user.user.firstName} {this.props.user.user.lastName}
-          </h1>
-          <strong>{this.props.user.user.email}</strong>
-          <strong>{this.props.user.user.phoneNum}</strong>
-          {this.props.user.user.hasResume
-            ? this.displayResume()
-            : this.displayCreateResume()}
+        <div className="post">
+          <div id="aboutMe" className="headPost">
+            <div className="data-logo">
+              {this.props.user.user.image == null ? (
+                <img
+                  onClick={this.showLoad}
+                  className="about-logo"
+                  src={require("../../images/userPic.png")}
+                  alt="profileImage"
+                />
+              ) : (
+                <img
+                  onClick={this.showLoad}
+                  className="about-logo"
+                  src={this.props.user.user.image}
+                  alt="profileImage"
+                />
+              )}
+              {this.state.showLoad ? (
+                <form id="loadForm" onSubmit={this.loadPic}>
+                  <input id="file" type="file" onChange={this.handleChange2} />
+                  <input id="sendPic" type="submit" value="Upload" />
+                </form>
+              ) : (
+                ""
+              )}
+            </div>
+            <div>
+              <h1>
+                {this.props.user.user.firstName} {this.props.user.user.lastName}
+              </h1>
+              <p>{this.props.user.user.jobTitle}</p>
+              <div id="contact5" className="contact3">
+                <img
+                  className="contact2"
+                  src={require("../../images/phone.png")}
+                  alt="phone"
+                />
+                <div>{this.props.user.user.phoneNum}</div>
+              </div>
+              <div id="contact5" className="contact3">
+                <img
+                  className="contact2"
+                  src={require("../../images/email.png")}
+                  alt="email"
+                />
+                <div>{this.props.user.user.email}</div>
+              </div>
+            </div>
+          </div>
         </div>
+        <p id="sort2" className="sort">
+          <span
+            className={this.state.active1 ? "active3" : null}
+            onClick={this.showRes}
+          >
+            Edit Resume
+          </span>{" "}
+          <span
+            onClick={this.showCon}
+            className={this.state.active2 ? "active4" : null}
+          >
+            Find new
+          </span>
+        </p>
+        {this.state.active1 ? (
+          <div className="companies" id="user_info">
+            <h1>
+              {this.props.user.user.firstName} {this.props.user.user.lastName}
+            </h1>
+            <strong>{this.props.user.user.email}</strong>
+            <strong>{this.props.user.user.phoneNum}</strong>
+            {this.props.user.user.hasResume
+              ? this.displayResume()
+              : this.displayCreateResume()}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

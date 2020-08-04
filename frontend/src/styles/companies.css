@@ -38,6 +38,14 @@
   /* min-width: 99%; */
   flex-direction: column;
 }
+#compData {
+  padding: 0 0 0;
+  justify-content: center;
+  background: none;
+  background-color: none;
+  flex-direction: column;
+  border: none;
+}
 .table-logo img {
   width: 25vw;
   height: 25vw;

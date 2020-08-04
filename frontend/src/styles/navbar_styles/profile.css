@@ -148,7 +148,100 @@
   justify-content: space-between;
   padding-top: 0.5vh;
 }
-
+/* #aboutMe img {
+  width: 30vw;
+  height: 30vw;
+} */
+.about-logo {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  margin-top: 3vh;
+}
+#aboutMe h1 {
+  font-size: 10vw;
+  text-align: center;
+  margin-top: 0.5vh;
+}
+#aboutMe {
+  padding-bottom: 2.9vh;
+  display: flex;
+  flex-direction: column;
+}
+#id {
+  width: 20vw;
+  height: 60vw;
+}
+#aboutMe p {
+  font-size: 6vw;
+  font-weight: 700;
+  margin-top: 0.5vh;
+  text-align: center;
+  margin-bottom: 0;
+}
+#contact5 {
+  padding: 0;
+  margin: 0;
+}
+#contact5 img {
+  width: 4vw;
+  height: 4vw;
+}
+#contact5 div {
+  font-size: 3vw;
+  margin-top: 4vh;
+}
+.data-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#file {
+  text-align: center;
+  padding-top: 2vh;
+  margin-left: 38vw;
+}
+#loadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#sendPic {
+  border-radius: 20px;
+  background-color: rgb(23, 68, 164);
+  color: white;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  font-size: 5vw;
+}
+#loadForm input {
+  font-weight: 700;
+}
+.profAll {
+  display: flex;
+  flex-direction: column;
+}
+#sort2 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#sort2 span {
+  margin: 0;
+}
+.active4 {
+  /* border-bottom: 3px solid red; */
+  background-color: rgb(23, 68, 164);
+  color: white;
+}
+.active3 {
+  background-color: rgb(23, 68, 164);
+  color: white;
+}
 @media only screen and (min-width: 768px) {
   #user_info h1 {
     font-size: 5vw;
@@ -159,6 +252,60 @@
   .headRes {
     font-size: 3vw;
   }
+  .about-logo {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin-top: 3vh;
+  }
+  #aboutMe h1 {
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 2vh;
+  }
+  #aboutMe p {
+    font-size: 4vw;
+    font-weight: 700;
+    margin-top: 0.5vh;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  #sort2 span {
+    font-size: 3vh;
+  }
+  #user_info {
+    padding-top: 6vw;
+    padding-bottom: 3vw;
+    font-size: 2.6vw;
+    margin-top: 1.2vh;
+    width: 92%;
+  }
+  #sendPic {
+    border-radius: 20px;
+    background-color: rgb(23, 68, 164);
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 3vw;
+    padding: 0 4vw;
+  }
+
+  #loadForm {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  #file {
+    text-align: center;
+    padding-top: 2vh;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+
+    font-size: 3vw;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -167,12 +314,12 @@
     border: 0.1px lightgray solid;
     flex-direction: column;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 7vh;
     min-height: 88vh;
     background-color: rgb(250, 253, 255);
     margin: auto;
     padding: auto;
-    margin-top: 7vw;
+    margin-top: 2vw;
     width: 57%;
     border-left-style: double;
     border-left-width: 3vw;
@@ -180,6 +327,7 @@
     border-right-style: double;
     border-right-width: 3vw;
     border-right-color: rgb(23, 68, 164);
+    font-size: 1.2vw;
   }
   #user_info h1 {
     width: 90%;
@@ -271,5 +419,84 @@
     /* resize: none; */
     resize: vertical;
     min-height: 10vw;
+  }
+  #id {
+    width: 100vw;
+    height: 100vw;
+  }
+  .about-logo {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin-top: 0;
+  }
+  #aboutMe h1 {
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 2vh;
+    text-decoration-color: rgb(23, 68, 164);
+    text-decoration: underline;
+  }
+  #aboutMe {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #aboutMe p {
+    font-size: 2vw;
+    font-weight: 700;
+    margin-top: 0.5vh;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  #contact5 img {
+    width: 2vw;
+    height: 2vw;
+    margin-bottom: 1vh;
+    margin-right: 0.7vw;
+  }
+  #contact5 div {
+    font-size: 1.6vw;
+    margin: 0;
+  }
+  #contact5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-logo {
+    margin-right: 2vw;
+  }
+  .workExp1 {
+    display: flex;
+    flex-direction: column;
+  }
+  #sendPic {
+    border-radius: 20px;
+    background-color: rgb(23, 68, 164);
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 1vw;
+    padding: 0 4vw;
+  }
+
+  #loadForm {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  #file {
+    text-align: center;
+    padding-top: 2vh;
+    margin-left: 0;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+
+    font-size: 1vw;
   }
 }

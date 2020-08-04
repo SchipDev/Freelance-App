@@ -185,7 +185,9 @@ class Companies extends Component {
               </button>
             </form>
           </div>
-          <div className="listCom">{this.showCompany()}</div>
+          <div id="compData" className="listCom">
+            {this.showCompany()}
+          </div>
         </div>
       </div>
     );

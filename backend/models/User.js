@@ -10,7 +10,7 @@ const userSchema = new Schema(
     hasResume: { type: Boolean, required: true, default: false },
     resumeId: String,
     googleId: String,
-    imageUrl: String,
+    image: String,
     phoneNum: {
       type: String
     }
