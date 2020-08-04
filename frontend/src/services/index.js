@@ -67,7 +67,7 @@ const actions = {
     return await service.post(`/delete_Edu/${resumeId}`, ind);
   }, 
   getResume: async (resumeId) => {
-    return await service.get(`/get-resume/${userId}`)
+    return await service.get(`/get-resume/${resumeId}`)
   }
 
 };
