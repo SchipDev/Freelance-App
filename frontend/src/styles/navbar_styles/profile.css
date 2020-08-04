@@ -184,12 +184,17 @@
   margin: 0;
 }
 #contact5 img {
-  width: 4vw;
-  height: 4vw;
+  width: 6vw;
+  height: 6vw;
+}
+#contact5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #contact5 div {
-  font-size: 3vw;
-  margin-top: 4vh;
+  font-size: 5vw;
+  margin-top: 2vh;
 }
 .data-logo {
   display: flex;
@@ -425,8 +430,8 @@
     height: 100vw;
   }
   .about-logo {
-    width: 15vw;
-    height: 15vw;
+    width: 13vw;
+    height: 13vw;
     border-radius: 50%;
     margin-top: 0;
   }

@@ -28,7 +28,11 @@ class Profile extends Component {
     selectedFile: null,
     showLoad: false,
     active1: true,
-    active2: false
+    active2: false,
+    isEditingWE: false,
+    isEditingSkills: false,
+    isEditingEdu: false,
+    isEditingEdu: false
   };
 
   componentDidMount() {
@@ -50,6 +54,28 @@ class Profile extends Component {
     return resume;
   };
 
+  deleteWE = ind => {
+    actions
+      .deleteWE(this.state.userResume?._id, { remove: ind })
+      .then(res => this.setState({ userResume: res.data, isEditingWE: false }));
+  };
+
+  deleteSkill = ind => {
+    actions
+      .deleteSkill(this.state.userResume?._id, { remove: ind })
+      .then(res =>
+        this.setState({ userResume: res.data, isEditingSkills: false })
+      );
+  };
+
+  deleteEdu = ind => {
+    actions
+      .deleteEdu(this.state.userResume?._id, { remove: ind })
+      .then(res =>
+        this.setState({ userResume: res.data, isEditingEdu: false })
+      );
+  };
+
   //----------------------------------------------------------------------------------------------------
 
   handleSubmitNewResume = e => {
@@ -65,14 +91,16 @@ class Profile extends Component {
   };
 
   handleSubmitAddWE = e => {
-    e.preventDefault();
-    let workExp = { ...this.state.addWEObj };
-    actions.addWorkExperience(workExp, this.state.userResume?._id).then(res =>
-      this.setState({
-        userResume: res.data,
-        isShowingAddWE: false
-      })
-    );
+    if (this.state.userResume.workExperience.length < 4) {
+      e.preventDefault();
+      let workExp = { ...this.state.addWEObj };
+      actions.addWorkExperience(workExp, this.state.userResume?._id).then(res =>
+        this.setState({
+          userResume: res.data,
+          isShowingAddWE: false
+        })
+      );
+    }
   };
 
   //----------------------------------------------------------------------------------------------------
@@ -150,21 +178,39 @@ class Profile extends Component {
           <div> {we.jobTitle[0].toUpperCase() + we.jobTitle.slice(1)} </div>
 
           <article>{we.description}</article>
+          {this.state.isEditingWE ? (
+            <button onClick={() => this.deleteWE(ind)}>Remove</button>
+          ) : (
+            ""
+          )}
         </div>
       );
     });
 
     return (
       <div className="workExp1">
-        <h3 className="headRes">Work Experience</h3>
+        <h3 className="headRes">
+          Work Experience{" "}
+          <button
+            onClick={() =>
+              this.setState({ isEditingWE: !this.state.isEditingWE })
+            }
+          >
+            Edit
+          </button>
+        </h3>
         <div>{workExp}</div>
-        <p
-          onClick={() =>
-            this.setState({ isShowingAddWE: !this.state.isShowingAddWE })
-          }
-        >
-          ⇤Add Work Experience⇥
-        </p>
+        {this.state.userResume?.workExperience?.length < 4 ? (
+          <p
+            onClick={() =>
+              this.setState({ isShowingAddWE: !this.state.isShowingAddWE })
+            }
+          >
+            ⇤Add Work Experience⇥
+          </p>
+        ) : (
+          ""
+        )}
         {this.state.isShowingAddWE ? (
           <form
             id="workExp"
@@ -222,21 +268,45 @@ class Profile extends Component {
 
   displaySkills = () => {
     let skillList = this.state.userResume?.skills?.map((skill, ind) => {
-      return <li className="skillSet">{skill}</li>;
+      return (
+        <li className="skillSet">
+          {skill}{" "}
+          {this.state.isEditingSkills ? (
+            <button onClick={() => this.deleteSkill(ind)}>Remove</button>
+          ) : (
+            ""
+          )}
+        </li>
+      );
     });
 
     return (
       <div className="skills1">
-        <h3 className="headRes">Skills</h3>
+        <h3 className="headRes">
+          Skills{" "}
+          <button
+            onClick={() =>
+              this.setState({ isEditingSkills: !this.state.isEditingSkills })
+            }
+          >
+            Edit
+          </button>
+        </h3>
         <ul>{skillList}</ul>
-        <p
-          onClick={() =>
-            this.setState({ isShowingAddSkill: !this.state.isShowingAddSkill })
-          }
-          className="addS"
-        >
-          ⇤Add Skill⇥
-        </p>
+        {this.state.userResume?.skills?.length < 10 ? (
+          <p
+            onClick={() =>
+              this.setState({
+                isShowingAddSkill: !this.state.isShowingAddSkill
+              })
+            }
+            className="addS"
+          >
+            ⇤Add Skill⇥
+          </p>
+        ) : (
+          ""
+        )}
         {this.state.isShowingAddSkill ? (
           <form className="formSkill" onSubmit={this.handleSubmitNewSkill}>
             <input
@@ -320,22 +390,40 @@ class Profile extends Component {
             <b>{edu.title}</b>
           </div>
           <div>{edu.recieved}</div> <article>{edu.description}</article>
+          {this.state.isEditingEdu ? (
+            <button onClick={() => this.deleteEdu(ind)}>Remove</button>
+          ) : (
+            ""
+          )}
         </div>
       );
     });
 
     return (
       <div className="edu1">
-        <h3 className="headRes">Education</h3>
+        <h3 className="headRes">
+          Education{" "}
+          <button
+            onClick={() =>
+              this.setState({ isEditingEdu: !this.state.isEditingEdu })
+            }
+          >
+            Edit
+          </button>
+        </h3>
         <div>{eduList}</div>
-        <p
-          onClick={() =>
-            this.setState({ isShowingAddEdu: !this.state.isShowingAddEdu })
-          }
-          className="addS addS2"
-        >
-          ⇤Add Education⇥
-        </p>
+        {this.state.userResume?.education?.length < 3 ? (
+          <p
+            onClick={() =>
+              this.setState({ isShowingAddEdu: !this.state.isShowingAddEdu })
+            }
+            className="addS addS2"
+          >
+            ⇤Add Education⇥
+          </p>
+        ) : (
+          ""
+        )}
         {this.state.isShowingAddEdu ? (
           <form
             id="workExp"
