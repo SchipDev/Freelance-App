@@ -65,7 +65,11 @@ const actions = {
   },
   deleteEdu: async (resumeId, ind) => {
     return await service.post(`/delete_Edu/${resumeId}`, ind);
+  }, 
+  getResume: async (resumeId) => {
+    return await service.get(`/get-resume/${userId}`)
   }
+
 };
 
 export default actions;

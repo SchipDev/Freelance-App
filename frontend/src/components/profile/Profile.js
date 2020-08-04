@@ -40,9 +40,7 @@ class Profile extends Component {
       this.props.history.push("/log-in");
     }
     if (this.props.user.user.hasResume) {
-      axios
-        .get(`http://localhost:5000/get-resume/${this.props.user.user._id}`)
-        .then(res => this.setState({ userResume: res.data[0] }));
+        actions.getResume(this.props.user.user._id).then(res => this.setState({ userResume: res.data[0] }));
     }
   }
 
