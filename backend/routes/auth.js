@@ -7,13 +7,16 @@ const Resume = require("../models/Resume.model");
 router.post("/signup", (req, res, next) => {
   User.register(req.body, req.body.password)
     .then(user => {
+      console.log("watermelon", user)
       req.login(user, function(err, result) {
+
+        console.log('cantelope', err, results)
         res.status(201).json(user);
 
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log(err, 'apple');
       res.status(500).json({ err });
     });
 });
@@ -25,6 +28,7 @@ router.get("/is-logged-in", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
+  console.log(req.user, ' asparagus')
   const { user } = req;
   res.status(200).json(user);
 });
