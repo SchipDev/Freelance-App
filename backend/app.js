@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
@@ -43,7 +43,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     secret: "secret",
-    //cookie: { maxAge: 1000 * 60 * 60, sameSite: false, secure: true }
+    cookie: { maxAge: 1000 * 60 * 60, secure: false }//sameSite: false, 
   })
 );
 
@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(logger("dev"));
 
 const index = require("./routes/index");

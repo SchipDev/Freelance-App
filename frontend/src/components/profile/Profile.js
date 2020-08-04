@@ -36,7 +36,7 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    if (!this.props.user.user.email) {
+    if (!this.props.user.user.email && !this.props.user.user.loading) {
       this.props.history.push("/log-in");
     }
     if (this.props.user.user.hasResume) {
@@ -518,6 +518,9 @@ class Profile extends Component {
     });
   };
   render() {
+    if (!this.props.user.user.email && !this.props.user.user.loading) {
+      this.props.history.push("/log-in");
+    }
     console.log(this.props.user.user.hasResume);
     return (
       <div className="profAll">

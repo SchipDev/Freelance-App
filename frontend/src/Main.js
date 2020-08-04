@@ -17,13 +17,15 @@ require("dotenv").config();
 
 class Main extends Component {
   state = {
-    user: {}
+    user: {
+      loading: true
+    },
   };
 
   async componentDidMount() {
     let user = await actions.isLoggedIn();
+    console.log("coolest ", user);
     this.setState({ ...user.data });
-    console.log("coolest ");
   }
 
   setUser = user => {

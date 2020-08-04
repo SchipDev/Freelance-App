@@ -8,7 +8,7 @@ router.post("/signup", (req, res, next) => {
   User.register(req.body, req.body.password)
     .then(user => {
       console.log("watermelon", user)
-      req.login(user, function(err, result) {
+      req.login(user, function(err) {
 
         console.log('cantelope', err, req.user)
         res.status(201).json(user);
