@@ -10,7 +10,7 @@ router.post("/signup", (req, res, next) => {
       console.log("watermelon", user)
       req.login(user, function(err, result) {
 
-        console.log('cantelope', err, result)
+        console.log('cantelope', err, req.user)
         res.status(201).json(user);
 
       });
@@ -47,9 +47,8 @@ router.get("/profile", isAuth, (req, res, next) => {
 router.post("/post-resume", isAuth, (req, res, next) => {
   Resume.create(req.body).then(resume => {
     User.findByIdAndUpdate(req.user._id, { hasResume: true }, { new: true })
-      .then(user => res.json({ user, resume }))
-      .catch(error => res.json({ error }));
-  });
+      .then(user => res.json({ user, resume }));
+  }).catch(error => res.json({ error }));
 });
 
 function isAuth(req, res, next) {
