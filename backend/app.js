@@ -40,6 +40,7 @@ app.use(
 
 app.use(
   session({
+    proxy: true,
     resave: false,
     saveUninitialized: true,
     secret: "secret",
