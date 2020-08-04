@@ -9,7 +9,7 @@ router.post("/signup", (req, res, next) => {
     .then(user => {
       req.login(user, function(err, result) {
         res.status(201).json(user);
-        
+
       });
     })
     .catch(err => {
@@ -20,6 +20,7 @@ router.post("/signup", (req, res, next) => {
 
 //return await service.get('/is-logged-in');
 router.get("/is-logged-in", (req, res, next) => {
+  console.log(req.user, 'orange')
   res.json(req.user);
 });
 
