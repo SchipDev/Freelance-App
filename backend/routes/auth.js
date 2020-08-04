@@ -9,6 +9,7 @@ router.post("/signup", (req, res, next) => {
     .then(user => {
       req.login(user, function(err, result) {
         res.status(201).json(user);
+        
       });
     })
     .catch(err => {
