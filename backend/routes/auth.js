@@ -10,7 +10,7 @@ router.post("/signup", (req, res, next) => {
       console.log("watermelon", user)
       req.login(user, function(err, result) {
 
-        console.log('cantelope', err, results)
+        console.log('cantelope', err, result)
         res.status(201).json(user);
 
       });
