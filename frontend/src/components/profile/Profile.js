@@ -491,7 +491,10 @@ class Profile extends Component {
     image.append("image", e.target.files[0]);
     console.log(this.state.user, this.props);
     actions.postReward(image, this.props.user.user._id).then(res => {
-      console.log(res);
+      this.props.setUser(res.data);
+      this.setState({
+        showLoad: false
+      })
     });
   };
   showLoad = () => {
