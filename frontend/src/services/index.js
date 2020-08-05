@@ -1,10 +1,11 @@
 import axios from "axios";
 let baseURL;
 
+console.log("HEYYYY!!!");
 process.env.NODE_ENV === "production"
-  ? (baseURL = 'https://iron-job-hunter.herokuapp.com')
-    // (baseURL = "window.location.origin")
-  : (baseURL = "http://localhost:5000");
+  ? (baseURL = "https://iron-job-hunter.herokuapp.com")
+  : // (baseURL = "window.location.origin")
+    (baseURL = "http://localhost:5000");
 
 const service = axios.create({ withCredentials: true, baseURL });
 
@@ -36,8 +37,11 @@ const actions = {
   showMyjobs: async id => {
     return await service.get(`/post-job/${id}`);
   },
-  //   showHelpers: async() => {
-  //     return await service.get('/job-helpers');
+  //   showHelpers: async () => {
+  //     return await service.get("/job-helpers");
+  //   },
+  //   showHelpers2: async () => {
+  //     return await service.get("/job-helpers/user");
   //   },
   deleteMyJob: async id => {
     return await service.get(`/post-job/delete/${id}`);
@@ -65,11 +69,13 @@ const actions = {
   },
   deleteEdu: async (resumeId, ind) => {
     return await service.post(`/delete_Edu/${resumeId}`, ind);
-  }, 
-  getResume: async (resumeId) => {
-    return await service.get(`/get-resume/${resumeId}`)
+  },
+  displayRes: async id => {
+    return await service.get(`/get-resume/${id}`);
+  },
+  getResume: async resumeId => {
+    return await service.get(`/get-resume/${resumeId}`);
   }
-
 };
 
 export default actions;

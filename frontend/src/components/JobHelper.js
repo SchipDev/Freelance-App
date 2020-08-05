@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import helpers from "../styles/navbar_styles/helpers.css";
+import actions from "../services";
 
 class JobHelper extends Component {
   state = {
@@ -35,11 +36,15 @@ class JobHelper extends Component {
     });
   };
   async componentDidMount() {
+    // let res = await actions.showHelpers();
+    // console.log(res);
+    // let res2 = await actions.showHelpers2();
+    // // let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
+    // console.log(res2);
     let res = await axios.get(`http://localhost:5000/job-helpers`);
     let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
-    
-    
-    console.log(res2.data, 'i think');
+    console.log("RES:", res);
+    console.log("RES2:", res2);
     this.setState({
       helpers: res.data,
       data: res.data,
@@ -66,40 +71,43 @@ class JobHelper extends Component {
       else return 0;
     });
     let date = Date.now();
+
     return res.map((helper, i) => {
       let user = this.state.users.filter(x => x._id == helper.userId);
-      console.log(user[0]);
-      return (
-        <div key={i} className="eachJob" id="eachHelper">
-          <h3>{helper.title[0].toUpperCase() + helper.title.slice(1)}</h3>
-          <p className="postDays2">
-            <strong>${helper.rate}</strong> | {helper.location}
-          </p>
-          <p className="descript">{helper.description}</p>
-          <strong>
-            Posted by {user[0].firstName} {user[0].lastName}
-          </strong>
-          <div className="contact3">
-            <img
-              className="contact2"
-              src={require("../images/phone.png")}
-              alt="phone"
-            />
-            <div>{user[0].phoneNum}</div>
+      console.log(user);
+      if (user[0] && user) {
+        return (
+          <div key={i} className="eachJob" id="eachHelper">
+            <h3>{helper.title[0].toUpperCase() + helper.title.slice(1)}</h3>
+            <p className="postDays2">
+              <strong>${helper.rate}</strong> | {helper.location}
+            </p>
+            <p className="descript">{helper.description}</p>
+            <strong>
+              Posted by {user[0].firstName} {user[0].lastName}
+            </strong>
+            <div className="contact3">
+              <img
+                className="contact2"
+                src={require("../images/phone.png")}
+                alt="phone"
+              />
+              <div>{user[0].phoneNum}</div>
+            </div>
+            <div className="contact3">
+              <img
+                className="contact2"
+                src={require("../images/email.png")}
+                alt="email"
+              />
+              <div>{user[0].email}</div>
+            </div>
+            <p className="days postDays">
+              {this.timeDiff(helper.updatedAt, date)}
+            </p>
           </div>
-          <div className="contact3">
-            <img
-              className="contact2"
-              src={require("../images/email.png")}
-              alt="email"
-            />
-            <div>{user[0].email}</div>
-          </div>
-          <p className="days postDays">
-            {this.timeDiff(helper.updatedAt, date)}
-          </p>
-        </div>
-      );
+        );
+      } else return "";
     });
   };
   sortPrice = () => {

@@ -29,6 +29,7 @@ router.get("/job-helpers", (req, res) => {
 });
 router.get("/job-helpers/user", (req, res) => {
   User.find().then(helpers => {
+    console.log("Hello");
     res.json(helpers);
   });
 });
@@ -47,7 +48,7 @@ router.post("/post-job", (req, res, next) => {
 router.get("/get-resume/:id", (req, res, next) => {
   console.log(req.params);
   Resume.find({ userId: req.params.id }).then(result => {
-    res.json(result);
+    res.json(result[0]);
   });
 });
 

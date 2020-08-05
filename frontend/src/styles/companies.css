@@ -195,6 +195,13 @@
   .rateStar strong {
     font-size: 3vw;
   }
+  #contact6 {
+    text-align: center;
+  }
+  #contact6 div {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
 @media only screen and (min-width: 1340px) {
   .companies {

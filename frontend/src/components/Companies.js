@@ -9,16 +9,23 @@ import Navbar from "./Navbar";
 class Companies extends Component {
   state = {
     companies: companies,
-
+    error: "",
     name: ""
   };
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+  handleChange = e => {
+    if (e.target.value) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    } else {
+      this.setState({
+        error: '"Please, enter the values!"'
+      });
+    }
   };
   getInfo = e => {
     e.preventDefault();
+
     axios({
       method: "GET",
       url: "https://indeed-com.p.rapidapi.com/search/companies",
@@ -30,6 +37,7 @@ class Companies extends Component {
       },
       params: {
         offset: "0",
+
         name: this.state.name
       }
     })
@@ -180,9 +188,13 @@ class Companies extends Component {
                 type="text"
                 name="name"
               />
-              <button className="submit" type="submit">
-                Find Companies
-              </button>
+              {this.state.name ? (
+                <button className="submit" type="submit">
+                  Find Companies
+                </button>
+              ) : (
+                <p>{this.state.error}</p>
+              )}
             </form>
           </div>
           <div id="compData" className="listCom">

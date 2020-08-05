@@ -3,6 +3,8 @@ import Navbar from "../Navbar";
 import "../../styles/navbar_styles/profile.css";
 import actions from "../../services/index";
 import axios from "axios";
+import UserSearch from "../UserSearch";
+import { Switch, Route } from "react-router-dom";
 
 class Profile extends Component {
   state = {
@@ -177,7 +179,9 @@ class Profile extends Component {
 
           <article>{we.description}</article>
           {this.state.isEditingWE ? (
-            <button onClick={() => this.deleteWE(ind)}>Remove</button>
+            <button id="expand_btn3" onClick={() => this.deleteWE(ind)}>
+              Remove
+            </button>
           ) : (
             ""
           )}
@@ -189,17 +193,18 @@ class Profile extends Component {
       <div className="workExp1">
         <h3 className="headRes">
           Work Experience{" "}
-          <button
+          <img
+            className="scissors"
+            src={require("../../images/scissors.png")}
             onClick={() =>
               this.setState({ isEditingWE: !this.state.isEditingWE })
             }
-          >
-            Edit
-          </button>
+          />
         </h3>
         <div>{workExp}</div>
         {this.state.userResume?.workExperience?.length < 4 ? (
           <p
+            id="workP"
             onClick={() =>
               this.setState({ isShowingAddWE: !this.state.isShowingAddWE })
             }
@@ -270,7 +275,13 @@ class Profile extends Component {
         <li className="skillSet">
           {skill}{" "}
           {this.state.isEditingSkills ? (
-            <button onClick={() => this.deleteSkill(ind)}>Remove</button>
+            <img
+              id="trash"
+              className="scissors"
+              src={require("../../images/delete.png")}
+              alt="logo"
+              onClick={() => this.deleteSkill(ind)}
+            />
           ) : (
             ""
           )}
@@ -282,13 +293,13 @@ class Profile extends Component {
       <div className="skills1">
         <h3 className="headRes">
           Skills{" "}
-          <button
+          <img
+            className="scissors"
+            src={require("../../images/scissors.png")}
             onClick={() =>
               this.setState({ isEditingSkills: !this.state.isEditingSkills })
             }
-          >
-            Edit
-          </button>
+          />
         </h3>
         <ul>{skillList}</ul>
         {this.state.userResume?.skills?.length < 10 ? (
@@ -389,7 +400,9 @@ class Profile extends Component {
           </div>
           <div>{edu.recieved}</div> <article>{edu.description}</article>
           {this.state.isEditingEdu ? (
-            <button onClick={() => this.deleteEdu(ind)}>Remove</button>
+            <button id="expand_btn3" onClick={() => this.deleteEdu(ind)}>
+              Remove
+            </button>
           ) : (
             ""
           )}
@@ -401,13 +414,14 @@ class Profile extends Component {
       <div className="edu1">
         <h3 className="headRes">
           Education{" "}
-          <button
+          <img
+            className="scissors"
+            src={require("../../images/scissors.png")}
+            alt="logo"
             onClick={() =>
               this.setState({ isEditingEdu: !this.state.isEditingEdu })
             }
-          >
-            Edit
-          </button>
+          />
         </h3>
         <div>{eduList}</div>
         {this.state.userResume?.education?.length < 3 ? (
@@ -587,7 +601,7 @@ class Profile extends Component {
             onClick={this.showCon}
             className={this.state.active2 ? "active4" : null}
           >
-            Find new
+            Find new connections
           </span>
         </p>
         {this.state.active1 ? (
@@ -604,6 +618,7 @@ class Profile extends Component {
         ) : (
           ""
         )}
+        {this.state.active2 ? <UserSearch /> : ""}
       </div>
     );
   }
