@@ -57,13 +57,6 @@ function isAuth(req, res, next) {
     : res.status(401).json({ msg: "Log in first" });
 }
 
-router.get('/*', (req, res) => {
-  console.log('everything', __dirname)
-  let url = path.join(__dirname, '../frontend/build', 'index.html');
-  // if (!url.startsWith('/app/')) // we're on local windows
-  //   url = url.substring(1);
-  res.sendFile(url);
-});
 
 module.exports = router;
 
