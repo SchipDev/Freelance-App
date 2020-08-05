@@ -12,7 +12,7 @@ import Profile from "./components/profile/Profile";
 import MakePost from "./components/MakePost";
 import Contact from "./components/Contact";
 import JobHelper from "./components/JobHelper";
-import UserSearch from './components/UserSearch'
+import UserSearch from "./components/UserSearch";
 require("dotenv").config();
 
 class Main extends Component {

@@ -111,9 +111,6 @@ class SignUp extends Component {
             <br />
             <input type="submit" value="Sign Up" id="signup_button" />
           </form>
-          <Link to="/google-signup" id="suwg">
-            Sign Up With Google <img id="googleLogo" src={logo} alt="logo" />
-          </Link>
         </div>
       </div>
     );

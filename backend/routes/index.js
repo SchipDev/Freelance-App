@@ -47,7 +47,7 @@ router.post("/post-job", (req, res, next) => {
 router.get("/get-resume/:id", (req, res, next) => {
   console.log(req.params);
   Resume.find({ userId: req.params.id }).then(result => {
-    res.json(result);
+    res.json(result[0]);
   });
 });
 

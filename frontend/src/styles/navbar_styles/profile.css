@@ -1,10 +1,9 @@
 #user_info {
-  padding-top: 17vw;
+  padding-top: 4vw;
   padding-bottom: 6vw;
   border: 0.1px lightgray solid;
   flex-direction: column;
-  align-items: center;
-
+  align-items: unset;
   min-height: 88vh;
   background-color: rgb(250, 253, 255);
   margin-top: 1.2vh;
@@ -31,7 +30,7 @@
   display: flex;
   flex-direction: column;
 
-  align-items: center;
+  align-items: left;
 }
 #textarea3 {
   text-align: justify;
@@ -71,10 +70,11 @@
   display: flex;
   flex-direction: column;
   padding: 2vw 4vw;
+  align-items: left;
 }
 .workExp1 p {
   padding: 2vw 0 0;
-  text-align: center;
+  text-align: justify;
   cursor: pointer;
   font-weight: 900;
 }
@@ -114,7 +114,7 @@
 .skills1 {
   display: flex;
   flex-direction: column;
-  padding: 0 4vw;
+  padding: 1vw 4vw 0;
 }
 .addS {
   text-align: center;
@@ -247,6 +247,18 @@
   background-color: rgb(23, 68, 164);
   color: white;
 }
+.scissors {
+  width: 8vw;
+  height: 6vw;
+  margin-left: 2vw;
+  cursor: pointer;
+}
+#trash {
+  margin-bottom: 0.4vh;
+  width: 5vw;
+  height: 5vw;
+}
+
 @media only screen and (min-width: 768px) {
   #user_info h1 {
     font-size: 5vw;
@@ -257,6 +269,7 @@
   .headRes {
     font-size: 3vw;
   }
+
   .about-logo {
     width: 15vw;
     height: 15vw;
@@ -318,7 +331,7 @@
     padding-bottom: 6vw;
     border: 0.1px lightgray solid;
     flex-direction: column;
-    align-items: center;
+    align-items: unset;
     padding-top: 7vh;
     min-height: 88vh;
     background-color: rgb(250, 253, 255);
@@ -335,7 +348,7 @@
     font-size: 1.2vw;
   }
   #user_info h1 {
-    width: 90%;
+    width: 100%;
     font-size: 3vw;
   }
   #user_info strong {
@@ -405,10 +418,10 @@
     font-size: 0.98vw;
   }
   .skillSet {
-    line-height: 2.2em;
+    line-height: 2.8em;
   }
   .edu1 {
-    padding: 3vw 4vw 1vw;
+    padding: 1vw 4vw 1vw;
   }
   .summary {
     margin-top: 2vh;
@@ -503,5 +516,21 @@
     margin-bottom: 4vh;
 
     font-size: 1vw;
+  }
+  .scissors {
+    width: 3vw;
+    height: 1.5vw;
+    margin-left: 1vw;
+  }
+  #trash {
+    margin-bottom: 0.6vh;
+    width: 2vw;
+    height: 2vw;
+  }
+  #workP {
+    padding-top: 2.5vh;
+  }
+  .addS2 {
+    margin-top: 1vw;
   }
 }

@@ -8,7 +8,7 @@ const Navbar = () => {
     <div id="bar" className="navDone">
       <Link style={{ textDecoration: "none" }} to="/">
         {" "}
-        <div id="logoNav" className="logoNav2">
+        <div id="logoNav" className="logoNav2" title="Log Out">
           <img src={require("../images/logo.png")} alt="logo" />
           <h1>
             <span>Job</span>Hunter

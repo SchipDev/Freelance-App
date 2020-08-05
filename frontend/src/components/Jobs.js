@@ -16,7 +16,8 @@ class Jobs extends Component {
     title: "",
     location: "",
     radius: "",
-    showHeader: false
+    showHeader: false,
+    error: ""
   };
   handleChange = event => {
     this.setState({
@@ -148,9 +149,14 @@ class Jobs extends Component {
             <input onChange={this.handleChange} type="number" name="radius" />
             <br /> */}
               <br />
-              <button className="submit" type="submit">
-                Find Jobs
-              </button>
+
+              {this.state.title && this.state.location ? (
+                <button className="submit" type="submit">
+                  Find Jobs
+                </button>
+              ) : (
+                <p>{this.state.error}</p>
+              )}
             </form>
           </div>
           {this.state.showHeader ? (
