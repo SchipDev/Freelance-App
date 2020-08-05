@@ -17,7 +17,7 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    
+
     useFindAndModify: false
   })
   .then(x =>
@@ -45,7 +45,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     secret: "secret",
-    cookie: { maxAge: 1000 * 60 * 60, secure: false }//sameSite: false, 
+    cookie: { maxAge: 1000 * 60 * 60 }//sameSite: false, 
   })
 );
 
