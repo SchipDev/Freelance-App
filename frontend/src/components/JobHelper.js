@@ -37,7 +37,9 @@ class JobHelper extends Component {
   async componentDidMount() {
     let res = await axios.get(`http://localhost:5000/job-helpers`);
     let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
-    console.log(res2.data);
+    
+    
+    console.log(res2.data, 'i think');
     this.setState({
       helpers: res.data,
       data: res.data,
