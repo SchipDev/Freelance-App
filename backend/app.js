@@ -68,6 +68,7 @@ app.use("/", auth);
 let client = path.join(__dirname + "../public/index.html");
 
 app.get('*', (req, res) => {
+  console.log('hit')
   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 })
 
