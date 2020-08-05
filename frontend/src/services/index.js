@@ -1,9 +1,10 @@
 import axios from "axios";
 let baseURL;
 
+console.log("HEYYYY!!!")
 process.env.NODE_ENV === "production"
-  ? (baseURL = 'https://iron-job-hunter.herokuapp.com')
-    // (baseURL = "window.location.origin")
+  ? //(baseURL = 'https://iron-job-hunter.herokuapp.com')
+    (baseURL = "/")
   : (baseURL = "http://localhost:5000");
 
 const service = axios.create({ withCredentials: true, baseURL });
