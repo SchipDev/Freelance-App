@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
@@ -17,6 +17,7 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+
     useFindAndModify: false
   })
   .then(x =>
@@ -34,16 +35,17 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://clientnetlify.netlify.app"] //Swap this with the client url
+    origin: ["http://localhost:3000", "https://job-hunter.netlify.app"] //Swap this with the client url
   })
 );
 
 app.use(
   session({
+    proxy: true,
     resave: false,
     saveUninitialized: true,
     secret: "secret",
-    cookie: { maxAge: 1000 * 60 * 60 }
+    cookie: { maxAge: 1000 * 60 * 60 }//sameSite: false, 
   })
 );
 
@@ -54,7 +56,7 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(logger("dev"));
 
 const index = require("./routes/index");
@@ -64,5 +66,10 @@ app.use("/", auth);
 
 // Uncomment this line for production
 let client = path.join(__dirname + "../public/index.html");
+
+app.get('*', (req, res) => {
+  console.log('hit')
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+})
 
 module.exports = app;

@@ -10,7 +10,9 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 
 class App extends Component {
-  state = {};
+  state = {
+    loading: true
+  };
 
   async componentDidMount() {
     let user = await actions.isLoggedIn();

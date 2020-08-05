@@ -24,7 +24,7 @@ router.get("/post-job/:id", (req, res, next) => {
 });
 router.get("/job-helpers", (req, res) => {
   NewJobs.find().then(helpers => {
-    res.json(helpers);
+    res.status(200).json(helpers);
   });
 });
 router.get("/job-helpers/user", (req, res) => {

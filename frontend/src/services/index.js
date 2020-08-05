@@ -2,9 +2,9 @@ import axios from "axios";
 let baseURL;
 
 process.env.NODE_ENV === "production"
-  ? // ? (baseURL = 'https://sheltered-dawn-07708.herokuapp.com')
-    (baseURL = "window.location.origin")
-  : (baseURL = "http://localhost:5000");
+  ? (baseURL = "https://iron-job-hunter.herokuapp.com")
+  : // (baseURL = "window.location.origin")
+    (baseURL = "http://localhost:5000");
 
 const service = axios.create({ withCredentials: true, baseURL });
 
@@ -68,6 +68,9 @@ const actions = {
   },
   displayRes: async id => {
     return await service.get(`/get-resume/${id}`);
+  },
+  getResume: async resumeId => {
+    return await service.get(`/get-resume/${resumeId}`);
   }
 };
 
