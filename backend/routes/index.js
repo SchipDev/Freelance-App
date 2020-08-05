@@ -29,6 +29,7 @@ router.get("/job-helpers", (req, res) => {
 });
 router.get("/job-helpers/user", (req, res) => {
   User.find().then(helpers => {
+    console.log("Hello");
     res.json(helpers);
   });
 });
