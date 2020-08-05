@@ -45,9 +45,16 @@ app.use(
     resave: false,
     saveUninitialized: true,
     secret: "secret",
-    cookie: { maxAge: 1000 * 60 * 60 }//sameSite: false, 
+    cookie: { maxAge: 1000 * 60 * 60, sameSite:'none'}//sameSite: false, 
   })
 );
+
+console.log("WHAAAA")
+
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
+  sessionConfig.cookie.secure = true; // serve secure cookies
+}
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -62,10 +69,9 @@ app.use(logger("dev"));
 const index = require("./routes/index");
 const auth = require("./routes/auth");
 
-app.get('*', (req, res) => {
-  console.log('hit')
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
-})
+// app.get('*', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+// })
 
 app.use("/", index);
 app.use("/", auth);
