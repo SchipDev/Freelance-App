@@ -32,6 +32,7 @@ class Profile extends Component {
     showLoad: false,
     active1: true,
     active2: false,
+    active3: false,
     isEditingWE: false,
     isEditingSkills: false,
     isEditingEdu: false,
@@ -43,7 +44,9 @@ class Profile extends Component {
       this.props.history.push("/log-in");
     }
     if (this.props.user.user.hasResume) {
-        actions.getResume(this.props.user.user._id).then(res => this.setState({ userResume: res.data[0] }));
+      actions
+        .getResume(this.props.user.user._id)
+        .then(res => this.setState({ userResume: res.data[0] }));
     }
   }
 
@@ -507,7 +510,7 @@ class Profile extends Component {
       this.props.setUser(res.data);
       this.setState({
         showLoad: false
-      })
+      });
     });
   };
   showLoad = () => {
@@ -522,14 +525,23 @@ class Profile extends Component {
   };
   showRes = () => {
     this.setState({
-      active1: !this.state.active1,
-      active2: !this.state.active2
+      active1: true,
+      active2: false,
+      active3: false
     });
   };
   showCon = () => {
     this.setState({
-      active1: !this.state.active1,
-      active2: !this.state.active2
+      active1: false,
+      active2: true,
+      active3: false
+    });
+  };
+  showMycon = () => {
+    this.setState({
+      active1: false,
+      active2: false,
+      active3: true
     });
   };
   render() {
@@ -596,13 +608,19 @@ class Profile extends Component {
             className={this.state.active1 ? "active3" : null}
             onClick={this.showRes}
           >
-            Edit Resume
+            ✎ Edit Resume
           </span>{" "}
           <span
             onClick={this.showCon}
             className={this.state.active2 ? "active4" : null}
           >
-            Find new connections
+            ☏ Find new connections
+          </span>
+          <span
+            onClick={this.showMycon}
+            className={this.state.active3 ? "active5" : null}
+          >
+            ♖ See my connections
           </span>
         </p>
         {this.state.active1 ? (
@@ -619,8 +637,8 @@ class Profile extends Component {
         ) : (
           ""
         )}
-        {this.state.active2 ? <UserSearch currUser={this.props.user.user} setUser={this.props.setUser} /> : ""}
-        <Connections userId={this.props.user.user._id} setUser={this.props.setUser} />
+        {this.state.active2 ? <UserSearch user={this.props.user.user} /> : ""}
+        {this.state.active3 ? <p>What`s up?</p> : ""}
       </div>
     );
   }
