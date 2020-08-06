@@ -42,7 +42,9 @@ class Profile extends Component {
       this.props.history.push("/log-in");
     }
     if (this.props.user.user.hasResume) {
-        actions.getResume(this.props.user.user._id).then(res => this.setState({ userResume: res.data[0] }));
+      actions
+        .getResume(this.props.user.user._id)
+        .then(res => this.setState({ userResume: res.data[0] }));
     }
   }
 
@@ -506,7 +508,7 @@ class Profile extends Component {
       this.props.setUser(res.data);
       this.setState({
         showLoad: false
-      })
+      });
     });
   };
   showLoad = () => {
@@ -618,7 +620,7 @@ class Profile extends Component {
         ) : (
           ""
         )}
-        {this.state.active2 ? <UserSearch /> : ""}
+        {this.state.active2 ? <UserSearch user={this.props.user.user} /> : ""}
       </div>
     );
   }

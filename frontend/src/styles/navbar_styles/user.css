@@ -64,7 +64,46 @@
   height: 1.5em;
   cursor: pointer;
 }
-
+.emailSend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5vh;
+}
+.emailMe {
+  font-size: 3em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.emailSend textarea {
+  text-align: center;
+  border-radius: 10px;
+}
+.emailButton {
+  font-weight: 700;
+  background-color: rgb(23, 68, 164);
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.emailSend label {
+  color: rgb(91, 91, 91);
+}
+.info3 {
+  display: flex;
+  flex-direction: row;
+}
+.info3 button {
+  font-weight: 900;
+  background-color: rgb(23, 68, 164);
+  color: white;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+#borderImg {
+  border: 7px solid rgb(23, 68, 164);
+}
 @media only screen and (min-width: 1025px) {
   #findUser {
     background-color: rgb(23, 68, 164);
