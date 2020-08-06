@@ -15,6 +15,12 @@
   border-right-width: 5vw;
   border-right-color: rgb(23, 68, 164);
 }
+#butt0n2 {
+  margin-top: 0;
+}
+#workP {
+  text-align: center;
+}
 #user_info h1 {
   width: 90%;
   text-align: center;
@@ -138,7 +144,7 @@
 }
 .skillButton {
   padding: 0;
-  margin: 0;
+  margin-bottom: 0;
 }
 .eduForm {
   padding-top: 2vh;
@@ -263,7 +269,12 @@
   height: 5vw;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 765px) {
+  .submitButton {
+    width: 15vw;
+    font-size: 3vw;
+    padding: 0;
+  }
   #user_info h1 {
     font-size: 5vw;
   }
@@ -331,6 +342,10 @@
 }
 
 @media only screen and (min-width: 1025px) {
+  .textarea3 {
+    width: 90%;
+    border-radius: 10px;
+  }
   #user_info {
     padding-bottom: 6vw;
     border: 0.1px lightgray solid;
@@ -408,13 +423,13 @@
   .formSkill {
     display: flex;
     flex-direction: row;
-
+    align-items: center;
     justify-content: center;
     margin-top: 1.5vw;
   }
   .skillButton {
     padding: 0;
-    margin-bottom: 2vh;
+    margin-top: -3vh;
   }
 
   #skillInp {
@@ -533,6 +548,7 @@
   }
   #workP {
     padding-top: 2.5vh;
+    text-align: center;
   }
   .addS2 {
     margin-top: 1vw;
