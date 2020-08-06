@@ -75,6 +75,13 @@ const actions = {
   },
   getResume: async resumeId => {
     return await service.get(`/get-resume/${resumeId}`);
+  }, 
+  connect: async (currUserId, utcId) => {
+    //console.log(currUserId, utcId)
+    return await service.post('/connect', {idArr: [currUserId, utcId]})
+  }, 
+  getConnections: async userId => {
+    return await service.get(`/get-connections/${userId}`)
   }
 };
 
