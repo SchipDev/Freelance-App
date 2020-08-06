@@ -11,7 +11,7 @@ const ConnectButton = (props) => {
     }
 
     return (
-        <button onClick={connect}>Connect</button>
+        <button onClick={connect}>Follow</button>
     )
 }
 
