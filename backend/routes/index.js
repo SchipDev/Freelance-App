@@ -9,17 +9,13 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/get-resume/:id", (req, res, next) => {
-  console.log(req.params);
   Resume.find({ userId: req.params.id }).then(result => {
-    console.log(result);
     res.json(result);
   });
 });
 router.get("/post-job/:id", (req, res, next) => {
-  console.log(req.params);
   NewJobs.find({ userId: req.params.id }).then(jobs => {
     res.json(jobs);
-    console.log(result);
   });
 });
 router.get("/job-helpers", (req, res) => {
@@ -29,15 +25,12 @@ router.get("/job-helpers", (req, res) => {
 });
 router.get("/job-helpers/user", (req, res) => {
   User.find().then(helpers => {
-    console.log("Hello");
     res.json(helpers);
   });
 });
 router.get("/post-job/delete/:id", (req, res, next) => {
-  console.log(req.params);
   NewJobs.deleteOne({ userId: req.params.id }).then(jobs => {
     res.json(jobs);
-    console.log(result);
   });
 });
 router.post("/post-job", (req, res, next) => {
@@ -46,7 +39,6 @@ router.post("/post-job", (req, res, next) => {
   });
 });
 router.get("/get-resume/:id", (req, res, next) => {
-  console.log(req.params);
   Resume.find({ userId: req.params.id }).then(result => {
     res.json(result[0]);
   });
@@ -56,7 +48,6 @@ router.post(
   "/post-rewards/:id",
   uploadCloud.single("image"),
   (req, res, next) => {
-    console.log(req.params, req.file);
     User.findByIdAndUpdate(
       req.params.id,
       { image: req.file.path },
@@ -69,10 +60,8 @@ router.post(
 
 router.post("/add_WE/:id", (req, res, next) => {
   Resume.findById(req.params.id).then(result => {
-    console.log(result, "peach");
     result.workExperience.unshift(req.body);
     result.save((err, doc) => {
-      console.log(err, doc, "apple");
       if (err) throw err;
       res.json(doc);
     });
@@ -81,7 +70,6 @@ router.post("/add_WE/:id", (req, res, next) => {
 
 router.post("/add_Skill/:id", (req, res, next) => {
   Resume.findById(req.params.id).then(result => {
-    console.log(req.body.newSkill);
     result.skills.unshift(req.body.newSkill);
     result.save((err, doc) => {
       if (err) throw err;
@@ -92,7 +80,6 @@ router.post("/add_Skill/:id", (req, res, next) => {
 
 router.post("/add_Education/:id", (req, res, next) => {
   Resume.findById(req.params.id).then(result => {
-    console.log(req.body);
     result.education.unshift(req.body);
     result.save((err, doc) => {
       if (err) throw err;
@@ -127,8 +114,6 @@ router.get("/user_search/jobTitle/:id", (req, res, next) => {
 });
 
 router.post("/delete_WE/:id", (req, res, next) => {
-  console.log(req.body.remove);
-  console.log(req.params.id);
   Resume.findById(req.params.id).then(result => {
     result.workExperience.splice(req.body.remove, 1);
     result.save((err, doc) => {
@@ -139,8 +124,6 @@ router.post("/delete_WE/:id", (req, res, next) => {
 });
 
 router.post("/delete_Skill/:id", (req, res, next) => {
-  console.log(req.body.remove);
-  console.log(req.params.id);
   Resume.findById(req.params.id).then(result => {
     result.skills.splice(req.body.remove, 1);
     result.save((err, doc) => {
@@ -151,8 +134,6 @@ router.post("/delete_Skill/:id", (req, res, next) => {
 });
 
 router.post("/delete_Edu/:id", (req, res, next) => {
-  console.log(req.body.remove);
-  console.log(req.params.id);
   Resume.findById(req.params.id).then(result => {
     result.education.splice(req.body.remove, 1);
     result.save((err, doc) => {

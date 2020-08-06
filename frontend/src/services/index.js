@@ -1,7 +1,6 @@
 import axios from "axios";
 let baseURL;
 
-console.log("HEYYYY!!!");
 process.env.NODE_ENV === "production"
   ? (baseURL = "https://iron-job-hunter.herokuapp.com")
   : // (baseURL = "window.location.origin")
@@ -14,7 +13,6 @@ const actions = {
     return await service.get("/is-logged-in");
   },
   signUp: async user => {
-    console.log("ofc");
     return await service.post("/signup", user);
   },
   logIn: async user => {
@@ -77,7 +75,6 @@ const actions = {
     return await service.get(`/get-resume/${resumeId}`);
   }, 
   connect: async (currUserId, utcId) => {
-    //console.log(currUserId, utcId)
     return await service.post('/connect', {idArr: [currUserId, utcId]})
   }, 
   getConnections: async userId => {
