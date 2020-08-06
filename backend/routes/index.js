@@ -163,4 +163,27 @@ router.post("/delete_Edu/:id", (req, res, next) => {
   });
 });
 
+router.post('/connect', (req, res, next) => {
+  // console.log(req.body.idArr[0])
+  User.findById(req.body.idArr[0]).then(result => {
+    // console.log(result)
+    if (!result.connections.includes(req.body.idArr[1])) {
+      result.connections.push(req.body.idArr[1])
+      result.save((err, doc) => {
+        if (err) throw error;
+        res.json(doc)
+      })
+    }
+    else {
+      res.json(result)
+    }
+  })
+})
+
+router.get('/get-connections/:id', (req,res,next) => {
+  User.findById(req.params.id).populate('connections').then(result => {
+    res.json(result)
+  })
+})
+
 module.exports = router;

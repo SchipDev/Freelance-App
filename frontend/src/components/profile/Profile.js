@@ -5,6 +5,7 @@ import actions from "../../services/index";
 import axios from "axios";
 import UserSearch from "../UserSearch";
 import { Switch, Route } from "react-router-dom";
+import Connections from '../Connections'
 
 class Profile extends Component {
   state = {
@@ -618,7 +619,8 @@ class Profile extends Component {
         ) : (
           ""
         )}
-        {this.state.active2 ? <UserSearch /> : ""}
+        {this.state.active2 ? <UserSearch currUser={this.props.user.user} setUser={this.props.setUser} /> : ""}
+        <Connections userId={this.props.user.user._id} setUser={this.props.setUser} />
       </div>
     );
   }

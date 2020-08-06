@@ -77,11 +77,6 @@ class Main extends Component {
           />
           <Route
             exact
-            path="/google-signup"
-            render={props => <GoogleAuth {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
             path="/companies/details"
             render={props => (
               <CompanyDetail {...props} setUser={this.setUser} />
@@ -99,7 +94,6 @@ class Main extends Component {
             path="/contact"
             render={props => <Contact {...props} user={this.state} />}
           />
-
           <Route
             exact
             path="/search"

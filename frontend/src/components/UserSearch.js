@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import actions from "../services/index";
 import "../styles/navbar_styles/user.css";
+import ConnectButton from './ConnectButton'
 
 class UserSearch extends Component {
   state = {
@@ -180,6 +181,7 @@ class UserSearch extends Component {
           ) : (
             ""
           )}
+          {!this.props.currUser.connections.includes(user._id) ? <ConnectButton currUserId={this.props.currUser._id} utcId={user._id} setUser={this.props.setUser}/> : ''}
         </div>
       );
     });

@@ -13,7 +13,8 @@ const userSchema = new Schema(
     image: String,
     phoneNum: {
       type: String
-    }
+    }, 
+    connections: [{type: Schema.Types.ObjectId, ref: 'User'}]
   },
   {
     timestamps: true,
