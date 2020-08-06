@@ -5,7 +5,7 @@ import actions from "../../services/index";
 import axios from "axios";
 import UserSearch from "../UserSearch";
 import { Switch, Route } from "react-router-dom";
-import Connections from '../Connections'
+import Connections from "../Connections";
 
 class Profile extends Component {
   state = {
@@ -145,12 +145,11 @@ class Profile extends Component {
           <textarea
             name="summary"
             onChange={this.handleChange}
-            className="input_field"
-            id="textarea3"
+            className="textarea3"
             placeholder="A resume summary statement is a short, three- to five-sentence paragraph at the top of a resume, directly below the contact information, that introduces you to employers and sets the tone for the rest of your resume"
           />
-
-          <input className="submitButton" type="submit" />
+          <br></br>
+          <input id="butt0n2" className="submitButton" type="submit" />
         </form>
       </div>
     );
@@ -177,7 +176,7 @@ class Profile extends Component {
               {we.startDate} - {we.endDate}
             </div>
           </div>
-          <div> {we.jobTitle[0].toUpperCase() + we.jobTitle.slice(1)} </div>
+          <div> {we.jobTitle} </div>
 
           <article>{we.description}</article>
           {this.state.isEditingWE ? (
@@ -228,14 +227,15 @@ class Profile extends Component {
               name="jobTitle"
               type="text"
               placeholder="Job Title"
-              className="input_field"
+              id="textA"
+              className="textarea3"
             />{" "}
             <label>Company</label>
             <input
               onChange={this.handleChangeAddWE}
               name="employer"
               placeholder="Employer Name"
-              className="input_field"
+              className="textarea3"
             />{" "}
             <label>Start Date</label>
             <input
@@ -243,7 +243,7 @@ class Profile extends Component {
               name="startDate"
               type="text"
               placeholder="MM/DD/YYYY"
-              className="input_field"
+              className="textarea3"
             />
             <label>End Date</label>
             <input
@@ -251,16 +251,17 @@ class Profile extends Component {
               name="endDate"
               type="text"
               placeholder="MM/DD/YYYY or Present"
-              className="input_field"
+              className="textarea3"
             />
             <label>Description</label>
             <textarea
               onChange={this.handleChangeAddWE}
               name="description"
               placeholder="Descripe your responsibillities and the skills you used "
-              className="input_field"
+              className="textarea3"
             />
-            <input type="submit" className="submitButton" />
+            <br></br>
+            <input id="butt0n2" type="submit" className="submitButton" />
           </form>
         ) : (
           ""
@@ -326,9 +327,14 @@ class Profile extends Component {
               name="skillToAdd"
               placeholder="e.g.Interpersonal skills."
               id="skillInp"
-              className="input_field"
+              className="textarea3"
             />
-            <input className="submitButton skillButton" type="submit" />
+            <br></br>
+            <input
+              id="butt0n2"
+              className="submitButton skillButton"
+              type="submit"
+            />
           </form>
         ) : (
           ""
@@ -447,13 +453,13 @@ class Profile extends Component {
               name="institute"
               type="text"
               placeholder="Ex: Boston University"
-              className="input_field"
+              className="textarea3"
             />{" "}
             <label>Field of Study</label>
             <input
               onChange={this.handleChangeAddEdu}
               name="title"
-              className="input_field"
+              className="textarea3"
               placeholder="Ex: Business"
             />{" "}
             <label>Dates</label>
@@ -462,13 +468,13 @@ class Profile extends Component {
               name="date"
               type="text"
               placeholder="   MM/YYYY-MM/YYYY"
-              className="input_field"
+              className="textarea3"
             />{" "}
             <label>Degree</label>
             <input
               onChange={this.handleChangeAddEdu}
               name="recieved"
-              className="input_field"
+              className="textarea3"
               placeholder="Ex: Bachelor's"
             />{" "}
             <label>Activities and societies</label>
@@ -476,9 +482,10 @@ class Profile extends Component {
               onChange={this.handleChangeAddEdu}
               name="description"
               placeholder="Ex: Alpha Phi Omega, Marching Band, Volleyball"
-              className="input_field"
+              className="textarea3"
             />{" "}
-            <input className="submitButton" type="submit" />
+            <br></br>
+            <input id="butt0n2" className="submitButton" type="submit" />
           </form>
         ) : (
           ""
@@ -630,8 +637,22 @@ class Profile extends Component {
         ) : (
           ""
         )}
-        {this.state.active2 ? <UserSearch currUser={this.props.user.user} setUser={this.props.setUser} /> : ""}
-        {this.state.active3 ? <Connections userId={this.props.user.user._id} /> : ""}
+        {this.state.active2 ? (
+          <UserSearch
+            currUser={this.props.user.user}
+            setUser={this.props.setUser}
+          />
+        ) : (
+          ""
+        )}
+        {this.state.active3 ? (
+          <Connections
+            userId={this.props.user.user._id}
+            user={this.props.user.user}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
