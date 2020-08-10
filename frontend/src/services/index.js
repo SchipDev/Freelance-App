@@ -3,9 +3,8 @@ let baseURL;
 
 console.log("HEYYYY!!!");
 process.env.NODE_ENV === "production"
-  ? (baseURL = "https://iron-job-hunter.herokuapp.com")
-  : // (baseURL = "window.location.origin")
-    (baseURL = "http://localhost:5000");
+  ? (baseURL = "/api") //https://rocky-ocean-03987.herokuapp.com/
+  : (baseURL = "http://localhost:5000/api");
 
 const service = axios.create({ withCredentials: true, baseURL });
 
@@ -75,13 +74,13 @@ const actions = {
   },
   getResume: async resumeId => {
     return await service.get(`/get-resume/${resumeId}`);
-  }, 
+  },
   connect: async (currUserId, utcId) => {
     //console.log(currUserId, utcId)
-    return await service.post('/connect', {idArr: [currUserId, utcId]})
-  }, 
+    return await service.post("/connect", { idArr: [currUserId, utcId] });
+  },
   getConnections: async userId => {
-    return await service.get(`/get-connections/${userId}`)
+    return await service.get(`/get-connections/${userId}`);
   }
 };
 

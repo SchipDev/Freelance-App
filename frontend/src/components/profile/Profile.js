@@ -580,7 +580,7 @@ class Profile extends Component {
               {this.state.showLoad ? (
                 <form id="loadForm" onSubmit={this.loadPic}>
                   <input id="file" type="file" onChange={this.handleChange2} />
-                  <input id="sendPic" type="submit" value="Upload" />
+                  {/* <input id="sendPic" type="submit" value="Upload" /> */}
                 </form>
               ) : (
                 ""

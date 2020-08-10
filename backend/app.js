@@ -74,9 +74,11 @@ const auth = require("./routes/auth");
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
 
-app.use("/", index);
-app.use("/", auth);
-
+app.use("/api", index);
+app.use("/api", auth);
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+});
 // Uncomment this line for production
 let client = path.join(__dirname + "../public/index.html");
 
