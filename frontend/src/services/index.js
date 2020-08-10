@@ -1,7 +1,6 @@
 import axios from "axios";
 let baseURL;
 
-console.log("HEYYYY!!!");
 process.env.NODE_ENV === "production"
   ? (baseURL = "/api") //https://rocky-ocean-03987.herokuapp.com/
   : (baseURL = "http://localhost:5000/api");
@@ -13,7 +12,6 @@ const actions = {
     return await service.get("/is-logged-in");
   },
   signUp: async user => {
-    console.log("ofc");
     return await service.post("/signup", user);
   },
   logIn: async user => {
@@ -36,12 +34,12 @@ const actions = {
   showMyjobs: async id => {
     return await service.get(`/post-job/${id}`);
   },
-  //   showHelpers: async () => {
-  //     return await service.get("/job-helpers");
-  //   },
-  //   showHelpers2: async () => {
-  //     return await service.get("/job-helpers/user");
-  //   },
+  showHelpers: async () => {
+    return await service.get("/job-helpers");
+  },
+  showHelpers2: async () => {
+    return await service.get("/job-helpers/user");
+  },
   deleteMyJob: async id => {
     return await service.get(`/post-job/delete/${id}`);
   },

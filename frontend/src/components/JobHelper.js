@@ -36,15 +36,15 @@ class JobHelper extends Component {
     });
   };
   async componentDidMount() {
-    // let res = await actions.showHelpers();
-    // console.log(res);
-    // let res2 = await actions.showHelpers2();
-    // // let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
-    // console.log(res2);
-    let res = await axios.get(`http://localhost:5000/job-helpers`);
-    let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
-    console.log("RES:", res);
-    console.log("RES2:", res2);
+    let res = await actions.showHelpers();
+    console.log(res);
+    let res2 = await actions.showHelpers2();
+
+    console.log(res2);
+    // let res = await axios.get(`http://localhost:5000/job-helpers`);
+    // let res2 = await axios.get(`http://localhost:5000/job-helpers/user`);
+    console.log("RES:", res.data);
+    console.log("RES2:", res2.data);
     this.setState({
       helpers: res.data,
       data: res.data,
@@ -74,7 +74,8 @@ class JobHelper extends Component {
 
     return res.map((helper, i) => {
       let user = this.state.users.filter(x => x._id == helper.userId);
-      console.log(user);
+
+      console.log("USER", user);
       if (user[0] && user) {
         return (
           <div key={i} className="eachJob" id="eachHelper">

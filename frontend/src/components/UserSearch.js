@@ -5,6 +5,7 @@ import ConnectButton from './ConnectButton'
 
 class UserSearch extends Component {
     state = {
+        job: '', 
         results: "nsy",
         lastSearch: "",
         firstUsers: [],
@@ -32,8 +33,6 @@ class UserSearch extends Component {
         const template = "jobhunter";
         let showE = [...this.state.showE];
         let showEmail2 = [...this.state.showEmail2];
-        console.log(process.env.REACT_APP_EMAILJS_USERID);
-        console.log(this.state.value);
         let index = showE.indexOf(email);
         showE.splice(index, 1);
         showEmail2.splice(index, 1);
@@ -75,17 +74,12 @@ class UserSearch extends Component {
                 this.setState({
                     formEmailSent: true
                 });
-                console.log(res);
             })
             // Handle errors here however you like
             .catch(err => console.error("Failed to send feedback. Error: ", err));
     }
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
-
-    handleSubmitName = e => {
-        e.preventDefault();
-    };
 
     handleSubmitJob = e => {
         e.preventDefault();
@@ -206,7 +200,6 @@ class UserSearch extends Component {
                                 ""
                             )}
                     </div>
-                    {console.log(this.state.displayRes)}
                     {index !== -1 ? (
                         resume ? (
                             <div className="companies" id="user_info">
@@ -306,7 +299,6 @@ class UserSearch extends Component {
             });
         } else {
             const res = await actions.displayRes(id);
-            console.log(res);
             showR.push(id);
             displayRes.push(res.data[0]);
             this.setState({
@@ -349,7 +341,6 @@ class UserSearch extends Component {
         }
     };
     render() {
-        console.log("PROPS", this.props.user);
         return (
             <div className="allUsers">
                 <form className="form2" onSubmit={this.handleSubmitJob}>

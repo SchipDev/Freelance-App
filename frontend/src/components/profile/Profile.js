@@ -84,7 +84,6 @@ class Profile extends Component {
 
   handleSubmitNewResume = e => {
     e.preventDefault();
-    console.log(this.props);
     let resume = this.compileResume();
     actions.postResume(resume).then(res => {
       this.setState({
@@ -134,7 +133,6 @@ class Profile extends Component {
     this.setState({
       addWEObj: newWEObj
     });
-    console.log(this.state.addWEObj);
   };
 
   //----------------------------------------------------------------------------------------------------
@@ -347,7 +345,6 @@ class Profile extends Component {
 
   handleSubmitNewSkill = e => {
     e.preventDefault();
-    console.log(this.state.skillToAdd);
     actions
       .addSkill({ newSkill: this.state.skillToAdd }, this.state.userResume?._id)
       .then(res => {
@@ -382,13 +379,11 @@ class Profile extends Component {
     this.setState({
       newEduObj: eduObj
     });
-    console.log(this.state.newEduObj);
   };
 
   handleSubmitNewEdu = e => {
     e.preventDefault();
     let eduToSend = { ...this.state.newEduObj };
-    console.log(eduToSend);
     actions.addEducation(eduToSend, this.state.userResume?._id).then(res => {
       this.setState({
         userResume: res.data,
@@ -512,7 +507,6 @@ class Profile extends Component {
   handleChange2 = e => {
     let image = new FormData();
     image.append("image", e.target.files[0]);
-    console.log(this.state.user, this.props);
     actions.postReward(image, this.props.user.user._id).then(res => {
       this.props.setUser(res.data);
       this.setState({
@@ -555,7 +549,6 @@ class Profile extends Component {
     if (!this.props.user.user.email && !this.props.user.user.loading) {
       this.props.history.push("/log-in");
     }
-    console.log(this.props.user.user.hasResume);
     return (
       <div className="profAll">
         <Navbar />
