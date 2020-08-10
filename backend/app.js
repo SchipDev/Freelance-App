@@ -49,12 +49,12 @@ app.use(
   })
 );
 
-console.log("WHAAAA");
+console.log("Dog");
 
-if (process.env.NODE_ENV === "production") {
-  app.set("trust proxy", 1); // trust first proxy
-  sessionConfig.cookie.secure = true; // serve secure cookies
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.set("trust proxy", 1); // trust first proxy
+//   sessionConfig.cookie.secure = true; // serve secure cookies
+// }
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -80,6 +80,5 @@ app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 // Uncomment this line for production
-let client = path.join(__dirname + "../public/index.html");
 
 module.exports = app;
