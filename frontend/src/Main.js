@@ -19,7 +19,7 @@ class Main extends Component {
   state = {
     user: {
       loading: true
-    },
+    }
   };
 
   async componentDidMount() {
@@ -97,7 +97,13 @@ class Main extends Component {
           <Route
             exact
             path="/search"
-            render={props => <UserSearch {...props} user={this.state} />}
+            render={props => (
+              <UserSearch
+                email={this.state.user}
+                {...props}
+                user={this.state}
+              />
+            )}
           />
         </Switch>
       </div>

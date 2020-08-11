@@ -19,7 +19,7 @@ class LogIn extends Component {
           "Looks like you did not create an account, you can sign up for a new account!"
         );
 
-        window.location.href = "http://localhost:3000/sign-up";
+        window.location.href = "https://iron-job-hunter.herokuapp.com/sign-up";
       });
   };
   render() {
